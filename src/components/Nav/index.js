@@ -38,7 +38,7 @@ class Nav extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light mb-2">
+      <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light mb-2">
         <Link className="navbar-brand" to="/"> {/* TODO: This will lead to admin homepage FIGURE OUT ROUTES */}
           Real Game of Life
         </Link>
