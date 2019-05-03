@@ -12,7 +12,7 @@ export default {
     deleteGames: function(id) {
         return axios.delete("https://real-life-api.herokuapp.com//" + id);
     },
-    saveBook: function(Data) {
+    saveGames: function(Data) {
         return axios.post("https://real-life-api.herokuapp.com/", GamesData);
     }
 }
