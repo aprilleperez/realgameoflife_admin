@@ -13,3 +13,10 @@
     padding: 24px;
     background-color: lightgray;
 }
+
+.thisControls {
+    /* display: flex; */
+    /* justify-content: center; */
+    background-color: red;
+    width: 50px;
+}
