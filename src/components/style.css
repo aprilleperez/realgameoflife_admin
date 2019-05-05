@@ -17,6 +17,7 @@
 .thisControls {
     /* display: flex; */
     /* justify-content: center; */
-    background-color: red;
+    /* background-color: red; */
     width: 50px;
+    float: left;
 }

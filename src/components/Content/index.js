@@ -1,20 +1,40 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import { Container, Row, Col } from '../Grid'
 import { ContentHeader } from '../Header'
 import DashControl from '../DashControls'
 import '../style.css';
 
-function Content() {
-    return (
-        <div className="thisContent fluid">
-            <ContentHeader />
-            <DashControl />
-            
-            
-            HELLO!!!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-    )
+
+class Content extends Component {
+    state = {
+        games: [1, 2, 3] // DUMMY STATE
+    }
+
+    render() {
+        return (
+            <div className="thisContent fluid">
+                <Container>
+                    {/* TODO: re-visit how it maps once real games are passed in */}
+                    {this.state.games.map(game => (
+                        <Row>
+                            <Col size="sm-6">
+                                <ContentHeader />
+                            </Col>
+
+                            <Col size="sm-6">
+                                <DashControl class="fas fa-play" text="Play" />
+                                <DashControl class="fas fa-user" text="Edit" />
+                                <DashControl class="fas fa-poll-h" text="Edit" />
+                                <DashControl class="fas fa-trash" text="Drop" />
+                            </Col>
+                        </Row>
+                    ))}
+                </Container>
+            </div>
+        )
+    }
 }
 
 export default Content;
