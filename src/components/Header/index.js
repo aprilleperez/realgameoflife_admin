@@ -23,7 +23,7 @@ export function SubHeader() {
 export function ContentHeader() {
     return (
         <div>
-            <h3 className="thisContentHeader">Game 1: Yayay this is fun</h3>
+            <h3 className="thisContentHeader">Game 1: Something for Non-Profit</h3>
         </div>
     )
 }
