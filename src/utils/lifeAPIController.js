@@ -3,33 +3,33 @@ import axios from "axios";
 
 export function create() {
     let data = {
-        name: "Better Game Name",
+        name: "America's Ass",
         traits: {
-            trait1: "Bobs",
-            trait2: "Bobs",
-            trait3: "Bobs",
-            trait4: "Bobs",
-            trait5: "Bobs"
+            trait1: "Red",
+            trait2: "White",
+            trait3: "Blue",
+            trait4: "Firmness",
+            trait5: "Bubble-ness"
         },
         Avatars: [{
-            name: "Bobs",
-            trait1: 1,
-            trait2: 3,
-            trait3: 4,
-            trait4: 5,
-            trait5: 6
+            name: "Steve Rogers",
+            trait1: 20,
+            trait2: 20,
+            trait3: 20,
+            trait4: 20,
+            trait5: 20
         }],
         Questions: [{
-            Q: "Bobs",
+            Q: "Did Captain America's first suit really do him no favors?",
             responses: [
-                { r1: "Bobs", oc: [{ trait: "Bobs", amount: 6, upDown: "Bobs" }] },
-                { r2: "Bobs", oc: [{ trait: "Bobs", amount: 5, upDown: "Bobs" }] },
-                { r3: "Bobs", oc: [{ trait: "Bobs", amount: 4, upDown: "Bobs" }] },
-                { r4: "Bobs", oc: [{ trait: "Bobs", amount: 3, upDown: "Bobs" }] },
-                { r5: "Bobs", oc: [{ trait: "Bobs", amount: 2, upDown: "Bobs" }] }
+                { r1: "Definitely no favors done", oc: [{ trait: "Firmness", amount: 6, upDown: "down" }] },
+                { r2: "It was fine", oc: [{ trait: "Bubble-ness", amount: 5, upDown: "up" }] },
+                { r3: "Neither is America's ass", oc: [{ trait: "Red", amount: 4, upDown: "down" }] },
+                { r4: "All the favors! 10/10", oc: [{ trait: "Blue", amount: 9, upDown: "up" }] },
+                { r5: "I'm neutral on Ameria's ass", oc: [{ trait: "White", amount: 2, upDown: "down" }] }
             ],
-            trait1: "Bobs",
-            trait2: "Bobs"
+            trait1: "Bubble-ness",
+            trait2: "firmness"
         }]
     }
 
@@ -87,6 +87,22 @@ export function update() {
     }
     axios
         .put("http://localhost:3001/api/games/5ccddaa3bc49a849d88e6685", data, config)
+        .then(results =>
+            results.data.items.filter(
+                result =>
+                    result.game.title
+            )
+        )
+}
+
+export function remove() {
+    let config = {
+        headers: {
+            "Access-Control-Allow-Origin": "anonymous"
+        }
+    }
+    axios
+        .delete("http://localhost:3001/api/games/5ccddaa3bc49a849d88e6685", config)
         .then(results =>
             results.data.items.filter(
                 result =>
