@@ -1,0 +1,22 @@
+.thisHeader {
+    margin-top: 24px;
+}
+
+.thisSubHeader {
+    margin-top: 24px;
+}
+
+.thisContent {
+    margin-top: 16px;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 24px;
+    background-color: lightgray;
+}
+
+.thisControls {
+    /* display: flex; */
+    /* justify-content: center; */
+    background-color: red;
+    width: 50px;
+}
