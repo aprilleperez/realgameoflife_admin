@@ -7,10 +7,11 @@ function Card() {
                 <img src="./images/avatar.PNG"></img>
             </div>
             <div className="card-body">
-
-
+                <span>Avatar 1 Name</span>
             </div>
 
         </div>
     )
 }
+
+export default Card;

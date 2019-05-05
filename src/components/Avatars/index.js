@@ -9,6 +9,9 @@ function Avatars() {
             <SubHeader />
             <Row>
                 <Col size="md-4">
+                    <Card>
+
+                    </Card>
 
                 </Col>
 
