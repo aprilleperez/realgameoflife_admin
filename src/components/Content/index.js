@@ -24,10 +24,10 @@ class Content extends Component {
                             </Col>
 
                             <Col size="sm-6">
-                                <DashControl class="fas fa-play" text="Play" />
-                                <DashControl class="fas fa-user" text="Edit" />
-                                <DashControl class="fas fa-poll-h" text="Edit" />
-                                <DashControl class="fas fa-trash" text="Drop" />
+                                <DashControl class="fas fa-play" text="Play" href="/" />
+                                <DashControl class="fas fa-user" text="Edit" href="/edit" />
+                                <DashControl class="fas fa-poll-h" text="Edit" href="/edit" />
+                                <DashControl class="fas fa-trash" text="Drop" href="/" />
                             </Col>
                         </Row>
                     ))}
