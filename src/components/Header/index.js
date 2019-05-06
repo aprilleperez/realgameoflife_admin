@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import '../style.css';
 
-// TODO: Change to class component
-// TODO: GET HEADERS TO DYNAMICALLY UPDATE BASED ON CURRENT PAGE (HTTP) (refer to commented out stuff below)
 
 export function Header(props) {
     return (
@@ -27,6 +25,3 @@ export function ContentHeader(props) {
         </div>
     )
 }
-
-// className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
-// export default Header;
