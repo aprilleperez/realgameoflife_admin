@@ -21,7 +21,7 @@ class Create extends Component {
                 <Header text="Build your next amazing game!" />
                 <SubHeader text="Read below for how to get started" />
                 <Content />
-                <AdminButton text="Next" buttonType="green" to="/create" />
+                <AdminButton text="Next" buttonType="green" to="/create/questions" />
             </Container>
         )
     }

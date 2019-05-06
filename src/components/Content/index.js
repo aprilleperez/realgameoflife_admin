@@ -27,14 +27,14 @@ class Content extends Component {
 
                                 <Col size="sm-6">
                                     <DashControl class="fas fa-play" text="Play" href="/" />
-                                    <DashControl class="fas fa-user" text="Edit" href="/edit" />
-                                    <DashControl class="fas fa-poll-h" text="Edit" href="/edit" />
+                                    <DashControl class="fas fa-user" text="Edit" href="/edit/avatars" />
+                                    <DashControl class="fas fa-poll-h" text="Edit" href="/edit/questions" />
                                     <DashControl class="fas fa-trash" text="Drop" href="/" />
                                 </Col>
                             </Row>
                         ))}
                     </Container>
-                ) : (
+                ) : "/create" ? (
                         <Container>
                             <Row>
                                 <Col size="sm-12">
@@ -48,6 +48,10 @@ class Content extends Component {
                                 </Col>
                             </Row>
                         </Container>
+                    ) : (
+                        <Container>
+                            <p>Nothing here</p>
+                        </Container>
                     )}
             </div>
         )
@@ -55,24 +59,3 @@ class Content extends Component {
 }
 
 export default Content;
-
-
-
-
-{/* <Container> */ }
-{/* TODO: re-visit how it maps once real games are passed in (CONFIGURE STATE) */ }
-// {this.state.games.map(game => (
-//     <Row>
-//         <Col size="sm-6">
-//             <ContentHeader /> {/*TODO: get this to dynamically change based on state*/}
-//         </Col>
-
-//         <Col size="sm-6">
-//             <DashControl class="fas fa-play" text="Play" href="/" />
-//             <DashControl class="fas fa-user" text="Edit" href="/edit" />
-//             <DashControl class="fas fa-poll-h" text="Edit" href="/edit" />
-//             <DashControl class="fas fa-trash" text="Drop" href="/" />
-//         </Col>
-//     </Row>
-// ))}
-// </Container>
