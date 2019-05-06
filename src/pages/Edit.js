@@ -6,14 +6,15 @@ import { Col, Row, Container } from '../components/Grid';
 import { Header, SubHeader } from '../components/Header'
 import Content from '../components/Content'
 import AdminButton from '../components/Button'
-
+import Avatars from "../components/Avatars"
 
 function Edit() {
     return (
-        <Container fluid>
-            RENDER STUFF HERE
-        </Container>
+        <Avatars>
+
+        </Avatars>
     )
 }
 
 export default Edit;
+
