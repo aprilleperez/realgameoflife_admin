@@ -12,13 +12,14 @@ import AdminButton from '../components/Button'
 class Admin extends Component {
     state = {
         organization: "Non-Profit Goodness"
+        // TODO: figure out user state here
     }
     
     render() {
         return (
             <Container fluid>
                 <Header text={`Welcome to the dashboard, ${this.state.organization}.`} />
-                <SubHeader />
+                <SubHeader text="Create, Edit, or Drop games for your organization!" />
                 <Content />
                 <AdminButton text="Create" buttonType="green" to="/create" />
                 <AdminButton text="Edit" buttonType="blue" to="/edit" />
