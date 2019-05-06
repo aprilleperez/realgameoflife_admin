@@ -5,22 +5,13 @@ import { Row, Container } from "../Grid"
 
 function Label(props) {
     return (
-        <Container fluid>
-            <Row>
-                <p>Trait 1</p>
-            </Row>
-            <Row>
-                <p>Trait 2</p>
-            </Row>
-            <Row>
-                <p>Trait 3</p>
-            </Row>
-            <Row>
-                <p>Trait 4</p>
-            </Row>
-            <Row>
-                <p>Trait 5</p>
-            </Row>
+        <Container>
+            <form>
+                <div className="form-group">
+                    <label for="traits">Trait 1</label>
+
+                </div>
+            </form>
         </Container>
     )
 }
