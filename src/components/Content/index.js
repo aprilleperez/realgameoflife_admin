@@ -9,7 +9,8 @@ import '../style.css';
 
 class Content extends Component {
     state = {
-        games: [1, 2, 3] // DUMMY STATE
+        games: [1, 2, 3], // DUMMY STATE
+        organization: "Non-Profit goodness"
     }
 
     render() {
@@ -20,7 +21,7 @@ class Content extends Component {
                     {this.state.games.map(game => (
                         <Row>
                             <Col size="sm-6">
-                                <ContentHeader />
+                                <ContentHeader /> {/*TODO: get this to dynamically change */}
                             </Col>
 
                             <Col size="sm-6">
