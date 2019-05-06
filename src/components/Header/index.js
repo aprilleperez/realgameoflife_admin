@@ -20,10 +20,10 @@ export function SubHeader(props) {
     )
 }
 
-export function ContentHeader() {
+export function ContentHeader(props) {
     return (
         <div>
-            <h3 className="thisContentHeader">Game 1: Something for Non-Profit</h3>
+            <h3 className="thisContentHeader">{props.text}</h3>
         </div>
     )
 }
