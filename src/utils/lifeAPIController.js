@@ -8,7 +8,7 @@ export function create(gameObj) {
         }
     }
     axios
-        .post("http://localhost:3001/api/games", gameObj, config)
+        .post("https://real-life-api.herokuapp.com/api/games", gameObj, config)
         .then(results =>
             results.data.items.filter(
                 result =>
@@ -25,7 +25,7 @@ export function update(gameObj, id) {
         }
     }
     axios
-        .put(`http://localhost:3001/api/games/${id}`, gameObj, config)
+        .put(`https://real-life-api.herokuapp.com/api/games${id}`, gameObj, config)
         .then(results =>
             results.data.items.filter(
                 result =>

@@ -65,7 +65,7 @@ let testResponses = [
 
 let testQuestions = [new Question("Did Captain America's first suit really do him no favors?", testResponses, "Firmness", "Bubble-ness")]
 
-export const testGameObj = new GameObj("Still stuck on America's Ass", testTraits, testAvatars, testQuestions);
+export const testGameObj = new GameObj("Testing with America's Ass", testTraits, testAvatars, testQuestions);
 
 let updateResponses = [
     new Response("Because Tony is an appreciator of fine things", [new Outcome("Firmness", 3, "down"), new Outcome("Red", 4, "up")]),
