@@ -5,10 +5,10 @@ import '../style.css';
 
 export function DashControls(props) {
     return (
-        <div className="thisControls text-center">
+        <a href={props.href}><div className="thisControls text-center">
             <i class={props.class}></i>
             <p>{props.text}</ p>
-        </div>
+        </div></a>
     )
 }
 

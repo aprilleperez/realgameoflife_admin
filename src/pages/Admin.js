@@ -1,11 +1,12 @@
 import React from 'react';
 import * as Controller from "../utils/lifeAPIController";
 import { testGameObj, updateGameObj } from "../constructors"
+import { Link } from 'react-router-dom';
 
 import { Col, Row, Container } from '../components/Grid';
 import { Header, SubHeader } from '../components/Header'
 import Content from '../components/Content'
-import Button from '../components/Button'
+import AdminButton from '../components/Button'
 
 
 
@@ -15,7 +16,8 @@ function Admin() {
             <Header />
             <SubHeader />
             <Content />
-            <Button message="Done" />
+            <AdminButton text="Create" buttonType="green" to="/create" />
+            <AdminButton text="Edit" buttonType="blue" to="/edit" />
             <br></br>
             <br></br>
             <button className="btn btn-primary" type="button" onClick={() => Controller.update(updateGameObj, "5ccf266b84b9a54c70ed7ba9")}>Update</button>

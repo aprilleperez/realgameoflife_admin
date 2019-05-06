@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Nav from "./components/Nav";
 import Admin from "./pages/Admin";
-// import Create from "./pages/Create";
-// import Edit from "./pages/Edit";
+import Create from "./pages/Create";
+import Edit from "./pages/Edit";
 import './App.css';
 
 
@@ -14,8 +14,8 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path="/" component={Admin} />
-          {/* <Route exact path="/create" component={Create} /> */}
-          {/* <Route exact path="/edit" component={Edit} /> */}
+          <Route exact path="/create" component={Create} />
+          <Route exact path="/edit" component={Edit} />
           {/* <Route component={NoMatch} /> */}
         </Switch>
       </div>
