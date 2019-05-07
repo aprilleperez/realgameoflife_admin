@@ -7,13 +7,21 @@ function Label(props) {
     return (
         <Container>
             <form>
-                <div className="form-group">
-                    <label for="traits">Trait 1</label>
-
-                </div>
+                <input className={props.className} type="text" name="trait" placeholder={props.text} />
             </form>
         </Container>
     )
 }
 
 export default Label;
+
+
+
+
+
+{/* <form>
+                <div className="form-group">
+                    <label for="traits">Trait 1</label>
+
+                </div>
+            </form> */}
