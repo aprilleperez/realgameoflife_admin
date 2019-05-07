@@ -76,3 +76,96 @@ let updateQuestion = new Question("Why did Tony make Captain America's second su
 
 export const updateGameObj = new GameObj(testGameObj.name, testGameObj.traits, testGameObj.avatars, [testQuestions[0], updateQuestion])
 
+export const testDataObject = {
+    "_id": {
+        "$oid": "5cd0ed76413a3100173d1220"
+    },
+    "name": "Testing with America's Ass",
+    "traits": {
+        "trait1": "Red",
+        "trait2": "White",
+        "trait3": "Blue",
+        "trait4": "Firmness",
+        "trait5": "Bubble-ness"
+    },
+    "avatars": [
+        {
+            "name": "Steve Rogers",
+            "trait1": 20,
+            "trait2": 20,
+            "trait3": 20,
+            "trait4": 20,
+            "trait5": 20
+        },
+        {
+            "name": "Tony Stark",
+            "trait1": 10,
+            "trait2": 10,
+            "trait3": 10,
+            "trait4": 10,
+            "trait5": 10
+        },
+        {
+            "name": "Hulk",
+            "trait1": 18,
+            "trait2": 17,
+            "trait3": 16,
+            "trait4": 15,
+            "trait5": 14
+        }
+    ],
+    "questions": [
+        {
+            "Q": "Did Captain America's first suit really do him no favors?",
+            "responses": [
+                {
+                    "response": "Definitely no favors done",
+                    "outcomes": [
+                        {
+                            "trait": "Firmness",
+                            "amount": 3,
+                            "upDown": "down"
+                        },
+                        {
+                            "trait": "Red",
+                            "amount": 4,
+                            "upDown": "up"
+                        }
+                    ]
+                },
+                {
+                    "response": "It was fine",
+                    "outcomes": [
+                        {
+                            "trait": "Bubble-ness",
+                            "amount": 4,
+                            "upDown": "Up"
+                        },
+                        {
+                            "trait": "White",
+                            "amount": 3,
+                            "upDown": "Down"
+                        }
+                    ]
+                },
+                {
+                    "response": "Typing all this blows",
+                    "outcomes": [
+                        {
+                            "trait": "Firmness",
+                            "amount": 5,
+                            "upDown": "Down"
+                        },
+                        {
+                            "trait": "Firmness",
+                            "amount": 5,
+                            "upDown": "down"
+                        }
+                    ]
+                }
+            ],
+            "trait1": "Firmness",
+            "trait2": "Bubble-ness"
+        }
+    ]
+}

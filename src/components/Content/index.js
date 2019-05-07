@@ -14,15 +14,16 @@ class Content extends Component {
     // }
 
     render() {
+        console.log(window.location.pathname);
         return (
             <div className="thisContent fluid">
                 {window.location.pathname === "/" ? (
-                    <ContentAdmin />
+                    <ContentAdmin games={this.props.games} />
                 ) : null}
                 {window.location.pathname === "/create" ? (
                     <ContentCreate />
                 ) : null}
-                {window.location.pathname === "/edit" ? (
+                {window.location.pathname.startsWith("/edit") ? (
                     <ContentEdit />
                 ) : null}
             </div>
