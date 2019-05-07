@@ -1,14 +1,20 @@
 import React from "react";
-import { Row, Container } from "../Grid"
+import { Row, Container } from "../Grid";
+import Form from 'react-bootstrap/Form';
 
 // We can render all the traits with just one Label, but we'll need to pass all the correct props
 
 function Label(props) {
     return (
         <Container>
-            <form>
+            {/* <form>
                 <input className={props.className} type="text" name="trait" placeholder={props.text} />
-            </form>
+            </form> */}
+            <Form>
+                <Form.Group controlId="formBasicEmail">
+                    <Form.Control className={props.className} type="text" name="trait" placeholder={props.text} />
+                </Form.Group>
+            </Form>
         </Container>
     )
 }

@@ -18,7 +18,7 @@ class ContentCreateQuestions extends Component {
             <Container>
                 <Row>
                     <Col size="sm-12">
-                        <Label />
+                        <Label text="Type question here" />
                     </Col>
                 </Row>
 
