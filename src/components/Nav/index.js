@@ -57,6 +57,15 @@ class Nav extends Component {
         {/* determining if hamburger toggle will open or not */}
         <div className={`${this.state.open ? "" : "collapse "}navbar-collapse`} id="navbarNav">
           <ul className="navbar-nav">
+          <li className="nav-item">
+              <Link
+                onClick={this.toggleNav}
+                className={window.location.pathname === "/" ? "nav-link active" : "nav-link"} 
+                to="/"
+              >
+                Dashboard
+              </Link>
+            </li>
             <li className="nav-item">
               <Link
                 onClick={this.toggleNav}

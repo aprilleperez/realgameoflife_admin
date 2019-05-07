@@ -7,13 +7,13 @@ import { Col, Row, Container } from '../components/Grid';
 import { Header, SubHeader } from '../components/Header'
 import Content from '../components/Content'
 import AdminButton from '../components/Button'
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 class Create extends Component {
-    state = {
-        // organization: "Non-Profit Goodness"
-        // TODO: figure out user state here
-    }
+    // state = {
+
+    // }
     
     render() {
         return (
@@ -21,10 +21,12 @@ class Create extends Component {
                 <Header text="Build your next amazing game!" />
                 <SubHeader text="Read below for how to get started" />
                 <Content />
-                <AdminButton text="Next" buttonType="green" to="/create" />
+                <AdminButton text="Next" buttonType="green" to="/create/questions" />
             </Container>
         )
     }
 }
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 export default Create;
