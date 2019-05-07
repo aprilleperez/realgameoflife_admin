@@ -5,6 +5,7 @@ import Admin from "./pages/Admin";
 import Create from "./pages/Create";
 import Edit from "./pages/Edit"
 import './App.css';
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path="/" component={Admin} />
-          <Route exact path="/create" component={Create} />
+          <Route prefix path="/create" component={Create} />
           <Route prefix path="/edit" component={Edit} />
           {/* <Route component={NoMatch} /> */}
         </Switch>
@@ -24,4 +25,5 @@ function App() {
 }
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
 export default App;
