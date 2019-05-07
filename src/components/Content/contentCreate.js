@@ -9,9 +9,9 @@ import '../style.css';
 
 
 class ContentCreate extends Component {
-    state = {
-        traits: 5
-    }
+    // state = {
+
+    // }
 
     render() {
         return (
