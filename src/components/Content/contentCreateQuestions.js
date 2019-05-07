@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Container, Row, Col } from '../Grid'
 import { ContentHeader } from '../Header'
 import Label from '../Label'
+import Dropdown from '../Dropdown'
 import '../style.css';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -28,10 +29,11 @@ class ContentCreateQuestions extends Component {
                     <Row>
                         <Col size="sm-6">
                             <Label text="Response 1" />
+                            Affects:
                         </Col>
 
                         <Col size="sm-3">
-                            <p>TRAIT 1 +- TOGGLER HERE</p>
+                            <Dropdown text="Trait" />
                         </Col>
 
                         <Col size="sm-3">
