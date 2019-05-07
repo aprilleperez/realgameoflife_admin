@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import ContentAdmin from './contentAdmin';
 import ContentCreate from './contentCreate';
+import ContentCreateQuestions from './contentCreateQuestions';
 import ContentEdit from './contentEdit';
 import '../style.css';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -22,6 +23,9 @@ class Content extends Component {
                 ) : null}
                 {window.location.pathname === "/create" ? (
                     <ContentCreate />
+                ) : null}
+                {window.location.pathname === "/create/questions" ? (
+                    <ContentCreateQuestions />
                 ) : null}
                 {window.location.pathname.startsWith("/edit") ? (
                     <ContentEdit />

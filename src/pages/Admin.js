@@ -8,7 +8,6 @@ import { Header, SubHeader } from '../components/Header'
 import Content from '../components/Content'
 import AdminButton from '../components/Button'
 import axios from 'axios';
-import Dropdown from '../components/Dropdown'
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -59,7 +58,6 @@ class Admin extends Component {
                 <Header text={`Welcome to the dashboard, ${this.state.organization}.`} />
                 <SubHeader text="Create, Edit, or Drop games for your organization!" />
                 <Content games={this.state.allGameInfo} />
-                <Dropdown />
                 <AdminButton text="Create" buttonType="green" to="/create" />
                 <AdminButton text="Edit" buttonType="blue" to="/edit" />
 

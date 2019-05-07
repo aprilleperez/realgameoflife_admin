@@ -1,20 +1,26 @@
 import React, { Component } from "react";
 import '../style.css';
+import Form from 'react-bootstrap/Form';
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 // TODO: ADD IN FUNCTION TO LINK TO GAME INSTANCE
 
-export function Dropdown() {
+function Dropdown(props) {
     return (
-        <div class="dropdown">
-            <button class="dropbtn">Dropdown</button>
-            <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
-        </div>
+        <Form>
+        <Form.Group controlId="exampleForm.ControlSelect1">
+          <Form.Control as="select">
+            <option>{props.text} 1</option>
+            <option>{props.text} 2</option>
+            <option>{props.text} 3</option>
+            <option>{props.text} 4</option>
+            <option>{props.text} 5</option>
+          </Form.Control>
+        </Form.Group>
+      </Form>
     )
 }
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
 export default Dropdown;
