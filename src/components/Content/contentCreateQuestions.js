@@ -9,24 +9,37 @@ import '../style.css';
 
 
 class ContentCreateQuestions extends Component {
-    // state = {
-
-    // }
+    state = {
+        questions: [1, 2, 3, 4, 5]
+    }
 
     render() {
         return (
             <Container>
                 <Row>
                     <Col size="sm-12">
-                        <Label text="Type question here" />
+                        <Label className="questionInput" text="Type question here" />
                     </Col>
                 </Row>
 
-                <Row>
-                    <Col size="sm-12">
-                        <p>YAYAYAYAY</p>
-                    </Col>
-                </Row>
+            <br></br>
+            
+                {this.state.questions.map(question => (
+                    <Row>
+                        <Col size="sm-6">
+                            <Label text="Response 1" />
+                        </Col>
+
+                        <Col size="sm-3">
+                            <p>TRAIT 1 +- TOGGLER HERE</p>
+                        </Col>
+
+                        <Col size="sm-3">
+                            <p>TRAIT 2 +- TOGGLER HERE</p>
+                        </Col>
+                    </Row>
+                ))}
+
             </Container>
         )
     }

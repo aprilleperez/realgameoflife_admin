@@ -35,6 +35,14 @@
   height: 32px;
 }
 
+.questionInput {
+  padding: 5px;
+  border-style: solid;
+  border-color: gray;
+  border-width: .5px;
+  background-color: white;
+}
+
 
 /* BUTTON */
 .thisAdminButton {
