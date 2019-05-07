@@ -2,13 +2,8 @@
 import axios from "axios";
 
 export function create(gameObj) {
-    let config = {
-        headers: {
-            "Access-Control-Allow-Origin": "anonymous"
-        }
-    }
     axios
-        .post("https://real-life-api.herokuapp.com/api/games", gameObj, config)
+        .post("https://real-life-api.herokuapp.com/api/games", gameObj)
         .then(results =>
             results.data.items.filter(
                 result =>
