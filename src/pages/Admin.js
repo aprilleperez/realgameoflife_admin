@@ -11,20 +11,7 @@ import axios from 'axios';
 import Dropdown from '../components/Dropdown'
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-function test(results) {
-    console.log(results)
-}
-const fakeResponse = {
-    games: [
-        {
-            id: "t3est",
-            name: "America's Ass"
-        },
-        {
-            id: "34757",
-            name: "Testing Game Name"
-        }]
-}
+
 class Admin extends Component {
     state = {
         organization: "Nonprofit Organization Name",
@@ -40,20 +27,31 @@ class Admin extends Component {
     getAllGames() {
 
         axios.get("https://real-life-api.herokuapp.com/api/games")
-            .then(function (results) {
-                console.log(results)
+            .then((results) => {
+                console.log(results.data)
+                let allGameInfo = []
+                let nonprofitName = ""
+                for (let i = 0; i < results.data.length; i++) {
+                    let gameObj = {
+                        gameId: results.data[i]._id,
+                        gameName: results.data[i].name
+                    }
+                    nonprofitName = "We Need To Get the Name Somehow"
+                    allGameInfo.push(gameObj)
+
+                }
+                console.log("allGameInfo:", allGameInfo)
+                console.log(allGameInfo)
+
+
+                this.setState({
+                    organization: nonprofitName,
+                    allGameInfo: allGameInfo
+                })
             })
     }
 
-    // getTestGames() {
-    //     let allGameInfo = fakeResponse.games
-    //     let nonprofitName = "Fake Nonprofit"
 
-    //     this.setState({
-    //         organization: nonprofitName,
-    //         allGameInfo: allGameInfo
-    //     })
-    // }
 
     render() {
         return (

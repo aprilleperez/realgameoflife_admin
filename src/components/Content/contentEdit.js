@@ -14,17 +14,15 @@ class ContentEdit extends Component {
     state = {
         gameObj: {}
     }
+
     componentDidMount() {
-        this.getGame();
+        let id = "5cd1cc1b92e5900017321885"
+        this.getGame(id);
     }
 
     getGame(id) {
-        let config = {
-            headers: {
-                "Access-Control-Allow-Origin": "*"
-            }
-        }
-        axios.get(`https://real-life-api.herokuapp.com/api/games/${id}`, config)
+
+        axios.get(`https://real-life-api.herokuapp.com/api/games/${id}`)
             .then(test)
     }
 
