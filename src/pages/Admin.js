@@ -7,12 +7,45 @@ import { Col, Row, Container } from '../components/Grid';
 import { Header, SubHeader } from '../components/Header'
 import Content from '../components/Content'
 import AdminButton from '../components/Button'
+import axios from 'axios';
 
+function test(results) {
+    console.log(results)
+}
 
 class Admin extends Component {
     state = {
-        organization: "Non-Profit Goodness"
+        organization: "Nonprofit Organization Name",
+        allGameIds: [],
+        allGameNames: []
+
         // TODO: figure out user state here
+    }
+
+    componentDidMount() {
+        this.getTestGames();
+    }
+
+    // getAllGames() {
+    //     let config = {
+    //         headers: {
+    //             "Access-Control-Allow-Origin": "*"
+    //         }
+    //     }
+    //     axios.get("https://real-life-api.herokuapp.com/api/games", config)
+    //         .then(test)
+    // }
+
+    getTestGames() {
+        let allGameIds = ["t3st", "123go", "55ff73829"]
+        let allGameNames = ["Testing Game Name", "This is a test", "America's Ass"]
+        let nonprofitName = "Fake Nonprofit"
+
+        this.setState({
+            organization: nonprofitName,
+            allGameIds: allGameIds,
+            allGameNames: allGameNames
+        })
     }
 
     render() {
