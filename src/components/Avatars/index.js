@@ -5,18 +5,18 @@ import Card from "../Card"
 import Label from "../Label"
 import Sliders from "../Sliders"
 
-function Avatars() {
+function Avatars(props) {
     return (
         <Container fluid>
             <Header />
             <SubHeader />
             <Row>
                 <Col size="md-4">
-                    <Card>
+                    <Card avatar={props}>
                     </Card>
                 </Col>
                 <Col size="md-4">
-                    <Label></Label>
+                    <Label avatar={props}></Label>
                 </Col>
                 <Col size="md-4">
                     <Sliders>
