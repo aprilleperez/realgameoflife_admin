@@ -33,20 +33,20 @@ class ContentEdit extends Component {
         axios.get(`https://real-life-api.herokuapp.com/api/games/${id}`)
             .then((results) => {
                 console.log(results.data)
+                this.setState({
+                    gameObj: results.data
+                })
             })
     }
 
-    // getTestGame() {
-    //     let gameObj = testDataObject
-    //     this.setState({
-    //         gameObj: gameObj
-    //     })
-    // }
 
     render() {
+        console.log(this.state.gameObj.avatars)
+
         return (
             <Container>
-                <Avatars avatars={this.state.gameObj.avatars} />
+                <Avatars avatars={this.state.gameObj.avatars ? this.state.gameObj.avatars : []}
+                />
             </Container>
         )
     }
