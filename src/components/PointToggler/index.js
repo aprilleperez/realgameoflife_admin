@@ -11,7 +11,7 @@ function PointToggler(props) {
     return (
         <Row>
             <Col size="sm-6">
-                <Dropdown text={props.text} />
+                <Dropdown text={props.text} value={props.traits} />
             </Col>
 
             <Col size="sm-1">
@@ -19,7 +19,7 @@ function PointToggler(props) {
             </Col>
 
             <Col size="sm-1">
-                <div className="thisForm score">1 </div>
+                <div className="thisForm score">{props.traits} </div>
             </Col>
 
             <Col size="sm-1">

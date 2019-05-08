@@ -41,11 +41,12 @@ class ContentEdit extends Component {
 
 
     render() {
-        console.log(this.state.gameObj.avatars)
+        console.log("Trait Names", this.state.gameObj.traits)
 
         return (
             <Container>
                 <Avatars avatars={this.state.gameObj.avatars ? this.state.gameObj.avatars : []}
+                    traitName={this.state.gameObj.traits ? this.state.gameObj.traits : []}
                 />
             </Container>
         )

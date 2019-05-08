@@ -10,15 +10,17 @@ function Label(props) {
             {/* <form>
                 <input className={props.className} type="text" name="trait" placeholder={props.text} />
             </form> */}
+            {/* {this.props.traitNames.map(traitName => ( */}
             <Form>
 
                 <Form.Group controlId="formBasicEmail" className="thisForm">
 
-                    <Form.Control className={props.className} type="text" name="trait" placeholder={props.text} value={props.traits} />
+                    <Form.Control className={props.className}
+                        type="text" name="trait" placeholder={props.text} value={props.traitName} />
                 </Form.Group>
 
             </Form>
-
+            {/* ))} */}
         </Container>
     )
 }
