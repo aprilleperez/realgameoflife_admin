@@ -1,13 +1,13 @@
 import React from "react"
 
-function Card() {
+function Card(props) {
     return (
         <div className="card mt-10">
             <div className="img container">
                 <img src="/images/avatar.PNG"></img>
             </div>
             <div className="card-body">
-                <span>Avatar 1 Name</span>
+                <span> {props.avatar} </span>
             </div>
 
         </div>

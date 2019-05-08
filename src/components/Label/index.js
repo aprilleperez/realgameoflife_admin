@@ -11,10 +11,14 @@ function Label(props) {
                 <input className={props.className} type="text" name="trait" placeholder={props.text} />
             </form> */}
             <Form>
+
                 <Form.Group controlId="formBasicEmail" className="thisForm">
-                    <Form.Control className={props.className} type="text" name="trait" placeholder={props.text} />
+
+                    <Form.Control className={props.className} type="text" name="trait" placeholder={props.text} value={props.traits} />
                 </Form.Group>
+
             </Form>
+
         </Container>
     )
 }
