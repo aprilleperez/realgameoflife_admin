@@ -4,6 +4,7 @@ import { Header, SubHeader } from '../Header';
 import Card from "../Card"
 import Label from "../Label"
 import Sliders from "../Sliders"
+import PointToggler from "../PointToggler";
 
 function Avatars(props) {
     return (
@@ -16,17 +17,23 @@ function Avatars(props) {
                         <Card avatar={avatar.name} />
                     </Col>
                     <Col size="md-4">
-                        <Label traits={avatar.trait1} />
-                        <Label traits={avatar.trait2} />
-                        <Label traits={avatar.trait3} />
-                        <Label traits={avatar.trait4} />
-                        <Label traits={avatar.trait5} />
-                        {console.log(avatar)}
-                    </Col>
-                    <Col size="md-4">
-                        <Sliders>
+                        <Label traitName={props.traitName.trait1} />
+                        <Label traitName={props.traitName.trait2} />
+                        <Label traitName={props.traitName.trait3} />
+                        <Label traitName={props.traitName.trait4} />
+                        <Label traitName={props.traitName.trait5} />
 
-                        </Sliders>
+                        {console.log(avatar)}
+
+                    </Col>
+
+                    <Col size="md-4">
+                        <PointToggler traits={avatar.trait1} />
+                        <PointToggler traits={avatar.trait2} />
+                        <PointToggler traits={avatar.trait3} />
+                        <PointToggler traits={avatar.trait4} />
+                        <PointToggler traits={avatar.trait5} />
+
                     </Col>
 
                 </Row>
