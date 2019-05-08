@@ -13,34 +13,6 @@ class ContentCreateAvatars extends Component {
         gameObj: {}
     }
 
-<<<<<<< HEAD
-    // componentDidMount() {
-    //     this.getGame(this.getGameIdUrl());
-    // }
-
-    // getGameIdUrl() {
-    //     const url = window.location.pathname
-    //     const avatarIndex = url.indexOf("avatars")
-    //     const fromAvatars = url.substring(avatarIndex)
-    //     const id = fromAvatars.substring(fromAvatars.indexOf("/"))
-
-    //     return id
-    // }
-
-    // getGame(id) {
-
-    //     axios.get(`https://real-life-api.herokuapp.com/api/games/${id}`)
-    //         .then((results) => {
-    //             console.log(results.data)
-    //             this.setState({
-    //                 gameObj: results.data
-    //             })
-    //         })
-    // }
-
-
-=======
->>>>>>> 572c96dfca29cc2ceb885f072ef08edb72ad1e58
     render() {
         console.log(this.state.gameObj.avatars)
 
