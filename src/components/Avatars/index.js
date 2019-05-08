@@ -10,22 +10,22 @@ function Avatars(props) {
         <Container fluid>
             <Header />
             <SubHeader />
-            <Row>
-                <Col size="md-4">
-                    <Card avatar={props}>
-                    </Card>
-                </Col>
-                <Col size="md-4">
-                    <Label avatar={props}></Label>
-                </Col>
-                <Col size="md-4">
-                    <Sliders>
+            {props.avatars.map(avatar => (
+                <Row>
+                    <Col size="md-4">
+                        <Card avatar={avatar.name} />
+                    </Col>
+                    <Col size="md-4">
+                        <Label traits={avatar.traits} />
+                    </Col>
+                    <Col size="md-4">
+                        <Sliders>
 
-                    </Sliders>
-                </Col>
+                        </Sliders>
+                    </Col>
 
-            </Row>
-
+                </Row>
+            ))}
         </Container>
     )
 }
