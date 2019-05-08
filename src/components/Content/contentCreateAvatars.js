@@ -7,7 +7,7 @@ import { Container, Row, Col } from '../Grid'
 // import Label from '../Label'
 import '../style.css';
 import Avatars from '../Avatars';
-import { testDataObject } from "../../constructors"
+// import { testDataObject } from "../../constructors"
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -17,29 +17,29 @@ class ContentCreateAvatars extends Component {
         gameObj: {}
     }
 
-    componentDidMount() {
-        this.getGame(this.getGameIdUrl());
-    }
+    // componentDidMount() {
+    //     this.getGame(this.getGameIdUrl());
+    // }
 
-    getGameIdUrl() {
-        const url = window.location.pathname
-        const avatarIndex = url.indexOf("avatars")
-        const fromAvatars = url.substring(avatarIndex)
-        const id = fromAvatars.substring(fromAvatars.indexOf("/"))
+    // getGameIdUrl() {
+    //     const url = window.location.pathname
+    //     const avatarIndex = url.indexOf("avatars")
+    //     const fromAvatars = url.substring(avatarIndex)
+    //     const id = fromAvatars.substring(fromAvatars.indexOf("/"))
 
-        return id
-    }
+    //     return id
+    // }
 
-    getGame(id) {
+    // getGame(id) {
 
-        axios.get(`https://real-life-api.herokuapp.com/api/games/${id}`)
-            .then((results) => {
-                console.log(results.data)
-                this.setState({
-                    gameObj: results.data
-                })
-            })
-    }
+    //     axios.get(`https://real-life-api.herokuapp.com/api/games/${id}`)
+    //         .then((results) => {
+    //             console.log(results.data)
+    //             this.setState({
+    //                 gameObj: results.data
+    //             })
+    //         })
+    // }
 
 
     render() {
@@ -47,8 +47,8 @@ class ContentCreateAvatars extends Component {
 
         return (
             <Container>
-                <Avatars avatars={this.state.gameObj.avatars ? this.state.gameObj.avatars : []}
-                />
+                {/* <Avatars /> */}
+                hi
             </Container>
         )
     }
