@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
-
-import { Container, Row, Col } from '../Grid'
-// import { ContentHeader } from '../Header'
-// import Label from '../Label'
+import { Container } from '../Grid'
 import '../style.css';
 import Avatars from '../Avatars';
 // import { testDataObject } from "../../constructors"
@@ -68,7 +64,7 @@ export default ContentCreateAvatars;
 
 // class ContentCreateAvatars extends Component {
 //     // state = {
-        
+
 //     // }
 
 //     render() {

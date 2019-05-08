@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
 import { Container, Row, Col } from '../Grid'
 import { ContentHeader } from '../Header'
 import Label from '../Label'
@@ -9,9 +7,6 @@ import '../style.css';
 
 
 class ContentCreate extends Component {
-    // state = {
-
-    // }
 
     render() {
         return (
@@ -29,16 +24,16 @@ class ContentCreate extends Component {
                 </Row>
 
                 {/* {this.state.traits.map(trait => ( */}
-                    <Row>
-                        <Col size="sm-6">
+                <Row>
+                    <Col size="sm-6">
                         {/* TODO: try to figure out mapping...not working for some reason? */}
-                            <Label className="thisCreateTraits" text="Trait 1" />
-                            <Label className="thisCreateTraits" text="Trait 2" />
-                            <Label className="thisCreateTraits" text="Trait 3" />
-                            <Label className="thisCreateTraits" text="Trait 4" />
-                            <Label className="thisCreateTraits" text="Trait 5" />
-                        </Col>
-                    </Row>
+                        <Label className="thisCreateTraits" text="Trait 1" />
+                        <Label className="thisCreateTraits" text="Trait 2" />
+                        <Label className="thisCreateTraits" text="Trait 3" />
+                        <Label className="thisCreateTraits" text="Trait 4" />
+                        <Label className="thisCreateTraits" text="Trait 5" />
+                    </Col>
+                </Row>
                 {/* ))} */}
             </Container>
         )

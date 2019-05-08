@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
 import { Container, Row, Col } from '../Grid'
-import { ContentHeader } from '../Header'
 import Label from '../Label'
+<<<<<<< HEAD
 import Dropdown from '../Dropdown'
 import {PointToggler} from "../PointToggler"
+=======
+import PointToggler from "../PointToggler"
+>>>>>>> 8de7a91705edd1aa94b5165af55bc683714d9ff4
 import '../style.css';
+
+// import Dropdown from '../Dropdown'
+// import { ContentHeader } from '../Header'
+// import { Link } from 'react-router-dom';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 

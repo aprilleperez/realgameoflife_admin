@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import '../style.css';
 
-import { Container, Row, Col } from '../Grid'
+import { Row, Col } from '../Grid'
 import Dropdown from '../Dropdown'
 import TogglerButton from './togglerButton'
 ///////////////////////////////////////////////////////////////////////////////////////////////////
