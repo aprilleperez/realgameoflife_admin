@@ -13,6 +13,7 @@ class ContentCreateAvatars extends Component {
         gameObj: {}
     }
 
+<<<<<<< HEAD
     // componentDidMount() {
     //     this.getGame(this.getGameIdUrl());
     // }
@@ -38,6 +39,8 @@ class ContentCreateAvatars extends Component {
     // }
 
 
+=======
+>>>>>>> 572c96dfca29cc2ceb885f072ef08edb72ad1e58
     render() {
         console.log(this.state.gameObj.avatars)
 
