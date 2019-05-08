@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
 import ContentAdmin from './contentAdmin';
 import ContentCreate from './contentCreate';
 import ContentCreateAvatars from './contentCreateAvatars';
