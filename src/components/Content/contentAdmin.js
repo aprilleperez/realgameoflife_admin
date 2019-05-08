@@ -24,7 +24,7 @@ class ContentAdmin extends Component {
                             <DashControl class="fas fa-play" text="Play" href="/" />
                             <DashControl class="fas fa-user" text="Edit" href={`/edit/avatars/${game.gameId}`} />
                             <DashControl class="fas fa-poll-h" text="Edit" href={`/edit/questions/${game.gameId}`} />
-                            <DashControl class="fas fa-trash" text="Drop" href="/" />
+                            <DashControl class="fas fa-trash" text="Drop" href="/" /> {/*TODO: get drop to delete a game*/}
                         </Col>
                     </Row>
                 ))}
