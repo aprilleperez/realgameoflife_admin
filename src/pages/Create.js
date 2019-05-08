@@ -14,14 +14,34 @@ class Create extends Component {
     // state = {
 
     // }
-    
+
     render() {
         return (
             <Container fluid>
-                <Header text="Build your next amazing game!" />
-                <SubHeader text="Read below for how to get started" />
-                <Content />
-                <AdminButton text="Next" buttonType="green" to="/create/questions" />
+                {window.location.pathname === "/create" ? (
+                    <Container fluid>
+                        <Header text="Build your next amazing game!" />
+                        <SubHeader text="Read below for how to get started" />
+                        <Content />
+                        <AdminButton text="Next" buttonType="green" to="/create/avatars" />
+                    </Container>
+                ) : null}
+                {window.location.pathname === "/create/avatars" ? (
+                    <Container fluid>
+                        <Header text="Create Avatars" />
+                        <SubHeader text="THIS NEEDS TO BE UPDATED" />
+                        <Content />
+                        <AdminButton text="Next" buttonType="green" to="/create/questions" />
+                    </Container>
+                ) : null}
+                {window.location.pathname === "/create/questions" ? (
+                    <Container fluid>
+                        <Header text="Create Questions" />
+                        <SubHeader text="THIS NEEDS TO BE UPDATED" />
+                        <Content />
+                        <AdminButton text="Done" buttonType="green" to="/" />
+                    </Container>
+                ) : null}
             </Container>
         )
     }
