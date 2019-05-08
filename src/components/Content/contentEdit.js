@@ -16,14 +16,24 @@ class ContentEdit extends Component {
     }
 
     componentDidMount() {
-        let id = "5cd1cc1b92e5900017321885"
-        this.getGame(id);
+        this.getGame(this.getGameIdUrl());
+    }
+
+    getGameIdUrl() {
+        const url = window.location.pathname
+        const avatarIndex = url.indexOf("avatars")
+        const fromAvatars = url.substring(avatarIndex)
+        const id = fromAvatars.substring(fromAvatars.indexOf("/"))
+
+        return id
     }
 
     getGame(id) {
 
         axios.get(`https://real-life-api.herokuapp.com/api/games/${id}`)
-            .then(test)
+            .then((results) => {
+                console.log(results.data)
+            })
     }
 
     // getTestGame() {
