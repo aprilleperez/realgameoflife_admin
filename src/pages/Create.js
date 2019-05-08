@@ -21,7 +21,15 @@ class Create extends Component {
                 <Header text="Build your next amazing game!" />
                 <SubHeader text="Read below for how to get started" />
                 <Content />
-                <AdminButton text="Next" buttonType="green" to="/create/questions" />
+                {window.location.pathname === "/create" ? (
+                    <AdminButton text="Next" buttonType="green" to="/create/avatars" />
+                ) : null}
+                {window.location.pathname === "/create/avatars" ? (
+                    <AdminButton text="Next" buttonType="green" to="/create/questions" />
+                ) : null}
+                {window.location.pathname === "/create/questions" ? (
+                    <AdminButton text="Done" buttonType="green" to="/" />
+                ) : null}
             </Container>
         )
     }
@@ -30,3 +38,8 @@ class Create extends Component {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 export default Create;
+
+
+
+
+{/* <AdminButton text="Next" buttonType="green" to="/create/questions" /> */}
