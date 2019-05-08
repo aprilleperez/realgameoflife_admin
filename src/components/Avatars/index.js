@@ -16,7 +16,12 @@ function Avatars(props) {
                         <Card avatar={avatar.name} />
                     </Col>
                     <Col size="md-4">
-                        <Label traits={avatar.traits} />
+                        <Label traits={avatar.trait1} />
+                        <Label traits={avatar.trait2} />
+                        <Label traits={avatar.trait3} />
+                        <Label traits={avatar.trait4} />
+                        <Label traits={avatar.trait5} />
+                        {console.log(avatar)}
                     </Col>
                     <Col size="md-4">
                         <Sliders>

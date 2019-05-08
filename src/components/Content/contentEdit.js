@@ -42,6 +42,7 @@ class ContentEdit extends Component {
 
     render() {
         console.log(this.state.gameObj.avatars)
+
         return (
             <Container>
                 <Avatars avatars={this.state.gameObj.avatars ? this.state.gameObj.avatars : []}
