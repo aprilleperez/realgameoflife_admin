@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
 import { Container, Row, Col } from '../Grid'
-import { ContentHeader } from '../Header'
 import Label from '../Label'
-import Dropdown from '../Dropdown'
 import PointToggler from "../PointToggler"
 import '../style.css';
 ///////////////////////////////////////////////////////////////////////////////////////////////////

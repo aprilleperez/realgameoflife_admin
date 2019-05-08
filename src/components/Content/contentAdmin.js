@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
 import { Container, Row, Col } from '../Grid'
 import { ContentHeader } from '../Header'
 import DashControl from '../DashControls'
@@ -13,7 +11,7 @@ class ContentAdmin extends Component {
     render() {
         return (
             <Container>
-                {/* TODO: re-visit how it maps once real games are passed in (CONFIGURE STATE) */}
+                {/* Map over the games prop */}
                 {this.props.games.map(game => (
                     <Row>
                         <Col size="sm-6">

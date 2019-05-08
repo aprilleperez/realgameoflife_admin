@@ -3,7 +3,6 @@ import { Col, Row, Container } from '../Grid';
 import { Header, SubHeader } from '../Header';
 import Card from "../Card"
 import Label from "../Label"
-import Sliders from "../Sliders"
 import PointToggler from "../PointToggler";
 
 function Avatars(props) {
@@ -11,6 +10,7 @@ function Avatars(props) {
         <Container fluid>
             <Header />
             <SubHeader />
+            {/* Map over the avatars object */}
             {props.avatars.map(avatar => (
                 <Row>
                     <Col size="md-4">
@@ -23,11 +23,10 @@ function Avatars(props) {
                         <Label traitName={props.traitName.trait4} />
                         <Label traitName={props.traitName.trait5} />
 
-                        {console.log(avatar)}
-
                     </Col>
 
                     <Col size="md-4">
+                        {/* Grabbing the traits object and rendering each trait */}
                         <PointToggler traits={avatar.trait1} />
                         <PointToggler traits={avatar.trait2} />
                         <PointToggler traits={avatar.trait3} />

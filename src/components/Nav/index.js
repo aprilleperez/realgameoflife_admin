@@ -57,10 +57,10 @@ class Nav extends Component {
         {/* determining if hamburger toggle will open or not */}
         <div className={`${this.state.open ? "" : "collapse "}navbar-collapse`} id="navbarNav">
           <ul className="navbar-nav">
-          <li className="nav-item">
+            <li className="nav-item">
               <Link
                 onClick={this.toggleNav}
-                className={window.location.pathname === "/" ? "nav-link active" : "nav-link"} 
+                className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
                 to="/"
               >
                 Dashboard
@@ -69,7 +69,7 @@ class Nav extends Component {
             <li className="nav-item">
               <Link
                 onClick={this.toggleNav}
-                className={window.location.pathname === "/create" || "/create/avatars" || "/create/questions" ? "nav-link active" : "nav-link"} 
+                className={window.location.pathname === "/create" || "/create/avatars" || "/create/questions" ? "nav-link active" : "nav-link"}
                 to="/create"
               >
                 Create
@@ -78,8 +78,8 @@ class Nav extends Component {
             <li className="nav-item">
               <Link
                 onClick={this.toggleNav}
-                className="nav-link" 
-                // to="/edit" // TODO: figure out where logout will link to
+                className="nav-link"
+                to="/edit" // TODO: figure out where logout will link to
               >
                 Logout
               </Link>
