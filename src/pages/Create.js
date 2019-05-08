@@ -25,7 +25,6 @@ class Create extends Component {
                         <Content />
                         <AdminButton text="Next" buttonType="green" to="/create/avatars" />
                     </Container>
-
                 ) : null}
                 {window.location.pathname === "/create/avatars" ? (
                     <Container fluid>
@@ -34,7 +33,6 @@ class Create extends Component {
                         <Content />
                         <AdminButton text="Next" buttonType="green" to="/create/questions" />
                     </Container>
-
                 ) : null}
                 {window.location.pathname === "/create/questions" ? (
                     <Container fluid>
@@ -52,24 +50,3 @@ class Create extends Component {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 export default Create;
-
-
-
-
-{/* <AdminButton text="Next" buttonType="green" to="/create/questions" /> */ }
-
-
-{/* <Container fluid>
-<Header text="Build your next amazing game!" />
-<SubHeader text="Read below for how to get started" />
-<Content />
-{window.location.pathname === "/create" ? (
-    <AdminButton text="Next" buttonType="green" to="/create/avatars" />
-) : null}
-{window.location.pathname === "/create/avatars" ? (
-    <AdminButton text="Next" buttonType="green" to="/create/questions" />
-) : null}
-{window.location.pathname === "/create/questions" ? (
-    <AdminButton text="Done" buttonType="green" to="/" />
-) : null}
-</Container> */}
