@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 function Dropdown(props) {
     return (
         <Form>
-        <Form.Group controlId="exampleForm.ControlSelect1">
+        <Form.Group controlId="exampleForm.ControlSelect1" className="thisForm">
           <Form.Control as="select">
             <option>{props.text} 1</option>
             <option>{props.text} 2</option>

@@ -5,6 +5,7 @@ import { Container, Row, Col } from '../Grid'
 import { ContentHeader } from '../Header'
 import Label from '../Label'
 import Dropdown from '../Dropdown'
+import PointToggler from "../PointToggler"
 import '../style.css';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -23,21 +24,24 @@ class ContentCreateQuestions extends Component {
                     </Col>
                 </Row>
 
-            <br></br>
-            
+                <br></br>
+
                 {this.state.questions.map(question => (
                     <Row>
-                        <Col size="sm-6">
+                        <Col size="sm-4">
                             <Label text="Response 1" />
+                        </Col>
+
+                        <Col size="sm-1">
                             Affects:
                         </Col>
 
                         <Col size="sm-3">
-                            <Dropdown text="Trait" />
+                            <PointToggler text="Trait" />
                         </Col>
 
                         <Col size="sm-3">
-                            <p>TRAIT 2 +- TOGGLER HERE</p>
+                            <PointToggler text="Trait" />
                         </Col>
                     </Row>
                 ))}

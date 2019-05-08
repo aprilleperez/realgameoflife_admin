@@ -30,7 +30,7 @@ class ContentCreate extends Component {
 
                 {/* {this.state.traits.map(trait => ( */}
                     <Row>
-                        <Col size="sm-12">
+                        <Col size="sm-6">
                         {/* TODO: try to figure out mapping...not working for some reason? */}
                             <Label className="thisCreateTraits" text="Trait 1" />
                             <Label className="thisCreateTraits" text="Trait 2" />

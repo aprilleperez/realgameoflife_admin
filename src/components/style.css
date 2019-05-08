@@ -25,7 +25,7 @@
   background-color: red;
 } */
 
-.thisCreateTraits {
+/* .thisCreateTraits {
   margin: 5px;
   padding: 5px;
   border-style: solid;
@@ -33,14 +33,26 @@
   border-width: .5px;
   width: 416px;
   height: 32px;
-}
+} */
 
-.questionInput {
+/* .questionInput {
   padding: 5px;
   border-style: solid;
   border-color: gray;
   border-width: .5px;
   background-color: white;
+} */
+
+.thisForm {
+  padding: 5px;
+  border-style: solid;
+  border-color: gray;
+  border-width: .5px;
+  background-color: white;
+}
+
+.score {
+  width: 24px;
 }
 
 
@@ -99,6 +111,10 @@
   
   .navlink:hover {
     opacity: .8;
+  }
+
+  .togglerButton {
+    padding: 2px 6px;
   }
 
 
