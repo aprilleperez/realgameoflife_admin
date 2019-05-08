@@ -7,7 +7,7 @@ import TogglerButton from './togglerButton'
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-function PointToggler(props) {
+export function PointToggler(props) {
     return (
         <Row>
             <Col size="sm-6">
@@ -27,12 +27,29 @@ function PointToggler(props) {
             </Col>
         </Row>
     )
+}
 
+export function PointToggler2(props) {
+    return (
+        <Row>
+            <Col size="sm-1">
+                <TogglerButton className="fas fa-plus" />
+            </Col>
+
+            <Col size="sm-1">
+                <div className="thisForm score">{props.traits} </div>
+            </Col>
+
+            <Col size="sm-1">
+                <TogglerButton className="fas fa-minus" />
+            </Col>
+        </Row>
+    )
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-export default PointToggler;
+// export default PointToggler;
 
 
 

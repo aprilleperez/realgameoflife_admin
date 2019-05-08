@@ -48,7 +48,7 @@ class ContentCreateAvatars extends Component {
         return (
             <Container>
                 {/* <Avatars /> */}
-                hi
+                CREATE AVATAR CONTENT WILL GO HERE
             </Container>
         )
     }

@@ -5,7 +5,7 @@ import { Container, Row, Col } from '../Grid'
 import { ContentHeader } from '../Header'
 import Label from '../Label'
 import Dropdown from '../Dropdown'
-import PointToggler from "../PointToggler"
+import {PointToggler} from "../PointToggler"
 import '../style.css';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -39,11 +39,11 @@ class ContentEditQuestions extends Component {
                         </Col>
 
                         <Col size="sm-3">
-                            <PointToggler text="Trait" />
+                            <PointToggler text="Trait" traits="10" />
                         </Col>
 
                         <Col size="sm-3">
-                            <PointToggler text="Trait" />
+                            <PointToggler text="Trait" traits="10" />
                         </Col>
                     </Row>
                 ))}
