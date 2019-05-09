@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { Container } from '../Grid'
 import '../style.css';
-import Avatars from '../Avatars';
-
+// import Avatars from '../Avatars';
+// import { testDataObject } from "../../constructors"
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -18,8 +18,8 @@ class ContentCreateAvatars extends Component {
 
         return (
             <Container>
-                <Avatars avatars={this.state.gameObj.avatars ? this.state.gameObj.avatars : []}
-                />
+                {/* <Avatars /> */}
+                CREATE AVATAR CONTENT WILL GO HERE
             </Container>
         )
     }

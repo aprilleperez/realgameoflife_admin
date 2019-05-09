@@ -3,7 +3,7 @@ import { Col, Row, Container } from '../Grid';
 import { Header, SubHeader } from '../Header';
 import Card from "../Card"
 import Label from "../Label"
-import PointToggler from "../PointToggler";
+import {PointToggler2} from "../PointToggler";
 
 function Avatars(props) {
     return (
@@ -26,12 +26,11 @@ function Avatars(props) {
                     </Col>
 
                     <Col size="md-4">
-                        {/* Grabbing the traits object and rendering each trait */}
-                        <PointToggler traits={avatar.trait1} />
-                        <PointToggler traits={avatar.trait2} />
-                        <PointToggler traits={avatar.trait3} />
-                        <PointToggler traits={avatar.trait4} />
-                        <PointToggler traits={avatar.trait5} />
+                        <PointToggler2 traits={avatar.trait1} />
+                        <PointToggler2 traits={avatar.trait2} />
+                        <PointToggler2 traits={avatar.trait3} />
+                        <PointToggler2 traits={avatar.trait4} />
+                        <PointToggler2 traits={avatar.trait5} />
 
                     </Col>
 
@@ -44,3 +43,8 @@ function Avatars(props) {
 
 
 export default Avatars;
+
+
+
+
+

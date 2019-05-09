@@ -1,5 +1,6 @@
 import React from "react";
 import '../style.css';
+import { Container, Row, Col } from '../Grid'
 
 
 export function Header(props) {
@@ -23,5 +24,41 @@ export function ContentHeader(props) {
         <div>
             <h3 className="thisContentHeader">{props.text}</h3>
         </div>
+    )
+}
+
+export function AvatarHeader(props) {
+    return (
+        <Container fluid>
+            <Row>
+                <Col size="sm-1">
+
+                </Col>
+
+                <Col size="sm-2">
+                    <p className="text-center">Avatar 1</p>
+                </Col>
+
+                <Col size="sm-2">
+                    <p className="text-center">Avatar 2</p>
+                </Col>
+
+                <Col size="sm-2">
+                    <p className="text-center">Avatar 3</p>
+                </Col>
+
+                <Col size="sm-2">
+                    <p className="text-center">Avatar 4</p>
+                </Col>
+
+                <Col size="sm-2">
+                    <p className="text-center">Avatar 5</p>
+                </Col>
+
+                <Col size="sm-1">
+
+                </Col>
+            </Row>
+        </Container>
     )
 }

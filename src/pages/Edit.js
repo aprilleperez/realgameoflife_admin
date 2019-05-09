@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container } from '../components/Grid';
-import { Header, SubHeader } from '../components/Header'
+import { Header, SubHeader, AvatarHeader } from '../components/Header'
+import { QuestionDropdown } from '../components/Dropdown'
 import Content from '../components/Content'
 import AdminButton from '../components/Button'
 import { update } from '../utils/lifeAPIController';
@@ -30,15 +31,22 @@ class Edit extends Component {
                 {window.location.pathname.startsWith("/edit/avatars/") ? (
                     <Container fluid>
                         <Header text="Edit Avatars" />
+<<<<<<< HEAD
                         <SubHeader text="Update Avatar Selections" />
                         <Content globalState={this.props.globalState} />
+=======
+                        {/* <SubHeader text="Update Avatar Selections" /> */}
+                        <AvatarHeader />
+                        <Content />
+>>>>>>> 91b0c3eb953a316aedcf6b1796c0666354a1d220
                         <AdminButton text="Done" buttonType="green" to="/" />
                     </Container>
                 ) : null}
                 {window.location.pathname.startsWith("/edit/questions/") ? (
                     <Container fluid>
                         <Header text="Edit Questions" />
-                        <SubHeader text="Update Questions Selections" />
+                        {/* <SubHeader text="Update Questions Selections" /> */}
+                        <QuestionDropdown qtext="Question" text="Trait" />
                         <Content />
                         <AdminButton text="Done" buttonType="green" click={() => { }} to="/" />
                     </Container>

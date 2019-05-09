@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from '../Grid'
 import Label from '../Label'
-import PointToggler from "../PointToggler"
+import Dropdown from '../Dropdown'
+import {PointToggler} from "../PointToggler"
 import '../style.css';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -35,11 +36,11 @@ class ContentEditQuestions extends Component {
                         </Col>
 
                         <Col size="sm-3">
-                            <PointToggler text="Trait" />
+                            <PointToggler text="Trait" traits="10" />
                         </Col>
 
                         <Col size="sm-3">
-                            <PointToggler text="Trait" />
+                            <PointToggler text="Trait" traits="10" />
                         </Col>
                     </Row>
                 ))}
