@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/realgamesoflife_admin/static/css/main.a16ca5bc.chunk.css",
-    "main.js": "/realgamesoflife_admin/static/js/main.8775a89e.chunk.js",
-    "main.js.map": "/realgamesoflife_admin/static/js/main.8775a89e.chunk.js.map",
-    "runtime~main.js": "/realgamesoflife_admin/static/js/runtime~main.5f4442a9.js",
-    "runtime~main.js.map": "/realgamesoflife_admin/static/js/runtime~main.5f4442a9.js.map",
-    "static/js/2.35a6896d.chunk.js": "/realgamesoflife_admin/static/js/2.35a6896d.chunk.js",
-    "static/js/2.35a6896d.chunk.js.map": "/realgamesoflife_admin/static/js/2.35a6896d.chunk.js.map",
-    "index.html": "/realgamesoflife_admin/index.html",
-    "precache-manifest.e931c7a20ae2adb00e57e9428728de9c.js": "/realgamesoflife_admin/precache-manifest.e931c7a20ae2adb00e57e9428728de9c.js",
-    "service-worker.js": "/realgamesoflife_admin/service-worker.js",
-    "static/css/main.a16ca5bc.chunk.css.map": "/realgamesoflife_admin/static/css/main.a16ca5bc.chunk.css.map"
+    "main.css": "/realgameoflife_admin/static/css/main.a16ca5bc.chunk.css",
+    "main.js": "/realgameoflife_admin/static/js/main.8a60d0a4.chunk.js",
+    "main.js.map": "/realgameoflife_admin/static/js/main.8a60d0a4.chunk.js.map",
+    "runtime~main.js": "/realgameoflife_admin/static/js/runtime~main.b5138af5.js",
+    "runtime~main.js.map": "/realgameoflife_admin/static/js/runtime~main.b5138af5.js.map",
+    "static/js/2.35a6896d.chunk.js": "/realgameoflife_admin/static/js/2.35a6896d.chunk.js",
+    "static/js/2.35a6896d.chunk.js.map": "/realgameoflife_admin/static/js/2.35a6896d.chunk.js.map",
+    "index.html": "/realgameoflife_admin/index.html",
+    "precache-manifest.fe9d4786073469d447be018c59c7fcf4.js": "/realgameoflife_admin/precache-manifest.fe9d4786073469d447be018c59c7fcf4.js",
+    "service-worker.js": "/realgameoflife_admin/service-worker.js",
+    "static/css/main.a16ca5bc.chunk.css.map": "/realgameoflife_admin/static/css/main.a16ca5bc.chunk.css.map"
   }
 }
