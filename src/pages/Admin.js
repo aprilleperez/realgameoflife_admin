@@ -52,9 +52,9 @@ class Admin extends Component {
 
     render() {
         return (
-            < Container fluid >
+            <Container fluid >
                 <Header text={`Welcome to the dashboard, ${this.state.organization}.`} />
-                <SubHeader text="Create, Edit, or Drop games for your organization!" />
+                <SubHeader text="Create, Play, Edit, or Drop games for your organization!" />
                 <Content games={this.state.allGameInfo} />
                 <AdminButton text="Create Game" buttonType="green" to="/create" />
                 {/* <AdminButton text="Edit" buttonType="blue" to="/edit" /> */}

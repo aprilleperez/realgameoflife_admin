@@ -25,7 +25,7 @@ class Create extends Component {
                 {window.location.pathname === "/create/avatars" ? (
                     <Container fluid>
                         <Header text="Create Avatars" />
-                        <SubHeader text="THIS NEEDS TO BE UPDATED" />
+                        <SubHeader text="Avatar Tabs will go here" />
                         <Content />
                         <AdminButton text="Next" buttonType="green" to="/create/questions" />
                     </Container>
@@ -33,7 +33,7 @@ class Create extends Component {
                 {window.location.pathname === "/create/questions" ? (
                     <Container fluid>
                         <Header text="Create Questions" />
-                        <SubHeader text="THIS NEEDS TO BE UPDATED" />
+                        <SubHeader text="Question Dropdowns will go here" />
                         <Content />
                         <AdminButton text="Done" buttonType="green" to="/" />
                     </Container>
