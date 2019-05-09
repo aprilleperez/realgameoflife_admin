@@ -77,33 +77,31 @@ let updateQuestion = new Question("Why did Tony make Captain America's second su
 export const updateGameObj = new GameObj(testGameObj.name, testGameObj.traits, testGameObj.avatars, [testQuestions[0], updateQuestion])
 
 export const testDataObject = {
-    "_id": {
-        "$oid": "5cd0ed76413a3100173d1220"
-    },
-    "name": "Testing with America's Ass",
+
+    "name": "Real Object for Testing",
     "traits": {
-        "trait1": "Red",
-        "trait2": "White",
-        "trait3": "Blue",
-        "trait4": "Firmness",
-        "trait5": "Bubble-ness"
+        "trait1": "Wealth",
+        "trait2": "Education",
+        "trait3": "Health",
+        "trait4": "Family",
+        "trait5": "Community"
     },
     "avatars": [
         {
             "name": "Steve Rogers",
-            "trait1": 20,
-            "trait2": 20,
-            "trait3": 20,
-            "trait4": 20,
-            "trait5": 20
+            "trait1": 10,
+            "trait2": 15,
+            "trait3": 6,
+            "trait4": 9,
+            "trait5": 18
         },
         {
             "name": "Tony Stark",
-            "trait1": 10,
-            "trait2": 10,
-            "trait3": 10,
+            "trait1": 2,
+            "trait2": 7,
+            "trait3": 19,
             "trait4": 10,
-            "trait5": 10
+            "trait5": 11
         },
         {
             "name": "Hulk",
@@ -112,37 +110,53 @@ export const testDataObject = {
             "trait3": 16,
             "trait4": 15,
             "trait5": 14
+        },
+        {
+            "name": "Natasha Romanova",
+            "trait1": 5,
+            "trait2": 18,
+            "trait3": 15,
+            "trait4": 10,
+            "trait5": 13
+        },
+        {
+            "name": "Okoye",
+            "trait1": 12,
+            "trait2": 19,
+            "trait3": 20,
+            "trait4": 16,
+            "trait5": 10
         }
     ],
     "questions": [
         {
-            "Q": "Did Captain America's first suit really do him no favors?",
-            "responses": [
+            "Q": "Coming up with questions is really hard, right?",
+            responses: [
                 {
-                    "response": "Definitely no favors done",
+                    "response": "SO HARD",
                     "outcomes": [
                         {
-                            "trait": "Firmness",
+                            "trait": "Education",
                             "amount": 3,
                             "upDown": "down"
                         },
                         {
-                            "trait": "Red",
+                            "trait": "Wealth",
                             "amount": 4,
                             "upDown": "up"
                         }
                     ]
                 },
                 {
-                    "response": "It was fine",
+                    "response": "Not really",
                     "outcomes": [
                         {
-                            "trait": "Bubble-ness",
+                            "trait": "Family",
                             "amount": 4,
                             "upDown": "Up"
                         },
                         {
-                            "trait": "White",
+                            "trait": "Community",
                             "amount": 3,
                             "upDown": "Down"
                         }
@@ -152,20 +166,231 @@ export const testDataObject = {
                     "response": "Typing all this blows",
                     "outcomes": [
                         {
-                            "trait": "Firmness",
+                            "trait": "Family",
                             "amount": 5,
                             "upDown": "Down"
                         },
                         {
-                            "trait": "Firmness",
+                            "trait": "Wealth",
                             "amount": 5,
                             "upDown": "down"
                         }
                     ]
                 }
             ],
-            "trait1": "Firmness",
-            "trait2": "Bubble-ness"
+            "trait1": "Health",
+            "trait2": "Education"
+        },
+        {
+            "Q": "Now we have two questions, are we having fun yet?",
+            responses: [
+                {
+                    "response": "The most fun!",
+                    "outcomes": [
+                        {
+                            "trait": "Wealth",
+                            "amount": 3,
+                            "upDown": "down"
+                        },
+                        {
+                            "trait": "Health",
+                            "amount": 4,
+                            "upDown": "up"
+                        }
+                    ]
+                },
+                {
+                    "response": "No fun",
+                    "outcomes": [
+                        {
+                            "trait": "Community",
+                            "amount": 4,
+                            "upDown": "Up"
+                        },
+                        {
+                            "trait": "Family",
+                            "amount": 3,
+                            "upDown": "Down"
+                        }
+                    ]
+                },
+                {
+                    "response": "We're really going to have to think of FIVE RESPONSES!?",
+                    "outcomes": [
+                        {
+                            "trait": "Community",
+                            "amount": 5,
+                            "upDown": "Down"
+                        },
+                        {
+                            "trait": "Wealth",
+                            "amount": 5,
+                            "upDown": "down"
+                        }
+                    ]
+                }
+            ],
+            "trait1": "Wealth",
+            "trait2": "Community"
+        },
+
+        {
+            "Q": "Is it okay if I only make three questions?",
+            responses: [
+                {
+                    "response": "Yes",
+                    "outcomes": [
+                        {
+                            "trait": "Wealth",
+                            "amount": 3,
+                            "upDown": "down"
+                        },
+                        {
+                            "trait": "Health",
+                            "amount": 4,
+                            "upDown": "up"
+                        }
+                    ]
+                },
+                {
+                    "response": "No",
+                    "outcomes": [
+                        {
+                            "trait": "Community",
+                            "amount": 4,
+                            "upDown": "Up"
+                        },
+                        {
+                            "trait": "Family",
+                            "amount": 3,
+                            "upDown": "Down"
+                        }
+                    ]
+                },
+                {
+                    "response": "Well you're not making five responses so why not",
+                    "outcomes": [
+                        {
+                            "trait": "Community",
+                            "amount": 5,
+                            "upDown": "Down"
+                        },
+                        {
+                            "trait": "Wealth",
+                            "amount": 5,
+                            "upDown": "down"
+                        }
+                    ]
+                }
+            ],
+            "trait1": "Wealth",
+            "trait2": "Community"
+        },
+
+        {
+            "Q": "Which question is this one?",
+            responses: [
+                {
+                    "response": "One",
+                    "outcomes": [
+                        {
+                            "trait": "Wealth",
+                            "amount": 3,
+                            "upDown": "down"
+                        },
+                        {
+                            "trait": "Health",
+                            "amount": 4,
+                            "upDown": "up"
+                        }
+                    ]
+                },
+                {
+                    "response": "Four",
+                    "outcomes": [
+                        {
+                            "trait": "Community",
+                            "amount": 4,
+                            "upDown": "Up"
+                        },
+                        {
+                            "trait": "Family",
+                            "amount": 3,
+                            "upDown": "Down"
+                        }
+                    ]
+                },
+                {
+                    "response": "You stopped updating traits",
+                    "outcomes": [
+                        {
+                            "trait": "Community",
+                            "amount": 5,
+                            "upDown": "Down"
+                        },
+                        {
+                            "trait": "Wealth",
+                            "amount": 5,
+                            "upDown": "down"
+                        }
+                    ]
+                }
+            ],
+            "trait1": "Wealth",
+            "trait2": "Community"
+        },
+
+        {
+            "Q": "What if we only made five questions?",
+            responses: [
+                {
+                    "response": "UNACCEPTABLE",
+                    "outcomes": [
+                        {
+                            "trait": "Wealth",
+                            "amount": 3,
+                            "upDown": "down"
+                        },
+                        {
+                            "trait": "Health",
+                            "amount": 4,
+                            "upDown": "up"
+                        }
+                    ]
+                },
+                {
+                    "response": "I hope you got that Adventure Time reference",
+                    "outcomes": [
+                        {
+                            "trait": "Community",
+                            "amount": 4,
+                            "upDown": "Up"
+                        },
+                        {
+                            "trait": "Family",
+                            "amount": 3,
+                            "upDown": "Down"
+                        }
+                    ]
+                },
+                {
+                    "response": "Five is my favorite Umbrella Academy student",
+                    "outcomes": [
+                        {
+                            "trait": "Community",
+                            "amount": 5,
+                            "upDown": "Down"
+                        },
+                        {
+                            "trait": "Wealth",
+                            "amount": 5,
+                            "upDown": "down"
+                        }
+                    ]
+                }
+            ],
+            "trait1": "Wealth",
+            "trait2": "Community"
         }
     ]
 }

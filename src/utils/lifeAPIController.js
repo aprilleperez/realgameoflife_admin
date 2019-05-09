@@ -4,12 +4,6 @@ import axios from "axios";
 export function create(gameObj) {
     axios
         .post("https://real-life-api.herokuapp.com/api/games", gameObj)
-        .then(results =>
-            results.data.items.filter(
-                result =>
-                    result.game.title
-            )
-        )
 }
 
 export function update(gameObj, id) {
