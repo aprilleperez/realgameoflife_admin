@@ -7,14 +7,15 @@ import axios from 'axios';
 
 
 class ContentEdit extends Component {
-    state = {
-        gameObj: {}
-    }
+
+    // state = {
+    //     gameObj: {}
+    // }
 
     //Run get game once the component loads
-    componentDidMount() {
-        this.getGame(this.getGameIdUrl());
-    }
+    // componentWillMount() {
+    //     this.getGame(this.getGameIdUrl());
+    // }
 
     //this parses the url and grabs the id from it. It grabs the index of the avatars string
     //and marks the end of the string, then marks the index of the slash, and grabs the id
@@ -23,32 +24,33 @@ class ContentEdit extends Component {
         const url = window.location.pathname
         const avatarIndex = url.indexOf("avatars")
         const fromAvatars = url.substring(avatarIndex)
-        const id = fromAvatars.substring(fromAvatars.indexOf("/"))
+        const id = fromAvatars.substring(fromAvatars.indexOf("/") + 1)
 
         return id
     }
 
     //this is the find by id get to our API. Returns the game object with the id from the 
     //url. Sets the state to that object
-    getGame(id) {
-
-        axios.get(`https://real-life-api.herokuapp.com/api/games/${id}`)
-            .then((results) => {
-                console.log(results.data)
-                this.setState({
-                    gameObj: results.data
-                })
-            })
-    }
+    // getGame(id) {
+    //     console.log("hi from contentEdit", this.props)
+    //     // this.setState({
+    //     //     gameObj: this.props.globalState.gamesById[id]
+    //     // })
+    // }
 
 
     render() {
-        console.log("Trait Names", this.state.gameObj.traits)
-
+        // console.log("Trait Names", this.gameObj.traits)
+        const id = this.getGameIdUrl();
+        const gameObj = this.props.globalState.allGames.filter((game) => { return game._id === id })[0];
+        console.log(this.props.globalState, id, gameObj);
+        if (!gameObj) {
+            return (<div></div>)
+        }
         return (
             <Container>
-                <Avatars avatars={this.state.gameObj.avatars ? this.state.gameObj.avatars : []}
-                    traitName={this.state.gameObj.traits ? this.state.gameObj.traits : []}
+                <Avatars avatars={gameObj.avatars ? gameObj.avatars : []}
+                    traitName={gameObj.traits ? gameObj.traits : []}
                 />
             </Container>
         )
