@@ -15,15 +15,15 @@ export function PointToggler(props) {
             </Col>
 
             <Col size="sm-1">
-                <TogglerButton className="fas fa-plus" />
+                <TogglerButton className="fas fa-plus" onClick={props.onClick} />
             </Col>
 
             <Col size="sm-1">
-                <div className="thisForm score">{props.traits} </div>
+                <div className="thisForm score">{props.trait1Val || props.trait2Val} </div>
             </Col>
 
             <Col size="sm-1">
-                <TogglerButton className="fas fa-minus" />
+                <TogglerButton className="fas fa-minus" onClick={props.onClick} />
             </Col>
         </Row>
     )
