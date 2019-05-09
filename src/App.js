@@ -14,7 +14,7 @@ class App extends Component {
     organization: "Nonprofit Organization Name",
     allGameInfo: [],
     currentGameId: undefined,
-    gamesById: {} // key is a game id, value is the game object, so state.gamesById[state.currentGameId] will give the current game
+    allGames: []
     // TODO: figure out user state here
   }
 
@@ -35,19 +35,17 @@ class App extends Component {
             gameId: results.data[i]._id,
             gameName: results.data[i].name
           }
-          gameMap[results.data[i]._id] = results.data[i];
           nonprofitName = "We Need To Get the Name Somehow"
           allGameInfo.push(gameObj)
 
         }
         console.log("allGameInfo:", allGameInfo)
         console.log(allGameInfo)
-        console.log(gameMap)
 
         this.setState({
           organization: nonprofitName,
           allGameInfo: allGameInfo,
-          gamesById: gameMap
+          allGames: results.data
         })
       })
   }
@@ -58,8 +56,8 @@ class App extends Component {
           <Nav />
           <Switch>
             <Route exact path="/" render={(props) => <Admin {...props} globalState={this.state} />} />
-            <Route prefix path="/create" component={Create} />
-            <Route prefix path="/edit" component={Edit} />
+            <Route prefix path="/create" render={(props) => <Create {...props} globalState={this.state} />} />
+            <Route prefix path="/edit" render={(props) => <Edit {...props} globalState={this.state} />} />
             {/* <Route component={NoMatch} /> */}
           </Switch>
         </div>

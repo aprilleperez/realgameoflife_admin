@@ -31,7 +31,7 @@ class Content extends Component {
                     <ContentCreateQuestions />
                 ) : null}
                 {window.location.pathname.startsWith("/edit/avatars/") ? (
-                    <ContentEdit />
+                    <ContentEdit globalState={this.props.globalState} />
                 ) : null}
                 {window.location.pathname.startsWith("/edit/questions/") ? (
                     <ContentEditQuestions />

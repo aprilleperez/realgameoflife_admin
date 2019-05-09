@@ -25,7 +25,7 @@ class Edit extends Component {
                     <Container fluid>
                         <Header text="Edit Avatars" />
                         <SubHeader text="Update Avatar Selections" />
-                        <Content />
+                        <Content globalState={this.props.globalState} />
                         <AdminButton text="Done" buttonType="green" to="/" />
                     </Container>
                 ) : null}
