@@ -7,7 +7,6 @@ import axios from 'axios';
 
 
 class ContentEdit extends Component {
-
     state = {
         gameObj: {}
     }

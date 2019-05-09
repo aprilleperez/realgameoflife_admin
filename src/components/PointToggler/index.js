@@ -2,7 +2,7 @@ import React from "react";
 import '../style.css';
 
 import { Row, Col } from '../Grid'
-import Dropdown from '../Dropdown'
+import { Dropdown } from '../Dropdown'
 import TogglerButton from './togglerButton'
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
