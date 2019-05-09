@@ -6,17 +6,23 @@ import AdminButton from '../components/Button'
 import { update } from '../utils/lifeAPIController';
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 function getGameIdUrl() {
     const url = window.location.pathname
     const avatarIndex = url.indexOf("avatars")
     const fromAvatars = url.substring(avatarIndex)
-    const id = fromAvatars.substring(fromAvatars.indexOf("/"))
+    const id = fromAvatars.substring(fromAvatars.indexOf("/") + 1)
 
     return id
 }
 
 
 class Edit extends Component {
+    state = {
+
+    }
+
 
     render() {
         return (

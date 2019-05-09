@@ -19,7 +19,7 @@ class Content extends Component {
         return (
             <div className="thisContent fluid">
                 {window.location.pathname === "/" ? (
-                    <ContentAdmin games={this.props.games} />
+                    <ContentAdmin games={this.props.gameNameGameId} />
                 ) : null}
                 {window.location.pathname === "/create" ? (
                     <ContentCreate />

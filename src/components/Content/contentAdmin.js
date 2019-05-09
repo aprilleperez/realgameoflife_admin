@@ -10,7 +10,7 @@ import { remove } from '../../utils/lifeAPIController';
 class ContentAdmin extends Component {
 
     render() {
-        console.log("THIS PROPS GAMES", this.props.games)
+
         return (
             <Container>
                 {/* Map over the games prop */}

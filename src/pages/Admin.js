@@ -19,7 +19,7 @@ class Admin extends Component {
             < Container fluid >
                 <Header text={`Welcome to the dashboard, ${this.props.globalState.organization}.`} />
                 <SubHeader text="Create, Edit, or Drop games for your organization!" />
-                <Content games={this.props.globalState.allGameInfo} />
+                <Content gameNameGameId={this.props.globalState.gameNameGameId} everyGame={this.props.globalState.allGames} />
                 <AdminButton text="Create Game" buttonType="green" to="/create" />
                 {/* <AdminButton text="Edit" buttonType="blue" to="/edit" /> */}
 

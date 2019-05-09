@@ -12,7 +12,7 @@ import './App.css';
 class App extends Component {
   state = {
     organization: "Nonprofit Organization Name",
-    allGameInfo: [],
+    gameNameGameId: [],
     currentGameId: undefined,
     allGames: []
     // TODO: figure out user state here
@@ -27,24 +27,24 @@ class App extends Component {
     axios.get("https://real-life-api.herokuapp.com/api/games")
       .then((results) => {
         console.log(results.data)
-        let allGameInfo = []
+        let gameNameGameId = []
         let nonprofitName = ""
-        let gameMap = {}
+
         for (let i = 0; i < results.data.length; i++) {
           let gameObj = {
             gameId: results.data[i]._id,
             gameName: results.data[i].name
           }
           nonprofitName = "We Need To Get the Name Somehow"
-          allGameInfo.push(gameObj)
+          gameNameGameId.push(gameObj)
 
         }
-        console.log("allGameInfo:", allGameInfo)
-        console.log(allGameInfo)
+        console.log("allGameInfo:", gameNameGameId)
+        console.log(gameNameGameId)
 
         this.setState({
           organization: nonprofitName,
-          allGameInfo: allGameInfo,
+          gameNameGameId: gameNameGameId,
           allGames: results.data
         })
       })
