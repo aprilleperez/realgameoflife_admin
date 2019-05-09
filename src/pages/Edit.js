@@ -4,14 +4,26 @@ import { Header, SubHeader, AvatarHeader } from '../components/Header'
 import { QuestionDropdown } from '../components/Dropdown'
 import Content from '../components/Content'
 import AdminButton from '../components/Button'
+import { update } from '../utils/lifeAPIController';
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-class Edit extends Component {
-    // state = {
+function getGameIdUrl() {
+    const url = window.location.pathname
+    const avatarIndex = url.indexOf("avatars")
+    const fromAvatars = url.substring(avatarIndex)
+    const id = fromAvatars.substring(fromAvatars.indexOf("/") + 1)
 
-    // }
+    return id
+}
+
+
+class Edit extends Component {
+    state = {
+
+    }
+
 
     render() {
         return (
@@ -19,9 +31,8 @@ class Edit extends Component {
                 {window.location.pathname.startsWith("/edit/avatars/") ? (
                     <Container fluid>
                         <Header text="Edit Avatars" />
-                        {/* <SubHeader text="Update Avatar Selections" /> */}
-                        <AvatarHeader />
-                        <Content />
+                        <AvatarHeader text="Update Avatar Selections" />
+                        <Content globalState={this.props.globalState} />
                         <AdminButton text="Done" buttonType="green" to="/" />
                     </Container>
                 ) : null}
@@ -31,7 +42,7 @@ class Edit extends Component {
                         {/* <SubHeader text="Update Questions Selections" /> */}
                         <QuestionDropdown qtext="Question" text="Trait" />
                         <Content />
-                        <AdminButton text="Done" buttonType="green" to="/" />
+                        <AdminButton text="Done" buttonType="green" click={() => { }} to="/" />
                     </Container>
                 ) : null}
             </Container>
