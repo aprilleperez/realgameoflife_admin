@@ -36,7 +36,8 @@ class Response {
 }
 
 class Outcome {
-    constructor(trait, amount, upDown) {
+    constructor(text, trait, amount, upDown) {
+        this.text = text
         this.trait = trait
         this.amount = amount
         this.upDown = upDown
@@ -78,7 +79,7 @@ export const updateGameObj = new GameObj(testGameObj.name, testGameObj.traits, t
 
 export const testDataObject = {
 
-    "name": "Real Object for Testing",
+    "name": "Object Now With Outcome Text",
     "traits": {
         "trait1": "Wealth",
         "trait2": "Education",
@@ -136,11 +137,13 @@ export const testDataObject = {
                     "response": "SO HARD",
                     "outcomes": [
                         {
+                            "text": "Congrats! Your brain is getting bigger",
                             "trait": "Education",
                             "amount": 3,
                             "upDown": "down"
                         },
                         {
+                            "text": "Congrats! Your brain is getting bigger",
                             "trait": "Wealth",
                             "amount": 4,
                             "upDown": "up"
@@ -151,11 +154,13 @@ export const testDataObject = {
                     "response": "Not really",
                     "outcomes": [
                         {
+                            "text": "Your brain is getting neither bigger nor smaller",
                             "trait": "Family",
                             "amount": 4,
                             "upDown": "Up"
                         },
                         {
+                            "text": "Your brain is getting neither bigger nor smaller",
                             "trait": "Community",
                             "amount": 3,
                             "upDown": "Down"
@@ -166,11 +171,13 @@ export const testDataObject = {
                     "response": "Typing all this blows",
                     "outcomes": [
                         {
+                            "text": "Sad day! Your fingers have fallen off and your cat has eaten them.",
                             "trait": "Family",
                             "amount": 5,
                             "upDown": "Down"
                         },
                         {
+                            "text": "Sad day! Your fingers have fallen off and your cat has eaten them.",
                             "trait": "Wealth",
                             "amount": 5,
                             "upDown": "down"
@@ -188,11 +195,13 @@ export const testDataObject = {
                     "response": "The most fun!",
                     "outcomes": [
                         {
+                            "text": "You've become and out of work actor temping at a catering company.",
                             "trait": "Wealth",
                             "amount": 3,
                             "upDown": "down"
                         },
                         {
+                            "text": "You've become and out of work actor temping at a catering company.",
                             "trait": "Health",
                             "amount": 4,
                             "upDown": "up"
@@ -203,11 +212,13 @@ export const testDataObject = {
                     "response": "No fun",
                     "outcomes": [
                         {
+                            "text": "Wow kid, you really blew it.",
                             "trait": "Community",
                             "amount": 4,
                             "upDown": "Up"
                         },
                         {
+                            "text": "Wow kid, you really blew it.",
                             "trait": "Family",
                             "amount": 3,
                             "upDown": "Down"
@@ -218,11 +229,13 @@ export const testDataObject = {
                     "response": "We're really going to have to think of FIVE RESPONSES!?",
                     "outcomes": [
                         {
+                            "text": "Hooray! Your endurance has increased!",
                             "trait": "Community",
                             "amount": 5,
                             "upDown": "Down"
                         },
                         {
+                            "text": "Hooray! Your endurance has increased!",
                             "trait": "Wealth",
                             "amount": 5,
                             "upDown": "down"
@@ -241,11 +254,13 @@ export const testDataObject = {
                     "response": "Yes",
                     "outcomes": [
                         {
+                            "text": "You become the laziest couch potato.",
                             "trait": "Wealth",
                             "amount": 3,
                             "upDown": "down"
                         },
                         {
+                            "text": "You become the laziest couch potato.",
                             "trait": "Health",
                             "amount": 4,
                             "upDown": "up"
@@ -256,11 +271,13 @@ export const testDataObject = {
                     "response": "No",
                     "outcomes": [
                         {
+                            "text": "You wallow in your own self pity.",
                             "trait": "Community",
                             "amount": 4,
                             "upDown": "Up"
                         },
                         {
+                            "text": "You wallow in your own self pity.",
                             "trait": "Family",
                             "amount": 3,
                             "upDown": "Down"
@@ -271,11 +288,13 @@ export const testDataObject = {
                     "response": "Well you're not making five responses so why not",
                     "outcomes": [
                         {
+                            "text": "Here's your award for being the most reasonable!",
                             "trait": "Community",
                             "amount": 5,
                             "upDown": "Down"
                         },
                         {
+                            "text": "Here's your award for being the most reasonable!",
                             "trait": "Wealth",
                             "amount": 5,
                             "upDown": "down"
@@ -294,11 +313,13 @@ export const testDataObject = {
                     "response": "One",
                     "outcomes": [
                         {
+                            "text": "You have disappointed both The Count and the Tootsie Pop Owl",
                             "trait": "Wealth",
                             "amount": 3,
                             "upDown": "down"
                         },
                         {
+                            "text": "You have disappointed both The Count and the Tootsie Pop Owl",
                             "trait": "Health",
                             "amount": 4,
                             "upDown": "up"
@@ -309,11 +330,13 @@ export const testDataObject = {
                     "response": "Four",
                     "outcomes": [
                         {
+                            "text": "No one is disappointed! Revel in your ability to please both muppets and cartoons.",
                             "trait": "Community",
                             "amount": 4,
                             "upDown": "Up"
                         },
                         {
+                            "text": "No one is disappointed! Revel in your ability to please both muppets and cartoons.",
                             "trait": "Family",
                             "amount": 3,
                             "upDown": "Down"
@@ -324,11 +347,13 @@ export const testDataObject = {
                     "response": "You stopped updating traits",
                     "outcomes": [
                         {
+                            "text": "You're a party pooper. No one likes you.",
                             "trait": "Community",
                             "amount": 5,
                             "upDown": "Down"
                         },
                         {
+                            "text": "You're a party pooper. No one likes you.",
                             "trait": "Wealth",
                             "amount": 5,
                             "upDown": "down"
@@ -347,11 +372,13 @@ export const testDataObject = {
                     "response": "UNACCEPTABLE",
                     "outcomes": [
                         {
+                            "text": "The earl of Lemongrab has eaten you.",
                             "trait": "Wealth",
                             "amount": 3,
                             "upDown": "down"
                         },
                         {
+                            "text": "The earl of Lemongrab has eaten you.",
                             "trait": "Health",
                             "amount": 4,
                             "upDown": "up"
@@ -362,11 +389,13 @@ export const testDataObject = {
                     "response": "I hope you got that Adventure Time reference",
                     "outcomes": [
                         {
+                            "text": "I'm very disappointed in you.",
                             "trait": "Community",
                             "amount": 4,
                             "upDown": "Up"
                         },
                         {
+                            "text": "I'm very disappointed in you.",
                             "trait": "Family",
                             "amount": 3,
                             "upDown": "Down"
@@ -377,11 +406,13 @@ export const testDataObject = {
                     "response": "Five is my favorite Umbrella Academy student",
                     "outcomes": [
                         {
+                            "text": "You run boy, run",
                             "trait": "Community",
                             "amount": 5,
                             "upDown": "Down"
                         },
                         {
+                            "text": "You run boy, run",
                             "trait": "Wealth",
                             "amount": 5,
                             "upDown": "down"
