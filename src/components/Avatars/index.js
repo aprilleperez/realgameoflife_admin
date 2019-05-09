@@ -3,7 +3,6 @@ import { Col, Row, Container } from '../Grid';
 import { Header, SubHeader } from '../Header';
 import Card from "../Card"
 import Label from "../Label"
-import Sliders from "../Sliders"
 import {PointToggler2} from "../PointToggler";
 
 function Avatars(props) {

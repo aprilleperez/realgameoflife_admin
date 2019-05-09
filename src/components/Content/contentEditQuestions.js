@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from '../Grid'
 import Label from '../Label'
-<<<<<<< HEAD
 import Dropdown from '../Dropdown'
 import {PointToggler} from "../PointToggler"
-=======
-import PointToggler from "../PointToggler"
->>>>>>> 8de7a91705edd1aa94b5165af55bc683714d9ff4
 import '../style.css';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
