@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container } from '../components/Grid';
 import { Header, SubHeader } from '../components/Header'
+import { QuestionDropdown } from '../components/Dropdown'
 import Content from '../components/Content'
 import AdminButton from '../components/Button'
 
@@ -26,7 +27,8 @@ class Edit extends Component {
                 {window.location.pathname.startsWith("/edit/questions/") ? (
                     <Container fluid>
                         <Header text="Edit Questions" />
-                        <SubHeader text="Update Questions Selections" />
+                        {/* <SubHeader text="Update Questions Selections" /> */}
+                        <QuestionDropdown qtext="Question" text="Trait" />
                         <Content />
                         <AdminButton text="Done" buttonType="green" to="/" />
                     </Container>

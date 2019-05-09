@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+
 import { Container } from '../components/Grid';
 import { Header, SubHeader } from '../components/Header'
+import { QuestionDropdown } from '../components/Dropdown'
 import Content from '../components/Content'
 import AdminButton from '../components/Button'
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -33,7 +35,8 @@ class Create extends Component {
                 {window.location.pathname === "/create/questions" ? (
                     <Container fluid>
                         <Header text="Create Questions" />
-                        <SubHeader text="Question Dropdowns will go here" />
+                        {/* <SubHeader text="Question Dropdowns will go here" /> */}
+                        <QuestionDropdown qtext="Question" text="Trait" />
                         <Content />
                         <AdminButton text="Done" buttonType="green" to="/" />
                     </Container>

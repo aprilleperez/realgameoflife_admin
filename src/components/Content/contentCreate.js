@@ -7,6 +7,16 @@ import '../style.css';
 
 
 class ContentCreate extends Component {
+    state = {
+        gameObj: []
+    }
+
+    captureInputs = event => {
+        const { name, value } = event.target;
+        this.setState({
+            gameObj: []
+        })
+    }
 
     render() {
         return (
