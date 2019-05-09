@@ -3,14 +3,20 @@ import { Container } from '../components/Grid';
 import { Header, SubHeader } from '../components/Header'
 import Content from '../components/Content'
 import AdminButton from '../components/Button'
+import { update } from '../utils/lifeAPIController';
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+function getGameIdUrl() {
+    const url = window.location.pathname
+    const avatarIndex = url.indexOf("avatars")
+    const fromAvatars = url.substring(avatarIndex)
+    const id = fromAvatars.substring(fromAvatars.indexOf("/"))
+
+    return id
+}
 
 
 class Edit extends Component {
-    // state = {
-
-    // }
 
     render() {
         return (
@@ -28,7 +34,7 @@ class Edit extends Component {
                         <Header text="Edit Questions" />
                         <SubHeader text="Update Questions Selections" />
                         <Content />
-                        <AdminButton text="Done" buttonType="green" to="/" />
+                        <AdminButton text="Done" buttonType="green" click={() => { }} to="/" />
                     </Container>
                 ) : null}
             </Container>
