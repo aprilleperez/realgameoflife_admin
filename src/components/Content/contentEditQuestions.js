@@ -25,7 +25,7 @@ class ContentEditQuestions extends Component {
             trait2Val: this.state.trait2Val + 1
         })
     }
-c
+
     render() {
         return (
             <Container>
