@@ -13,6 +13,7 @@ class ContentEdit extends Component {
         super(props)
 
         this.handleChange = this.handleChange.bind(this);
+        this.updateAvatarName = this.updateAvatarName.bind(this);
 
 
         this.state = {
@@ -66,7 +67,7 @@ class ContentEdit extends Component {
             "trait5": 18
         }
 
-        let name = "name"
+        let name = "Steve Rogers"
 
         let value = "Apple Jack"
 
@@ -81,12 +82,12 @@ class ContentEdit extends Component {
             }
             newAvName[i] = newAv;
             console.log("NEW AV", newAv)
-            const gameObj = this.state.gameObj
-            const forRealUpdateAvatar = new GameObj(gameObj.name, gameObj.traits, newAvName, gameObj.questions)
-            update(forRealUpdateAvatar, id)
-            this.setState({
-                gameObj: forRealUpdateAvatar
-            })
+            // const gameObj = this.state.gameObj
+            // const forRealUpdateAvatar = new GameObj(gameObj.name, gameObj.traits, newAvName, gameObj.questions)
+            // update(forRealUpdateAvatar, id)
+            // this.setState({
+            //     gameObj: forRealUpdateAvatar
+            // })
 
         }
 
@@ -163,7 +164,7 @@ class ContentEdit extends Component {
                     handleChange={this.handleChange}
                     passedState={this.state}
                 />
-
+                <button className="btn btn-danger" text="Next" buttonType="green" to="/create/avatars" onClick={this.updateAvatarName} />
 
 
             </Container>
