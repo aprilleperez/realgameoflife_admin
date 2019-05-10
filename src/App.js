@@ -54,9 +54,9 @@ class App extends Component {
         <div>
           <Nav />
           <Switch>
-            <Route exact path= {`${process.env.PUBLIC_URL}/`} render={(props) => <Admin {...props} globalState={this.state} />} />
-            <Route prefix path={`${process.env.PUBLIC_URL}/create`}render={(props) => <Create {...props} globalState={this.state} />} />
-            <Route prefix path={`${process.env.PUBLIC_URL}/edit`} render={(props) => <Edit {...props} globalState={this.state} />} />
+            <Route exact path= {`/`} render={(props) => <Admin {...props} globalState={this.state} />} />
+            <Route prefix path={`/create`}render={(props) => <Create {...props} globalState={this.state} />} />
+            <Route prefix path={`/edit`} render={(props) => <Edit {...props} globalState={this.state} />} />
             {/* <Route component={NoMatch} /> */}
           </Switch>
         </div>
