@@ -9,8 +9,12 @@ import * as api from "../../utils/lifeAPIController"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+//Since all of our traits are always in this order, creating an array for easy mapping down in render.
+// Probably not ideal, but it works!
 let texts = ["trait1", "trait2", "trait3", "trait4", "trait5"]
 
+// Creating our class and setting the constructor and super constructor. Binding our methods below so they
+// can be easily called from onClick (in theory). Initalizing state to empty so we can update it when needed.
 class ContentCreate extends Component {
     constructor(props) {
         super(props)
@@ -23,6 +27,7 @@ class ContentCreate extends Component {
 
     }
 
+    // Take in the changed value and set state to be that
     handleChange(event) {
         const { name, value } = event.target;
         console.log("HELLO FROM HANDLECHANGE", name, value)
@@ -33,6 +38,7 @@ class ContentCreate extends Component {
 
     }
 
+    // This method builds our new object using our imported constructors and sends it to the database.
     buildTraits() {
         let traits = Object.keys(this.state).map(key => this.state[key])
         let templateObj = new constructor.GameObj("TO DO - Make Name For Game", traits, [], [])

@@ -27,10 +27,3 @@ export default Label;
 
 
 
-
-{/* <form>
-                <div className="form-group">
-                    <label for="traits">Trait 1</label>
-
-                </div>
-            </form> */}

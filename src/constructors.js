@@ -79,7 +79,7 @@ export const updateGameObj = new GameObj(testGameObj.name, testGameObj.traits, t
 
 export const testDataObject = {
 
-    "name": "TESTING FROM CREATE",
+    "name": "OBJECT FOR ABRAM",
     "traits": {
         "trait1": "Wealth",
         "trait2": "Education",
