@@ -1,6 +1,6 @@
 import React from "react"
 import Label from "../Label"
-import { Avatar } from "../../constructors";
+
 
 function Card(props) {
     return (

@@ -12,6 +12,12 @@ function makeMePartial(avatar, traitName, val, fnOfAllThree) {
         fnOfAllThree(avatar, traitName, val);
     }
 }
+
+function avatarNamePartial(avatar, name, val, fnOfAllThree) {
+    return () => {
+        fnOfAllThree(avatar, name, val)
+    }
+}
 /*
 <Label traitName={props.traitName.trait1} />
                             <Label traitName={props.traitName.trait2} />
