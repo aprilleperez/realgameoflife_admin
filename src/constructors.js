@@ -1,4 +1,4 @@
-class Traits {
+export class Traits {
     constructor(trait1, trait2, trait3, trait4, trait5) {
         this.trait1 = trait1
         this.trait2 = trait2
@@ -8,7 +8,7 @@ class Traits {
     }
 }
 
-class Avatar {
+export class Avatar {
     constructor(name, t1, t2, t3, t4, t5) {
         this.name = name
         this.trait1 = t1
@@ -19,7 +19,7 @@ class Avatar {
     }
 }
 
-class Question {
+export class Question {
     constructor(Q, responses, trait1, trait2) {
         this.Q = Q
         this.responses = responses
@@ -28,14 +28,14 @@ class Question {
     }
 }
 
-class Response {
+export class Response {
     constructor(response, outcomes) {
         this.response = response
         this.outcomes = outcomes
     }
 }
 
-class Outcome {
+export class Outcome {
     constructor(text, trait, amount, upDown) {
         this.text = text
         this.trait = trait
@@ -44,7 +44,7 @@ class Outcome {
     }
 }
 
-class GameObj {
+export class GameObj {
     constructor(name, traits, avatars, questions) {
         this.name = name
         this.traits = traits
@@ -79,7 +79,7 @@ export const updateGameObj = new GameObj(testGameObj.name, testGameObj.traits, t
 
 export const testDataObject = {
 
-    "name": "Object Now With Outcome Text",
+    "name": "5th New Test Object (not used by anyone)",
     "traits": {
         "trait1": "Wealth",
         "trait2": "Education",

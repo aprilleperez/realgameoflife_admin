@@ -15,7 +15,7 @@ class Content extends Component {
     // }
 
     render() {
-        console.log(window.location.pathname);
+        console.log("WINDOW LOCATION PATHNAME", window.location.pathname);
         return (
             <div className="thisContent fluid">
                 {window.location.pathname === "/" ? (

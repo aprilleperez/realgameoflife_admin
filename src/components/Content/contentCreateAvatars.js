@@ -14,7 +14,7 @@ class ContentCreateAvatars extends Component {
     }
 
     render() {
-        console.log(this.state.gameObj.avatars)
+        console.log("CONTENT CREATE AVATARS", this.state.gameObj.avatars)
 
         return (
             <Container>
