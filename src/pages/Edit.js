@@ -33,7 +33,7 @@ class Edit extends Component {
                         <Header text="Edit Avatars" />
                         <AvatarHeader text="Update Avatar Selections" />
                         <Content globalState={this.props.globalState} />
-                        <AdminButton text="Done" buttonType="green" to={process.env.PUBLIC_URL} />
+                        <AdminButton text="Done" buttonType="green" to="/" />
                     </Container>
                 ) : null}
                 {window.location.pathname.startsWith(`${process.env.PUBLIC_URL}/edit/questions/`) ? (
@@ -42,7 +42,7 @@ class Edit extends Component {
                         {/* <SubHeader text="Update Questions Selections" /> */}
                         <QuestionDropdown qtext="Question" text="Trait" />
                         <Content />
-                        <AdminButton text="Done" buttonType="green" click={() => { }} to={process.env.PUBLIC_URL} />
+                        <AdminButton text="Done" buttonType="green" click={() => { }} to="/" />
                     </Container>
                 ) : null}
             </Container>

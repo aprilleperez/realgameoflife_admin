@@ -39,7 +39,7 @@ class Create extends Component {
                         {/* <SubHeader text="Question Dropdowns will go here" /> */}
                         <QuestionDropdown qtext="Question" text="Trait" />
                         <Content />
-                        <AdminButton text="Done" buttonType="green" to={process.env.PUBLIC_URL} />
+                        <AdminButton text="Done" buttonType="green" to="/" />
                     </Container>
                 ) : null}
             </Container>
