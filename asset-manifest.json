@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/realgameoflife_admin/static/css/main.a16ca5bc.chunk.css",
-    "main.js": "/realgameoflife_admin/static/js/main.e47a6a9a.chunk.js",
-    "main.js.map": "/realgameoflife_admin/static/js/main.e47a6a9a.chunk.js.map",
+    "main.js": "/realgameoflife_admin/static/js/main.6449a1c0.chunk.js",
+    "main.js.map": "/realgameoflife_admin/static/js/main.6449a1c0.chunk.js.map",
     "runtime~main.js": "/realgameoflife_admin/static/js/runtime~main.b5138af5.js",
     "runtime~main.js.map": "/realgameoflife_admin/static/js/runtime~main.b5138af5.js.map",
     "static/js/2.6c553b60.chunk.js": "/realgameoflife_admin/static/js/2.6c553b60.chunk.js",
     "static/js/2.6c553b60.chunk.js.map": "/realgameoflife_admin/static/js/2.6c553b60.chunk.js.map",
     "index.html": "/realgameoflife_admin/index.html",
-    "precache-manifest.f71178e6a23b94c9a9f399a98e2c03a1.js": "/realgameoflife_admin/precache-manifest.f71178e6a23b94c9a9f399a98e2c03a1.js",
+    "precache-manifest.5201b5770aa4adae85359e4ed2e6501f.js": "/realgameoflife_admin/precache-manifest.5201b5770aa4adae85359e4ed2e6501f.js",
     "service-worker.js": "/realgameoflife_admin/service-worker.js",
     "static/css/main.a16ca5bc.chunk.css.map": "/realgameoflife_admin/static/css/main.a16ca5bc.chunk.css.map"
   }
