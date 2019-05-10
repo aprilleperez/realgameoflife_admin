@@ -21,5 +21,12 @@ export function remove(id) {
         })
 }
 
+export function findbyId(id) {
+
+    return axios.get(`https://real-life-api.herokuapp.com/api/games/${id}`)
+
+}
+
+
 
 

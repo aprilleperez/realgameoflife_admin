@@ -26,7 +26,7 @@ class App extends Component {
 
     axios.get("https://real-life-api.herokuapp.com/api/games")
       .then((results) => {
-        console.log(results.data)
+        console.log("RESULTS.DATA", results.data)
         let gameNameGameId = []
         let nonprofitName = ""
 
@@ -39,8 +39,7 @@ class App extends Component {
           gameNameGameId.push(gameObj)
 
         }
-        console.log("allGameInfo:", gameNameGameId)
-        console.log(gameNameGameId)
+        console.log("GAME NAME AND ID:", gameNameGameId)
 
         this.setState({
           organization: nonprofitName,
@@ -51,7 +50,7 @@ class App extends Component {
   }
   render() {
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div>
           <Nav />
           <Switch>
