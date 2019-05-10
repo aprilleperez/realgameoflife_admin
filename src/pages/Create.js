@@ -16,7 +16,7 @@ class Create extends Component {
     render() {
         return (
             <Container fluid>
-                {window.location.pathname === "/create" ? (
+                {window.location.pathname === `${process.env.PUBLIC_URL}/create` ? (
                     <Container fluid>
                         <Header text="Build your next amazing game!" />
                         <SubHeader text="Read below for how to get started" />
