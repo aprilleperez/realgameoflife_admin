@@ -18,7 +18,7 @@ class Content extends Component {
         console.log("WINDOW LOCATION PATHNAME", window.location.pathname);
         return (
             <div className="thisContent fluid">
-                {window.location.pathname === "/" ? (
+                {window.location.pathname === `${process.env.PUBLIC_URL}/` ? (
                     <ContentAdmin games={this.props.gameNameGameId} />
                 ) : null}
                 {window.location.pathname === "/create" ? (
