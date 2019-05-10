@@ -39,7 +39,7 @@ class Nav extends Component {
   render() {
     return (
       <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light mb-2">
-        <Link className="navbar-brand" to="/"> {/* TODO: This will lead to admin homepage FIGURE OUT ROUTES */}
+        <Link className="navbar-brand" to="/">
           Real Game of Life
         </Link>
         <button
@@ -70,7 +70,7 @@ class Nav extends Component {
               <Link
                 onClick={this.toggleNav}
                 className={window.location.pathname === "/create" || "/create/avatars" || "/create/questions" ? "nav-link active" : "nav-link"}
-                to="/create"
+                to={`/create`}
               >
                 Create
               </Link>
