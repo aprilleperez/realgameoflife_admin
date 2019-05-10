@@ -2,8 +2,7 @@
 import axios from "axios";
 
 export function create(gameObj) {
-    axios
-        .post("https://real-life-api.herokuapp.com/api/games", gameObj)
+    return axios.post("https://real-life-api.herokuapp.com/api/games", gameObj)
 }
 
 export function update(gameObj, id) {
