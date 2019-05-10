@@ -13,19 +13,6 @@ function makeMePartial(avatar, traitName, val, fnOfAllThree) {
     }
 }
 
-/*
-<Label traitName={props.traitName.trait1} />
-                            <Label traitName={props.traitName.trait2} />
-                            <Label traitName={props.traitName.trait3} />
-                            <Label traitName={props.traitName.trait4} />
-                            <Label traitName={props.traitName.trait5} />
-                            <PointToggler2 traits={avatar.trait1} updater={props.updater} />
-                            <PointToggler2 traits={avatar.trait2} updater={props.updater} />
-                            <PointToggler2 traits={avatar.trait3} updater={props.updater} />
-                            <PointToggler2 traits={avatar.trait4} updater={props.updater} />
-                            <PointToggler2 traits={avatar.trait5} updater={props.updater} />
-
-*/
 
 function Avatars(props) {
     return (
@@ -38,7 +25,7 @@ function Avatars(props) {
                 return (
                     <Row>
                         <Col size="md-4">
-                            <Card avatar={avatar.name} onChange={props.onChange} />
+                            <Card avatar={avatar.name} handleChange={props.handleChange} inputValue={props.passedState.Name} />
                         </Col>
                         <Col size="md-4">
                             {keys.map(key =>
