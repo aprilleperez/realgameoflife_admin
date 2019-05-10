@@ -24,7 +24,7 @@ class Create extends Component {
                         <AdminButton text="Next" buttonType="green" to="/create/avatars" />
                     </Container>
                 ) : null}
-                {window.location.pathname === "/create/avatars" ? (
+                {window.location.pathname === `${process.env.PUBLIC_URL}/create/avatars` ? (
                     <Container fluid>
                         <Header text="Create Avatars" />
                         {/* <SubHeader text="Avatar Tabs will go here" /> */}
@@ -33,7 +33,7 @@ class Create extends Component {
                         <AdminButton text="Next" buttonType="green" to="/create/questions" />
                     </Container>
                 ) : null}
-                {window.location.pathname === "/create/questions" ? (
+                {window.location.pathname === `${process.env.PUBLIC_URL}/create/questions` ? (
                     <Container fluid>
                         <Header text="Create Questions" />
                         {/* <SubHeader text="Question Dropdowns will go here" /> */}
