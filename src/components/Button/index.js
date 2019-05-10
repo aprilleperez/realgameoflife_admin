@@ -1,6 +1,6 @@
 import React from "react";
 import '../style.css';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 function AdminButton(props) {
@@ -9,7 +9,7 @@ function AdminButton(props) {
 
     return (
         <div className="thisAdminButton">
-            <a href={props.to}><button className={className}>{props.text}</button></a>
+            <Link to={props.to}><button className={className}>{props.text}</button></Link>
         </div>
 
     )

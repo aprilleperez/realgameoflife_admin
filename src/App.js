@@ -50,13 +50,13 @@ class App extends Component {
   }
   render() {
     return (
-      <Router>
+      <Router basename = {process.env.PUBLIC_URL}>
         <div>
           <Nav />
           <Switch>
-            <Route exact path="/" render={(props) => <Admin {...props} globalState={this.state} />} />
-            <Route prefix path="/create" render={(props) => <Create {...props} globalState={this.state} />} />
-            <Route prefix path="/edit" render={(props) => <Edit {...props} globalState={this.state} />} />
+            <Route exact path= {`/`} render={(props) => <Admin {...props} globalState={this.state} />} />
+            <Route prefix path={`/create`}render={(props) => <Create {...props} globalState={this.state} />} />
+            <Route prefix path={`/edit`} render={(props) => <Edit {...props} globalState={this.state} />} />
             {/* <Route component={NoMatch} /> */}
           </Switch>
         </div>
@@ -68,3 +68,5 @@ class App extends Component {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 export default App;
+
+// basename="/realgameoflife_admin/"

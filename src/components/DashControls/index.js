@@ -1,15 +1,16 @@
 import React from "react";
 import '../style.css';
+import { Link } from 'react-router-dom';
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
-// TODO: ADD IN FUNCTION TO LINK TO GAME INSTANCE
 
 export function DashControls(props) {
-    if (props.href) {
+    if (props.to) {
         return (
-            <a href={props.href}><div className="thisControls text-center">
+            <Link to={props.to}><div className="thisControls text-center">
                 <i className={props.class}></i>
                 <p>{props.text}</ p>
-            </div></a>
+            </div></Link>
         )
     }
     else {
@@ -23,4 +24,5 @@ export function DashControls(props) {
 }
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
 export default DashControls;

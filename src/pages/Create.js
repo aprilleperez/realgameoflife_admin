@@ -19,32 +19,32 @@ class Create extends Component {
     render() {
         return (
             <Container fluid>
-                {window.location.pathname === "/create" ? (
+
+                {window.location.pathname === `${process.env.PUBLIC_URL}/create` ? (
                     <Container fluid>
                         <Header text="Build your next amazing game!" />
                         <SubHeader text="Read below for how to get started" />
                         <Content />
-                        <AdminButton text="Next" buttonType="green" to="/create/avatars" />
+                        <AdminButton text="Next" buttonType="green" to={`/create/avatars`} />
                     </Container>
                 ) : null}
-                {window.location.pathname === "/create/avatars" ? (
+                {window.location.pathname === `${process.env.PUBLIC_URL}/create/avatars` ? (
                     <Container fluid>
                         <Header text="Create Avatars" />
-                        {/* <SubHeader text="Avatar Tabs will go here" /> */}
                         <AvatarHeader />
                         <Content />
-                        <AdminButton text="Next" buttonType="green" to="/create/questions" />
+                        <AdminButton text="Next" buttonType="green" to={`/create/questions`} />
                     </Container>
                 ) : null}
-                {window.location.pathname === "/create/questions" ? (
+                {window.location.pathname === `${process.env.PUBLIC_URL}/create/questions` ? (
                     <Container fluid>
                         <Header text="Create Questions" />
-                        {/* <SubHeader text="Question Dropdowns will go here" /> */}
                         <QuestionDropdown qtext="Question" text="Trait" />
                         <Content />
                         <AdminButton text="Done" buttonType="green" to="/" />
                     </Container>
                 ) : null}
+
             </Container>
         )
     }
