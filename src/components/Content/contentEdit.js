@@ -33,7 +33,7 @@ class ContentEdit extends Component {
         const id = this.getGameIdUrl();
         let allNewAvs = [...this.state.gameObj.avatars]
         for (let i = 0; i < this.state.gameObj.avatars.length; i++) {
-            if (avatar.name === this.state.gameObj.avatars[i].name) {
+            if (avatar === this.state.gameObj.avatars[i]) {
                 console.log("HELLO FROM FOR LOOP")
                 let cur = this.state.gameObj.avatars[i];
                 let newAv = {
