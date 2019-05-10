@@ -48,10 +48,27 @@ class ContentEdit extends Component {
 
     }
 
-    //helper method 
-    updateAvatarName(avatar, name, value) {
-        console.log(avatar, name, value)
-        const id = this.getGameIdUrl();
+
+
+
+    updateAvatarName() {
+        // console.log(avatar, name, value)
+        // const id = this.getGameIdUrl();
+
+        const id = "5cd5f0c1f6e7250017cffcdb"
+
+        let avatar = {
+            "name": "Steve Rogers",
+            "trait1": 10,
+            "trait2": 15,
+            "trait3": 6,
+            "trait4": 9,
+            "trait5": 18
+        }
+
+        let name = "name"
+
+        let value = "Apple Jack"
 
         let newAvName = [...this.state.gameObj.avatars]
         for (let i = 0; i < this.state.gameObj.avatars.length; i++) {
@@ -64,6 +81,12 @@ class ContentEdit extends Component {
             }
             newAvName[i] = newAv;
             console.log("NEW AV", newAv)
+            const gameObj = this.state.gameObj
+            const forRealUpdateAvatar = new GameObj(gameObj.name, gameObj.traits, newAvName, gameObj.questions)
+            update(forRealUpdateAvatar, id)
+            this.setState({
+                gameObj: forRealUpdateAvatar
+            })
 
         }
 
@@ -76,7 +99,7 @@ class ContentEdit extends Component {
     // cur to represent the current avatar. Spread all the traits in the object, but update the trait
     // that's been edited by the user. Do this for each avatar trait that's been edited.
     updateAvatarTrait(avatar, trait, value) {
-        console.log("UPDATE AVATAR TRAIT", avatar, trait, value)
+        console.log("UPDATE AVATAR TRAIT:", "AVATAR:", avatar, "TRAIT:", trait, "VALUE:", value)
         const id = this.getGameIdUrl();
         let allNewAvTraits = [...this.state.gameObj.avatars]
         for (let i = 0; i < this.state.gameObj.avatars.length; i++) {
@@ -139,9 +162,10 @@ class ContentEdit extends Component {
                     updater={(avatar, trait, value) => { this.updateAvatarTrait(avatar, trait, value) }}
                     handleChange={this.handleChange}
                     passedState={this.state}
-
-
                 />
+
+
+
             </Container>
         )
     }

@@ -14,6 +14,7 @@ function makeMePartial(avatar, traitName, val, fnOfAllThree) {
 }
 
 
+
 function Avatars(props) {
     return (
         <Container fluid>
