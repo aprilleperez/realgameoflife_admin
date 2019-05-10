@@ -6,8 +6,8 @@ import Button from 'react-bootstrap/Button';
 
 function TogglerButton(props) {
     return (
-        <Button className="togglerButton">
-            <i className={props.className} onClick={() => { console.log(props); props.updater("Test Update Name", "Wealth", 99) }}></i>
+        <Button className="togglerButton" onClick={() => { props.onClick() }}>
+            <i class={props.className}></i>
         </Button>
     )
 }
