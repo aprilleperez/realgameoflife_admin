@@ -21,7 +21,7 @@ class Create extends Component {
                         <Header text="Build your next amazing game!" />
                         <SubHeader text="Read below for how to get started" />
                         <Content />
-                        <AdminButton text="Next" buttonType="green" to="/create/avatars" />
+                        <AdminButton text="Next" buttonType="green" to={`${process.env.PUBLIC_URL}/create/avatars`} />
                     </Container>
                 ) : null}
                 {window.location.pathname === `${process.env.PUBLIC_URL}/create/avatars` ? (
@@ -30,7 +30,7 @@ class Create extends Component {
                         {/* <SubHeader text="Avatar Tabs will go here" /> */}
                         <AvatarHeader />
                         <Content />
-                        <AdminButton text="Next" buttonType="green" to="/create/questions" />
+                        <AdminButton text="Next" buttonType="green" to={`${process.env.PUBLIC_URL}/create/questions`} />
                     </Container>
                 ) : null}
                 {window.location.pathname === `${process.env.PUBLIC_URL}/create/questions` ? (
@@ -39,7 +39,7 @@ class Create extends Component {
                         {/* <SubHeader text="Question Dropdowns will go here" /> */}
                         <QuestionDropdown qtext="Question" text="Trait" />
                         <Content />
-                        <AdminButton text="Done" buttonType="green" to="/" />
+                        <AdminButton text="Done" buttonType="green" to={process.env.PUBLIC_URL} />
                     </Container>
                 ) : null}
             </Container>
