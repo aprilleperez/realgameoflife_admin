@@ -33,7 +33,7 @@ export function PointToggler2(props) {
     return (
         <Row>
             <Col size="sm-1">
-                <TogglerButton className="fas fa-plus" updater={props.updater} />
+                <TogglerButton className="fas fa-plus" onClick={props.plus} />
             </Col>
 
             <Col size="sm-1">
@@ -41,7 +41,7 @@ export function PointToggler2(props) {
             </Col>
 
             <Col size="sm-1">
-                <TogglerButton className="fas fa-minus" updater={props.updater} />
+                <TogglerButton className="fas fa-minus" onClick={props.minus} />
             </Col>
         </Row>
     )

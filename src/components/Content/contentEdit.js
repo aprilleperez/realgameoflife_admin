@@ -30,6 +30,28 @@ class ContentEdit extends Component {
 
     updateAvatarTrait(avatar, trait, value) {
         console.log(avatar, trait, value)
+        const id = this.getGameIdUrl();
+        let allNewAvs = [...this.state.gameObj.avatars]
+        for (let i = 0; i < this.state.gameObj.avatars.length; i++) {
+            if (avatar.name === this.state.gameObj.avatars[i].name) {
+                console.log("HELLO FROM FOR LOOP")
+                let cur = this.state.gameObj.avatars[i];
+                let newAv = {
+                    ...cur,
+                    [trait]: value
+
+                };
+                // allNewAvs.push(newAv)
+                allNewAvs[i] = newAv;
+
+                const gameObj = this.state.gameObj
+                const forRealUpdateAvatar = new GameObj(gameObj.name, gameObj.traits, allNewAvs, gameObj.questions)
+                update(forRealUpdateAvatar, id)
+                this.setState({
+                    gameObj: forRealUpdateAvatar
+                })
+            }
+        }
     }
 
 
