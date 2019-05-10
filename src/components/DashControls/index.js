@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 
 
 export function DashControls(props) {
-    if (props.href) {
+    if (props.to) {
         return (
-            <Link to={props.href}><div className="thisControls text-center">
+            <Link to={props.to}><div className="thisControls text-center">
                 <i className={props.class}></i>
                 <p>{props.text}</ p>
             </div></Link>
