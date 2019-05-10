@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import { update } from '../utils/lifeAPIController';
+
 import { Container } from '../components/Grid';
 import { Header, SubHeader, AvatarHeader } from '../components/Header'
 import { QuestionDropdown } from '../components/Dropdown'
 import Content from '../components/Content'
 import AdminButton from '../components/Button'
-import { update } from '../utils/lifeAPIController';
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -23,7 +23,6 @@ class Edit extends Component {
     state = {
 
     }
-
 
     render() {
         return (
@@ -54,20 +53,3 @@ class Edit extends Component {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 export default Edit;
-
-
-
-
-// function Edit() {
-//     return (
-//         <Container fluid>
-//             <Header text="Edit Avatars for now" />
-//             <SubHeader text="Avatar Selections" />
-//             <Content />
-//             <AdminButton text="Next" buttonType="green" to="/create/questions" />
-//         </Container>
-//     )
-// }
-
-// export default Edit;
-

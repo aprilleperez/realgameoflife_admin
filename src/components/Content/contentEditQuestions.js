@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import { Container, Row, Col } from '../Grid'
 import Label from '../Label'
 import Dropdown from '../Dropdown'
@@ -15,6 +16,7 @@ class ContentEditQuestions extends Component {
     }
 
     onClick = () => {
+        // TODO: add in distinction of + or - button being clicked
         // if (className === "fa fa-plus") {
         //     this.setState({
         //         trait1Val: this.state.trait1Val + 1,
@@ -29,6 +31,7 @@ class ContentEditQuestions extends Component {
     render() {
         return (
             <Container>
+
                 <Row>
                     <Col size="sm-12">
                         <Label className="questionInput" text="Type question here" />
@@ -51,10 +54,6 @@ class ContentEditQuestions extends Component {
                         </Row>
 
                         <Row>
-                            {/* <Col size="sm-2">
-                                Affects:
-                            </Col> */}
-
                             <Col size="sm-5">
                                 <PointToggler text="Affects Trait" trait1Val={this.state.trait1Val} onClick={this.onClick} />
                             </Col>
