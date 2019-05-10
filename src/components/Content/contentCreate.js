@@ -3,20 +3,44 @@ import { Container, Row, Col } from '../Grid'
 import { ContentHeader } from '../Header'
 import Label from '../Label'
 import '../style.css';
+import AdminButton from '../Button';
+import * as constructor from "../../constructors"
+import * as api from "../../utils/lifeAPIController"
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+let texts = ["trait1", "trait2", "trait3", "trait4", "trait5"]
 
 class ContentCreate extends Component {
-    state = {
-        gameObj: []
+    constructor(props) {
+        super(props)
+
+        this.handleChange = this.handleChange.bind(this);
+        this.buildTraits = this.buildTraits.bind(this);
+
+        this.state = {
+        }
+
     }
 
-    captureInputs = event => {
+    handleChange(event) {
         const { name, value } = event.target;
+        console.log("HELLO FROM HANDLECHANGE", name, value)
+
         this.setState({
-            gameObj: []
+            [name]: value
         })
+
     }
+
+    buildTraits() {
+        let traits = Object.keys(this.state).map(key => this.state[key])
+        let templateObj = new constructor.GameObj("TO DO - Make Name For Game", traits, [], [])
+        console.log("TEMPLATE OBJECT", templateObj)
+        api.create(constructor.testDataObject)
+            .then(results => console.log(results))
+    }
+
 
     render() {
         return (
@@ -33,18 +57,17 @@ class ContentCreate extends Component {
                     </Col>
                 </Row>
 
-                {/* {this.state.traits.map(trait => ( */}
+
                 <Row>
                     <Col size="sm-6">
-                        {/* TODO: try to figure out mapping...not working for some reason? */}
-                        <Label className="thisCreateTraits" text="Trait 1" />
-                        <Label className="thisCreateTraits" text="Trait 2" />
-                        <Label className="thisCreateTraits" text="Trait 3" />
-                        <Label className="thisCreateTraits" text="Trait 4" />
-                        <Label className="thisCreateTraits" text="Trait 5" />
+                        {texts.map((text, i) => (
+                            <Label onChange={this.handleChange} className="thisCreateTraits" text={text} traitNumber={i} />
+                        ))}
                     </Col>
+
                 </Row>
-                {/* ))} */}
+
+                <button text="Next" buttonType="green" to="/create/avatars" onClick={this.buildTraits} />
             </Container>
         )
     }

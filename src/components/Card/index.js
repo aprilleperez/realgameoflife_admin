@@ -1,4 +1,6 @@
 import React from "react"
+import Label from "../Label"
+
 
 function Card(props) {
     return (
@@ -7,7 +9,7 @@ function Card(props) {
                 <img src="/images/avatar.PNG"></img>
             </div>
             <div className="card-body">
-                <span> {props.avatar} </span>
+                <Label className="thisCreateTraits" text={props.avatar} traitName={props.onChange} traitNumber="Name" />
             </div>
 
         </div>

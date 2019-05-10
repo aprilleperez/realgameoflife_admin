@@ -18,6 +18,7 @@ class ContentEdit extends Component {
 
     }
 
+    //Check the URL to grab the ID, s
     getGame() {
         findbyId(this.getGameIdUrl())
             .then((results) => {
@@ -28,13 +29,33 @@ class ContentEdit extends Component {
 
     }
 
+    updateAvatarName(avatar, name, value) {
+        console.log(avatar, name, value)
+        const id = this.getGameIdUrl();
+
+        let newAvName = [...this.state.gameObj.avatars]
+        for (let i = 0; i < this.state.gameObj.avatars.length; i++) {
+            if (avatar === this.state.gameObj.avatars[i])
+                console.log("HELLO FROM AV-NAME LOOP")
+            let cur = this.state.gameObj.avatars[i]
+            let newAv = {
+                ...cur,
+                [name]: value
+            }
+            newAvName[i] = newAv;
+            console.log("NEW AV", newAv)
+
+        }
+
+    }
+
     updateAvatarTrait(avatar, trait, value) {
         console.log(avatar, trait, value)
         const id = this.getGameIdUrl();
-        let allNewAvs = [...this.state.gameObj.avatars]
+        let allNewAvTraits = [...this.state.gameObj.avatars]
         for (let i = 0; i < this.state.gameObj.avatars.length; i++) {
-            if (avatar.name === this.state.gameObj.avatars[i].name) {
-                console.log("HELLO FROM FOR LOOP")
+            if (avatar === this.state.gameObj.avatars[i]) {
+                console.log("HELLO FROM TRAIT LOOP")
                 let cur = this.state.gameObj.avatars[i];
                 let newAv = {
                     ...cur,
@@ -42,16 +63,26 @@ class ContentEdit extends Component {
 
                 };
                 // allNewAvs.push(newAv)
-                allNewAvs[i] = newAv;
+                allNewAvTraits[i] = newAv;
 
                 const gameObj = this.state.gameObj
-                const forRealUpdateAvatar = new GameObj(gameObj.name, gameObj.traits, allNewAvs, gameObj.questions)
+                const forRealUpdateAvatar = new GameObj(gameObj.name, gameObj.traits, allNewAvTraits, gameObj.questions)
                 update(forRealUpdateAvatar, id)
                 this.setState({
                     gameObj: forRealUpdateAvatar
                 })
             }
         }
+    }
+
+    handleChange(event) {
+        const { name, value } = event.target;
+        console.log("HELLO FROM NAME HANDLECHANGE", name, value)
+
+        this.setState({
+            [name]: value
+        })
+
     }
 
 
@@ -69,15 +100,6 @@ class ContentEdit extends Component {
     }
 
 
-    updateAvatar() {
-        const id = this.getGameIdUrl();
-        let updatedAvatar = [new Avatar("Update Avatar Name", 99, 99, 99, 99, 99)]
-        const updateFromAvatarObj = new GameObj(testDataObject.name, testDataObject.traits, updatedAvatar, testDataObject.questions)
-
-        update(updateFromAvatarObj, id)
-
-    }
-
     render() {
         const gameObj = this.state.gameObj
         if (!gameObj) {
@@ -88,6 +110,9 @@ class ContentEdit extends Component {
                 <Avatars avatars={gameObj.avatars ? gameObj.avatars : []}
                     traitName={gameObj.traits ? gameObj.traits : []}
                     updater={(avatar, trait, value) => { this.updateAvatarTrait(avatar, trait, value) }}
+                    onChange={this.onChange}
+
+
                 />
             </Container>
         )
