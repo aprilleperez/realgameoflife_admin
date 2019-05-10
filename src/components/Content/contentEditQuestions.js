@@ -15,8 +15,10 @@ class ContentEditQuestions extends Component {
     }
 
     onClick = () => {
-        // if ( ) {
-
+        // if (className === "fa fa-plus") {
+        //     this.setState({
+        //         trait1Val: this.state.trait1Val + 1,
+        //     })
         // }
         this.setState({
             trait1Val: this.state.trait1Val + 1,
