@@ -7,10 +7,7 @@ import Form from 'react-bootstrap/Form';
 function Label(props) {
     return (
         <Container>
-            {/* <form>
-                <input className={props.className} type="text" name="trait" placeholder={props.text} />
-            </form> */}
-            {/* {this.props.traitNames.map(traitName => ( */}
+
             <Form>
 
                 <Form.Group controlId="formBasicEmail" className="thisForm">
@@ -20,7 +17,7 @@ function Label(props) {
                 </Form.Group>
 
             </Form>
-            {/* ))} */}
+
         </Container>
     )
 }
