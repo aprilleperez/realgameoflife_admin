@@ -5,14 +5,11 @@ import { Container } from '../components/Grid';
 import { Header, SubHeader } from '../components/Header'
 import Content from '../components/Content'
 import AdminButton from '../components/Button'
-import axios from 'axios';
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 class Admin extends Component {
-
-
-
 
     render() {
         return (
