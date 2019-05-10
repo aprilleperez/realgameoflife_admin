@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from '../Grid'
 import Label from '../Label'
 import Dropdown from '../Dropdown'
-import {PointToggler} from "../PointToggler"
+import { PointToggler } from "../PointToggler"
 import '../style.css';
 
 // import Dropdown from '../Dropdown'
@@ -13,9 +13,17 @@ import '../style.css';
 
 class ContentCreateQuestions extends Component {
     state = {
-        questions: [1, 2, 3, 4, 5]
+        questions: [1, 2, 3, 4, 5],
+        trait1Val: 10,
+        trait2Val: 15
     }
 
+    onClick = () => {
+        this.setState({
+            trait1Val: this.state.trait1Val + 1,
+            trait2Val: this.state.trait2Val + 1
+        })
+    }
 
 
     render() {
@@ -30,23 +38,29 @@ class ContentCreateQuestions extends Component {
                 <br></br>
 
                 {this.state.questions.map(question => (
-                    <Row>
-                        <Col size="sm-4">
-                            <Label text="Response 1" />
-                        </Col>
+                    <Container fluid>
+                        <Row>
+                            <Col size="sm-6">
+                                <Label text="Type a response here" />
+                            </Col>
 
-                        <Col size="sm-1">
-                            Affects:
-                        </Col>
+                            <Col size="sm-6">
+                                <Label text="Type an outcome to this response" />
+                            </Col>
+                        </Row>
 
-                        <Col size="sm-3">
-                            <PointToggler text="Trait" traits="10" />
-                        </Col>
+                        <Row>
+                            <Col size="sm-5">
+                                <PointToggler text="Affects Trait" trait1Val={this.state.trait1Val} onClick={this.onClick} />
+                            </Col>
 
-                        <Col size="sm-3">
-                            <PointToggler text="Trait" traits="10" />
-                        </Col>
-                    </Row>
+                            <Col size="sm-5">
+                                <PointToggler text="Affects Trait" trait2Val={this.state.trait2Val} onClick={this.onClick} />
+                            </Col>
+                        </Row>
+
+                        <hr></hr>
+                    </Container>
                 ))}
 
             </Container>
@@ -57,3 +71,23 @@ class ContentCreateQuestions extends Component {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 export default ContentCreateQuestions;
+
+
+
+{/* <Row>
+    <Col size="sm-4">
+        <Label text="Response 1" />
+    </Col>
+
+    <Col size="sm-1">
+        Affects:
+    </Col>
+
+    <Col size="sm-3">
+        <PointToggler text="Trait" trait1Val={this.state.trait1Val} onClick={this.onClick} />
+    </Col>
+
+    <Col size="sm-3">
+        <PointToggler text="Trait" trait2Val={this.state.trait2Val} onClick={this.onClick} />
+    </Col>
+</Row> */}

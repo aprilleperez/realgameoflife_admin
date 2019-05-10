@@ -32,29 +32,40 @@ class ContentEditQuestions extends Component {
                 <Row>
                     <Col size="sm-12">
                         <Label className="questionInput" text="Type question here" />
+                        <hr></hr>
                     </Col>
                 </Row>
 
                 <br></br>
 
                 {this.state.questions.map(question => (
-                    <Row>
-                        <Col size="sm-4">
-                            <Label text="Response 1" />
-                        </Col>
+                    <Container fluid>
+                        <Row>
+                            <Col size="sm-6">
+                                <Label text="Type a response here" />
+                            </Col>
 
-                        <Col size="sm-1">
-                            Affects:
-                        </Col>
+                            <Col size="sm-6">
+                                <Label text="Type an outcome to this response" />
+                            </Col>
+                        </Row>
 
-                        <Col size="sm-3">
-                            <PointToggler text="Trait" trait1Val={this.state.trait1Val} onClick={this.onClick} />
-                        </Col>
+                        <Row>
+                            {/* <Col size="sm-2">
+                                Affects:
+                            </Col> */}
 
-                        <Col size="sm-3">
-                            <PointToggler text="Trait" trait2Val={this.state.trait2Val} onClick={this.onClick} />
-                        </Col>
-                    </Row>
+                            <Col size="sm-5">
+                                <PointToggler text="Affects Trait" trait1Val={this.state.trait1Val} onClick={this.onClick} />
+                            </Col>
+
+                            <Col size="sm-5">
+                                <PointToggler text="Affects Trait" trait2Val={this.state.trait2Val} onClick={this.onClick} />
+                            </Col>
+                        </Row>
+
+                        <hr></hr>
+                    </Container>
                 ))}
 
             </Container>
