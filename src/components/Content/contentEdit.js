@@ -18,6 +18,7 @@ class ContentEdit extends Component {
 
     }
 
+    //Check the URL to grab the ID, s
     getGame() {
         findbyId(this.getGameIdUrl())
             .then((results) => {
@@ -74,6 +75,16 @@ class ContentEdit extends Component {
         }
     }
 
+    handleChange(event) {
+        const { name, value } = event.target;
+        console.log("HELLO FROM NAME HANDLECHANGE", name, value)
+
+        this.setState({
+            [name]: value
+        })
+
+    }
+
 
 
     //this parses the url and grabs the id from it. It grabs the index of the avatars string
@@ -99,7 +110,9 @@ class ContentEdit extends Component {
                 <Avatars avatars={gameObj.avatars ? gameObj.avatars : []}
                     traitName={gameObj.traits ? gameObj.traits : []}
                     updater={(avatar, trait, value) => { this.updateAvatarTrait(avatar, trait, value) }}
-                    nameUpdater={(avatar, name, value) => { this.updateAvatarName(avatar, name, value) }}
+                    onChange={this.onChange}
+
+
                 />
             </Container>
         )

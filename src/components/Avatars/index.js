@@ -13,11 +13,6 @@ function makeMePartial(avatar, traitName, val, fnOfAllThree) {
     }
 }
 
-function avatarNamePartial(avatar, name, val, fnOfAllThree) {
-    return () => {
-        fnOfAllThree(avatar, name, val)
-    }
-}
 /*
 <Label traitName={props.traitName.trait1} />
                             <Label traitName={props.traitName.trait2} />
@@ -43,7 +38,7 @@ function Avatars(props) {
                 return (
                     <Row>
                         <Col size="md-4">
-                            <Card avatar={avatar.name} />
+                            <Card avatar={avatar.name} onChange={props.onChange} />
                         </Col>
                         <Col size="md-4">
                             {keys.map(key =>

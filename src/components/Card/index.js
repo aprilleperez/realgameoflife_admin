@@ -9,7 +9,7 @@ function Card(props) {
                 <img src="/images/avatar.PNG"></img>
             </div>
             <div className="card-body">
-                <Label onChange={() => console.log("Hello from Label")} className="thisCreateTraits" text={props.avatar} traitName={props.avatar} traitNumber="Name" />
+                <Label className="thisCreateTraits" text={props.avatar} traitName={props.onChange} traitNumber="Name" />
             </div>
 
         </div>
