@@ -70,7 +70,7 @@ class Nav extends Component {
               <Link
                 onClick={this.toggleNav}
                 className={window.location.pathname === "/create" || "/create/avatars" || "/create/questions" ? "nav-link active" : "nav-link"}
-                to={`${process.env.PUBLIC_URL}/create`}
+                to={`/create`}
               >
                 Create
               </Link>

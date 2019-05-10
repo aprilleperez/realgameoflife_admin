@@ -16,6 +16,7 @@ class Create extends Component {
     render() {
         return (
             <Container fluid>
+
                 {window.location.pathname === `${process.env.PUBLIC_URL}/create` ? (
                     <Container fluid>
                         <Header text="Build your next amazing game!" />
@@ -27,7 +28,6 @@ class Create extends Component {
                 {window.location.pathname === `${process.env.PUBLIC_URL}/create/avatars` ? (
                     <Container fluid>
                         <Header text="Create Avatars" />
-                        {/* <SubHeader text="Avatar Tabs will go here" /> */}
                         <AvatarHeader />
                         <Content />
                         <AdminButton text="Next" buttonType="green" to={`${process.env.PUBLIC_URL}/create/questions`} />
@@ -36,12 +36,12 @@ class Create extends Component {
                 {window.location.pathname === `${process.env.PUBLIC_URL}/create/questions` ? (
                     <Container fluid>
                         <Header text="Create Questions" />
-                        {/* <SubHeader text="Question Dropdowns will go here" /> */}
                         <QuestionDropdown qtext="Question" text="Trait" />
                         <Content />
                         <AdminButton text="Done" buttonType="green" to="/" />
                     </Container>
                 ) : null}
+                
             </Container>
         )
     }

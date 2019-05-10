@@ -17,7 +17,8 @@ class Admin extends Component {
     render() {
         return (
             < Container fluid >
-            {console.log('public url:', process.env.PUBLIC_URL)}
+
+                {console.log('public url:', process.env.PUBLIC_URL)}
                 <Header text={`Welcome to the dashboard, ${this.props.globalState.organization}.`} />
                 <SubHeader text="Create, Edit, or Drop games for your organization!" />
                 <Content gameNameGameId={this.props.globalState.gameNameGameId} everyGame={this.props.globalState.allGames} />

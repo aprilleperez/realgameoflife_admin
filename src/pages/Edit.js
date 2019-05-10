@@ -28,6 +28,7 @@ class Edit extends Component {
     render() {
         return (
             <Container fluid>
+
                 {window.location.pathname.startsWith(`${process.env.PUBLIC_URL}/edit/avatars/`) ? (
                     <Container fluid>
                         <Header text="Edit Avatars" />
@@ -39,12 +40,12 @@ class Edit extends Component {
                 {window.location.pathname.startsWith(`${process.env.PUBLIC_URL}/edit/questions/`) ? (
                     <Container fluid>
                         <Header text="Edit Questions" />
-                        {/* <SubHeader text="Update Questions Selections" /> */}
                         <QuestionDropdown qtext="Question" text="Trait" />
                         <Content />
                         <AdminButton text="Done" buttonType="green" click={() => { }} to="/" />
                     </Container>
                 ) : null}
+                
             </Container>
         )
     }
