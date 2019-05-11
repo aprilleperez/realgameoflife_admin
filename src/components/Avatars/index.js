@@ -21,12 +21,12 @@ function Avatars(props) {
             <Header />
             <SubHeader />
             {/* Map over the avatars object */}
-            {props.avatars.map(avatar => {
+            {props.avatars.map((avatar, i) => {
 
                 return (
                     <Row>
                         <Col size="md-4">
-                            <Card avatar={avatar.name} handleChange={props.handleChange} inputValue={props.passedState.Name} />
+                            <Card avatar={avatar} avatarIndex={i} handleChange={props.handleChange} />
                         </Col>
                         <Col size="md-4">
                             {keys.map(key =>

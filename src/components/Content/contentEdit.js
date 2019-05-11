@@ -42,56 +42,33 @@ class ContentEdit extends Component {
     handleChange(event) {
         const { name, value } = event.target;
         console.log("HELLO FROM NAME HANDLECHANGE", name, value)
+        let allNewAvs = [...this.state.gameObj.avatars]
+        const cur = this.state.gameObj.avatars[name];
+        let newAv = {
+            ...cur,
+            name: value
 
+        };
+        allNewAvs[name] = newAv;
+        const newGameObj = {
+            ...this.state.gameObj,
+            avatars: allNewAvs
+        }
         this.setState({
-            [name]: value
+            gameObj: newGameObj
         })
 
     }
 
-
-
-
     updateAvatarName() {
-        // console.log(avatar, name, value)
-        // const id = this.getGameIdUrl();
 
-        const id = "5cd5f0c1f6e7250017cffcdb"
-
-        let avatar = {
-            "name": "Steve Rogers",
-            "trait1": 10,
-            "trait2": 15,
-            "trait3": 6,
-            "trait4": 9,
-            "trait5": 18
-        }
-
-        let name = "Steve Rogers"
-
-        let value = "Apple Jack"
-
-        let newAvName = [...this.state.gameObj.avatars]
-        for (let i = 0; i < this.state.gameObj.avatars.length; i++) {
-            if (avatar === this.state.gameObj.avatars[i])
-                console.log("HELLO FROM AV-NAME LOOP")
-            let cur = this.state.gameObj.avatars[i]
-            let newAv = {
-                ...cur,
-                [name]: value
-            }
-            newAvName[i] = newAv;
-            console.log("NEW AV", newAv)
-            // const gameObj = this.state.gameObj
-            // const forRealUpdateAvatar = new GameObj(gameObj.name, gameObj.traits, newAvName, gameObj.questions)
-            // update(forRealUpdateAvatar, id)
-            // this.setState({
-            //     gameObj: forRealUpdateAvatar
-            // })
-
-        }
-
+        const id = this.getGameIdUrl();
+        const gameObj = this.state.gameObj
+        //const forRealUpdateAvatar = new GameObj(gameObj.name, gameObj.traits, newAvName, gameObj.questions)
+        update(gameObj, id)
     }
+
+
 
     // helper method so we can grab the value of the trait that's being edited on each Avatar.
     // Grab the game ID again so we know which game we're working on. Create a new duplicate array,
