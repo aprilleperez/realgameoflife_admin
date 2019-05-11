@@ -38,13 +38,12 @@ class Edit extends Component {
                 ) : null}
                 {window.location.pathname.startsWith(`${process.env.PUBLIC_URL}/edit/questions/`) ? (
                     <Container fluid>
-                        <Header text="Edit Questions" />
-                        <QuestionDropdown qtext="Question" text="Trait" />
+
                         <Content />
-                        <AdminButton text="Done" buttonType="green" click={() => { }} to="/" />
+
                     </Container>
                 ) : null}
-                
+
             </Container>
         )
     }
