@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import "./style.css";
+import "../style.css";
 
 
 class Nav extends Component {
@@ -38,7 +38,7 @@ class Nav extends Component {
 
   render() {
     return (
-      <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light mb-2">
+      <nav className="appNav navbar sticky-top navbar-expand-lg navbar-light mb-2">
         <Link className="navbar-brand" to="/">
           Real Game of Life
         </Link>

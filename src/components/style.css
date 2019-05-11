@@ -1,22 +1,51 @@
-.thisHeader {
+/* ------------------------------GLOBAL------------------------------ */
+body {
+  background-color: #AFD9EA;
+  font-family: 'Muli', sans-serif;
+}
+
+/* ------------------------------Nav Component------------------------------ */
+.appNav {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* ------------------------------Header Component------------------------------ */
+.appHeader {
     margin-top: 24px;
 }
 
-.thisSubHeader {
+.appSubHeader {
     margin-top: 24px;
+    /* color: #F6E1A1;
+    font-weight: 700; */
 }
 
+/* ------------------------------Content Component------------------------------ */
 .thisContent {
     margin-top: 16px;
     margin-left: 2%;
     margin-right: 2%;
     padding: 24px;
-    background-color: lightgray;
+    /* background-color: rgba(241, 197, 176, 0.75); */
+    /* border-radius: 10px; */
+    /* border-color: #F1C5B0;
+    border-radius: 10px;
+    border-style: solid; */
 }
 
+/* ------------------------------DashControls Component------------------------------ */
 .thisControls {
     width: 50px;
     float: left;
+}
+
+.appControls {
+  color: #F0A6BA;
+}
+
+.controlsText {
+  font-weight: 700;
 }
 
 /* .traitsColumn {
@@ -43,6 +72,7 @@
   background-color: white;
 } */
 
+/* ------------------------------??? Component------------------------------ */
 .thisForm {
   padding: 5px;
   border-style: solid;
@@ -56,7 +86,7 @@
 }
 
 
-/* BUTTON */
+/* ------------------------------BUTTON------------------------------ */
 .thisAdminButton {
   display: flex;
   justify-content: center;
@@ -119,7 +149,7 @@
 
 
 
-  /* Dropdown Hover */
+  /* ------------------------------Dropdown Hover------------------------------ */
   .dropbtn {
     background-color: #4CAF50;
     color: white;
