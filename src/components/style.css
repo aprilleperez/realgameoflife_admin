@@ -42,17 +42,18 @@ body {
 
 .appControls {
   color: #F0A6BA;
+  cursor: pointer;
+}
+
+.appControls:hover {
+  color: #F1C5B0;
 }
 
 .controlsText {
   font-weight: 700;
 }
 
-/* .traitsColumn {
-  display: flex;
-  justify-content: center;
-  background-color: red;
-} */
+
 
 /* .thisCreateTraits {
   margin: 5px;
@@ -87,26 +88,35 @@ body {
 
 
 /* ------------------------------BUTTON------------------------------ */
-.thisAdminButton {
+.appAdminButton {
   display: flex;
   justify-content: center;
 }
 
-.thisButton {
+.appButton {
   width: 392px;
   height: 75px;
   margin: 32px;
   padding: 8px 16px;
+  background-color: #F6E1A1;
+  border: none;
+  color:white;
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.appButton:hover {
+  opacity: .8;
 }
 
 .green {
     background-color: #4CAF50;
-    border: none;
-    color: white;
+  
     /* padding: 15px 25px; */
-    text-align: center;
-    font-size: 24px;
-    cursor: pointer;
+
+  
     display: inline-block
   }
   

@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom';
 
 function AdminButton(props) {
 
-    let className = "thisButton " + props.buttonType;
+    // let className = "thisButton " + props.buttonType;
 
     return (
-        <div className="thisAdminButton">
-            <Link to={props.to}><button className={className}>{props.text}</button></Link>
+        <div className="appAdminButton">
+            <Link to={props.to}><button className="appButton">{props.text}</button></Link>
+            {/* className={className} */}
         </div>
 
     )

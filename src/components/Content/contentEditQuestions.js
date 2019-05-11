@@ -247,7 +247,6 @@ class ContentEditQuestions extends Component {
         const allProps = { qProps: q, t1Props: t1, t2Props: t2 }
         return (
             <Container>
-                <Header text="Edit Questions" />
                 <QuestionDropdown {...allProps} />
                 <Row>
                     <Col size="sm-12">
