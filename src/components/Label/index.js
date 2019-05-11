@@ -14,7 +14,7 @@ function Label(props) {
 
                     <Form.Control className={props.className}
                     // changed value from props.text to props.traitName @12:40 5/11/19
-                        type="text" name={props.traitNumber} placeholder={props.text} value={props.traitName} onChange={props.onChange} />
+                        type="text" name={props.traitNumber} placeholder={props.text} value={props.traitName} onChange={props.onChange} disabled={props.disabled} />
                 </Form.Group>
 
             </Form>
