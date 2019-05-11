@@ -9,7 +9,7 @@ export function DashControls(props) {
         return (
             <Link to={props.to}><div className="thisControls text-center">
                 <i className={props.class}></i>
-                <p>{props.text}</ p>
+                <p className="appControls controlsText">{props.text}</ p>
             </div></Link>
         )
     }
@@ -17,7 +17,7 @@ export function DashControls(props) {
         return (
             <div className="thisControls text-center">
                 <i className={props.class} onClick={props.click}></i>
-                <p>{props.text}</ p>
+                <p className="appControls controlsText">{props.text}</ p>
             </div>
         )
     }

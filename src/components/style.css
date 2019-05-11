@@ -1,29 +1,59 @@
-.thisHeader {
+/* ------------------------------GLOBAL------------------------------ */
+body {
+  background-color: #AFD9EA;
+  font-family: 'Muli', sans-serif;
+}
+
+/* ------------------------------Nav Component------------------------------ */
+.appNav {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* ------------------------------Header Component------------------------------ */
+.appHeader {
     margin-top: 24px;
 }
 
-.thisSubHeader {
+.appSubHeader {
     margin-top: 24px;
+    /* color: #F6E1A1;
+    font-weight: 700; */
 }
 
+/* ------------------------------Content Component------------------------------ */
 .thisContent {
     margin-top: 16px;
     margin-left: 2%;
     margin-right: 2%;
     padding: 24px;
-    background-color: lightgray;
+    /* background-color: rgba(241, 197, 176, 0.75); */
+    /* border-radius: 10px; */
+    /* border-color: #F1C5B0;
+    border-radius: 10px;
+    border-style: solid; */
 }
 
+/* ------------------------------DashControls Component------------------------------ */
 .thisControls {
     width: 50px;
     float: left;
 }
 
-/* .traitsColumn {
-  display: flex;
-  justify-content: center;
-  background-color: red;
-} */
+.appControls {
+  color: #F0A6BA;
+  cursor: pointer;
+}
+
+.appControls:hover {
+  color: #F1C5B0;
+}
+
+.controlsText {
+  font-weight: 700;
+}
+
+
 
 /* .thisCreateTraits {
   margin: 5px;
@@ -43,6 +73,7 @@
   background-color: white;
 } */
 
+/* ------------------------------??? Component------------------------------ */
 .thisForm {
   padding: 5px;
   border-style: solid;
@@ -56,27 +87,36 @@
 }
 
 
-/* BUTTON */
-.thisAdminButton {
+/* ------------------------------BUTTON------------------------------ */
+.appAdminButton {
   display: flex;
   justify-content: center;
 }
 
-.thisButton {
+.appButton {
   width: 392px;
   height: 75px;
   margin: 32px;
   padding: 8px 16px;
+  background-color: #F6E1A1;
+  border: none;
+  color:white;
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.appButton:hover {
+  opacity: .8;
 }
 
 .green {
     background-color: #4CAF50;
-    border: none;
-    color: white;
+  
     /* padding: 15px 25px; */
-    text-align: center;
-    font-size: 24px;
-    cursor: pointer;
+
+  
     display: inline-block
   }
   
@@ -119,7 +159,7 @@
 
 
 
-  /* Dropdown Hover */
+  /* ------------------------------Dropdown Hover------------------------------ */
   .dropbtn {
     background-color: #4CAF50;
     color: white;

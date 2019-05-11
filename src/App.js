@@ -6,6 +6,7 @@ import Create from "./pages/Create";
 import Edit from "./pages/Edit"
 import axios from "axios"
 import './App.css';
+import './components/style.css'
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 

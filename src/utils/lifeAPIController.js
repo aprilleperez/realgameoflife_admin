@@ -16,7 +16,7 @@ export function remove(id) {
     axios
         .delete(`https://real-life-api.herokuapp.com/api/games/${id}`)
         .then(() => {
-            window.location.pathname = "/"
+            window.location.pathname = process.env.PUBLIC_URL //"/"
         })
 }
 
