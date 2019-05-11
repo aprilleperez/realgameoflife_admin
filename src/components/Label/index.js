@@ -13,7 +13,8 @@ function Label(props) {
                 <Form.Group controlId="formBasicEmail" className="thisForm">
 
                     <Form.Control className={props.className}
-                        type="text" name="trait" placeholder={props.text} value={props.traitName} />
+                    // changed value from props.text to props.traitName @12:40 5/11/19
+                        type="text" name={props.traitNumber} placeholder={props.text} value={props.traitName} onChange={props.onChange} disabled={props.disabled} />
                 </Form.Group>
 
             </Form>
@@ -27,10 +28,3 @@ export default Label;
 
 
 
-
-{/* <form>
-                <div className="form-group">
-                    <label for="traits">Trait 1</label>
-
-                </div>
-            </form> */}

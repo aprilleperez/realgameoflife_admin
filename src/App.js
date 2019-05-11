@@ -15,7 +15,6 @@ class App extends Component {
     gameNameGameId: [],
     currentGameId: undefined,
     allGames: []
-    // TODO: figure out user state here
   }
 
   componentDidMount() {
@@ -23,7 +22,6 @@ class App extends Component {
   }
 
   getAllGames() {
-
     axios.get("https://real-life-api.herokuapp.com/api/games")
       .then((results) => {
         console.log("RESULTS.DATA", results.data)
@@ -48,15 +46,16 @@ class App extends Component {
         })
       })
   }
+
   render() {
     return (
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router basename = {process.env.PUBLIC_URL}>
         <div>
           <Nav />
           <Switch>
-            <Route exact path="/" render={(props) => <Admin {...props} globalState={this.state} />} />
-            <Route prefix path="/create" render={(props) => <Create {...props} globalState={this.state} />} />
-            <Route prefix path="/edit" render={(props) => <Edit {...props} globalState={this.state} />} />
+            <Route exact path= {`/`} render={(props) => <Admin {...props} globalState={this.state} />} />
+            <Route prefix path={`/create`}render={(props) => <Create {...props} globalState={this.state} />} />
+            <Route prefix path={`/edit`} render={(props) => <Edit {...props} globalState={this.state} />} />
             {/* <Route component={NoMatch} /> */}
           </Switch>
         </div>
@@ -68,5 +67,3 @@ class App extends Component {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 export default App;
-
-// basename="/realgameoflife_admin/"

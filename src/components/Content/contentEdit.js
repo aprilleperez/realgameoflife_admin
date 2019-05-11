@@ -1,23 +1,34 @@
 import React, { Component } from 'react';
+import { GameObj } from "../../constructors"
+import axios from 'axios';
+import { update, findbyId } from '../../utils/lifeAPIController';
+
 import { Container } from '../Grid'
 import '../style.css';
 import Avatars from '../Avatars';
-import { Avatar, testDataObject, GameObj } from "../../constructors"
-import axios from 'axios';
-import { update, findbyId } from '../../utils/lifeAPIController';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 class ContentEdit extends Component {
-    state = {
-        gameObj: {}
+    constructor(props) {
+        super(props)
+
+        this.handleChange = this.handleChange.bind(this);
+        this.updateAvatarName = this.updateAvatarName.bind(this);
+
+
+        this.state = {
+            gameObj: {}
+        }
     }
+
     // Run get game once the component loads
     componentDidMount() {
         this.getGame()
-
     }
 
+    //Check the URL to grab the ID, then pass that id up to the findbyId to get it from the database.
+    //Save that entire object in state
     getGame() {
         findbyId(this.getGameIdUrl())
             .then((results) => {
@@ -25,27 +36,68 @@ class ContentEdit extends Component {
                     gameObj: results.data
                 })
             })
-
     }
 
-    updateAvatarTrait(avatar, trait, value) {
-        console.log(avatar, trait, value)
-        const id = this.getGameIdUrl();
+    // This is so we can grab that value of an updated filed in real time. 
+    handleChange(event) {
+        const { name, value } = event.target;
+        console.log("HELLO FROM NAME HANDLECHANGE", name, value)
         let allNewAvs = [...this.state.gameObj.avatars]
+        const cur = this.state.gameObj.avatars[name];
+        let newAv = {
+            ...cur,
+            name: value
+
+        };
+        allNewAvs[name] = newAv;
+        const newGameObj = {
+            ...this.state.gameObj,
+            avatars: allNewAvs
+        }
+        this.setState({
+            gameObj: newGameObj
+        })
+    }
+
+    updateAvatarName() {
+
+        const id = this.getGameIdUrl();
+        const gameObj = this.state.gameObj
+        //const forRealUpdateAvatar = new GameObj(gameObj.name, gameObj.traits, newAvName, gameObj.questions)
+        update(gameObj, id)
+    }
+
+
+
+    // helper method so we can grab the value of the trait that's being edited on each Avatar.
+    // Grab the game ID again so we know which game we're working on. Create a new duplicate array,
+    //called allNewAvTraits. Loop over the original gameObj and compare the current state of Avatr
+    // to each avatar in the original gameObj. When a match is found, set that instance to the variable
+    // cur to represent the current avatar. Spread all the traits in the object, but update the trait
+    // that's been edited by the user. Do this for each avatar trait that's been edited.
+    updateAvatarTrait(avatar, trait, value) {
+        console.log("UPDATE AVATAR TRAIT:", "AVATAR:", avatar, "TRAIT:", trait, "VALUE:", value)
+        const id = this.getGameIdUrl();
+        let allNewAvTraits = [...this.state.gameObj.avatars]
         for (let i = 0; i < this.state.gameObj.avatars.length; i++) {
-            if (avatar.name === this.state.gameObj.avatars[i].name) {
-                console.log("HELLO FROM FOR LOOP")
+            if (avatar === this.state.gameObj.avatars[i]) {
+                console.log("HELLO FROM TRAIT LOOP")
                 let cur = this.state.gameObj.avatars[i];
                 let newAv = {
                     ...cur,
                     [trait]: value
-
                 };
-                // allNewAvs.push(newAv)
-                allNewAvs[i] = newAv;
+                // Now that we have both the current avatar and the traits that have been changed,
+                //set our duplicate array at each trait index to be the newly created trait.
+                // set gameObj to this.state.gameObj so we only have to write all that once. Then make a 
+                // new instance of the GameObj class, passing the constructor the name, traits, newly updated 
+                // avatar traits, and questions. 
 
+                // Send all of that up to the database using our update function, passing it the object we're updating
+                //and its id. Then, update the gameObj in state to be our new object!
+                allNewAvTraits[i] = newAv;
                 const gameObj = this.state.gameObj
-                const forRealUpdateAvatar = new GameObj(gameObj.name, gameObj.traits, allNewAvs, gameObj.questions)
+                const forRealUpdateAvatar = new GameObj(gameObj.name, gameObj.traits, allNewAvTraits, gameObj.questions)
                 update(forRealUpdateAvatar, id)
                 this.setState({
                     gameObj: forRealUpdateAvatar
@@ -53,6 +105,8 @@ class ContentEdit extends Component {
             }
         }
     }
+
+
 
 
 
@@ -68,15 +122,9 @@ class ContentEdit extends Component {
         return id
     }
 
-
-    updateAvatar() {
-        const id = this.getGameIdUrl();
-        let updatedAvatar = [new Avatar("Update Avatar Name", 99, 99, 99, 99, 99)]
-        const updateFromAvatarObj = new GameObj(testDataObject.name, testDataObject.traits, updatedAvatar, testDataObject.questions)
-
-        update(updateFromAvatarObj, id)
-
-    }
+    // If gameObj isn't empty (which it will be on first render, in which case just return an empty div),
+    // render the Avatars component, passing it the gameObj that exists in state (unless it's empty, in which case)
+    // just pass an empty array). 
 
     render() {
         const gameObj = this.state.gameObj
@@ -85,10 +133,16 @@ class ContentEdit extends Component {
         }
         return (
             <Container>
+
                 <Avatars avatars={gameObj.avatars ? gameObj.avatars : []}
                     traitName={gameObj.traits ? gameObj.traits : []}
                     updater={(avatar, trait, value) => { this.updateAvatarTrait(avatar, trait, value) }}
+                    handleChange={this.handleChange}
+                    passedState={this.state}
                 />
+                <button className="btn btn-danger" text="Next" buttonType="green" to="/create/avatars" onClick={this.updateAvatarName} />
+
+
             </Container>
         )
     }

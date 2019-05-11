@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import { update } from '../utils/lifeAPIController';
+
 import { Container } from '../components/Grid';
 import { Header, SubHeader, AvatarHeader } from '../components/Header'
 import { QuestionDropdown } from '../components/Dropdown'
 import Content from '../components/Content'
 import AdminButton from '../components/Button'
-import { update } from '../utils/lifeAPIController';
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -24,11 +24,11 @@ class Edit extends Component {
 
     }
 
-
     render() {
         return (
             <Container fluid>
-                {window.location.pathname.startsWith("/edit/avatars/") ? (
+
+                {window.location.pathname.startsWith(`${process.env.PUBLIC_URL}/edit/avatars/`) ? (
                     <Container fluid>
                         <Header text="Edit Avatars" />
                         <AvatarHeader text="Update Avatar Selections" />
@@ -36,15 +36,14 @@ class Edit extends Component {
                         <AdminButton text="Done" buttonType="green" to="/" />
                     </Container>
                 ) : null}
-                {window.location.pathname.startsWith("/edit/questions/") ? (
+                {window.location.pathname.startsWith(`${process.env.PUBLIC_URL}/edit/questions/`) ? (
                     <Container fluid>
-                        <Header text="Edit Questions" />
-                        {/* <SubHeader text="Update Questions Selections" /> */}
-                        <QuestionDropdown qtext="Question" text="Trait" />
+
                         <Content />
-                        <AdminButton text="Done" buttonType="green" click={() => { }} to="/" />
+
                     </Container>
                 ) : null}
+
             </Container>
         )
     }
@@ -53,20 +52,3 @@ class Edit extends Component {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 export default Edit;
-
-
-
-
-// function Edit() {
-//     return (
-//         <Container fluid>
-//             <Header text="Edit Avatars for now" />
-//             <SubHeader text="Avatar Selections" />
-//             <Content />
-//             <AdminButton text="Next" buttonType="green" to="/create/questions" />
-//         </Container>
-//     )
-// }
-
-// export default Edit;
-

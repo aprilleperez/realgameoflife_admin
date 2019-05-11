@@ -18,22 +18,22 @@ class Content extends Component {
         console.log("WINDOW LOCATION PATHNAME", window.location.pathname);
         return (
             <div className="thisContent fluid">
-                {window.location.pathname === "/" ? (
+                {window.location.pathname === `${process.env.PUBLIC_URL}/` ? (
                     <ContentAdmin games={this.props.gameNameGameId} />
                 ) : null}
-                {window.location.pathname === "/create" ? (
+                {window.location.pathname === `${process.env.PUBLIC_URL}/create` ? (
                     <ContentCreate />
                 ) : null}
-                {window.location.pathname === "/create/avatars" ? (
+                {window.location.pathname === `${process.env.PUBLIC_URL}/create/avatars` ? (
                     <ContentCreateAvatars />
                 ) : null}
-                {window.location.pathname === "/create/questions" ? (
+                {window.location.pathname === `${process.env.PUBLIC_URL}/create/questions` ? (
                     <ContentCreateQuestions />
                 ) : null}
-                {window.location.pathname.startsWith("/edit/avatars/") ? (
+                {window.location.pathname.startsWith(`${process.env.PUBLIC_URL}/edit/avatars/`) ? (
                     <ContentEdit globalState={this.props.globalState} />
                 ) : null}
-                {window.location.pathname.startsWith("/edit/questions/") ? (
+                {window.location.pathname.startsWith(`${process.env.PUBLIC_URL}/edit/questions/`) ? (
                     <ContentEditQuestions />
                 ) : null}
             </div>
