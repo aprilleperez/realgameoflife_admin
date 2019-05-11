@@ -30,7 +30,7 @@ export function QuestionDropdown(props) {
     <Container fluid>
       <Row>
         <Col size="sm-1">
-          Edit:
+          Edit Question:
       </Col>
 
         <Col size="sm-3">
@@ -38,7 +38,7 @@ export function QuestionDropdown(props) {
         </Col>
 
         <Col size="sm-2">
-          Weighted By:
+          Weighted By Avatar's:
       </Col>
 
         <Col size="sm-2">

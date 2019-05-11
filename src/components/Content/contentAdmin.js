@@ -15,18 +15,22 @@ class ContentAdmin extends Component {
             <Container>
 
                 {this.props.games.map(game => (
-                    <Row>
-                        <Col size="sm-6">
-                            <ContentHeader text={game.gameName} />
-                        </Col>
+                    <Container>
+                        <Row>
+                            <Col size="sm-6">
+                                <ContentHeader text={game.gameName} />
+                            </Col>
 
-                        <Col size="sm-6">
-                            <DashControl class="fas fa-play" text="Play" to="/" /> {/*TODO: figure out route to play this game */}
-                            <DashControl class="fas fa-user" text="Edit" to={`/edit/avatars/${game.gameId}`} />
-                            <DashControl class="fas fa-poll-h" text="Edit" to={`/edit/questions/${game.gameId}`} />
-                            <DashControl class="fas fa-trash" text="Drop" click={() => { remove(game.gameId) }} />
-                        </Col>
-                    </Row>
+                            <Col size="sm-6">
+                                <DashControl class="appControls fas fa-play" text="Play" to="/" /> {/*TODO: figure out route to play this game */}
+                                <DashControl class="appControls fas fa-user" text="Edit" to={`/edit/avatars/${game.gameId}`} />
+                                <DashControl class="appControls fas fa-poll-h" text="Edit" to={`/edit/questions/${game.gameId}`} />
+                                <DashControl class="appControls fas fa-trash" text="Drop" click={() => { remove(game.gameId) }} />
+                            </Col>
+                            <hr></hr>
+                        </Row>
+                        <hr></hr>
+                    </Container>
                 ))}
 
             </Container>

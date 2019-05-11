@@ -6,7 +6,7 @@ import { Container, Row, Col } from '../Grid'
 export function Header(props) {
     return (
         <div className="text-center">
-            <h1 className="thisHeader">{props.text}</h1>
+            <h1 className="appHeader">{props.text}</h1>
         </div>
     )
 }
@@ -14,7 +14,7 @@ export function Header(props) {
 export function SubHeader(props) {
     return (
         <div className="text-center">
-            <h5 className="thisSubHeader">{props.text}</h5>
+            <h5 className="appSubHeader">{props.text}</h5>
         </div>
     )
 }
@@ -22,7 +22,7 @@ export function SubHeader(props) {
 export function ContentHeader(props) {
     return (
         <div>
-            <h3 className="thisContentHeader">{props.text}</h3>
+            <h3 className="appContentHeader">{props.text}</h3>
         </div>
     )
 }
