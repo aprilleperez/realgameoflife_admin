@@ -14,6 +14,7 @@ class ContentEdit extends Component {
         super(props)
 
         this.handleChange = this.handleChange.bind(this);
+        this.updateAvatarName = this.updateAvatarName.bind(this);
 
 
         this.state = {
@@ -41,30 +42,32 @@ class ContentEdit extends Component {
     handleChange(event) {
         const { name, value } = event.target;
         console.log("HELLO FROM NAME HANDLECHANGE", name, value)
+        let allNewAvs = [...this.state.gameObj.avatars]
+        const cur = this.state.gameObj.avatars[name];
+        let newAv = {
+            ...cur,
+            name: value
 
+        };
+        allNewAvs[name] = newAv;
+        const newGameObj = {
+            ...this.state.gameObj,
+            avatars: allNewAvs
+        }
         this.setState({
-            [name]: value
+            gameObj: newGameObj
         })
     }
 
-    //helper method 
-    updateAvatarName(avatar, name, value) {
-        console.log(avatar, name, value)
-        const id = this.getGameIdUrl();
+    updateAvatarName() {
 
-        let newAvName = [...this.state.gameObj.avatars]
-        for (let i = 0; i < this.state.gameObj.avatars.length; i++) {
-            if (avatar === this.state.gameObj.avatars[i])
-                console.log("HELLO FROM AV-NAME LOOP")
-            let cur = this.state.gameObj.avatars[i]
-            let newAv = {
-                ...cur,
-                [name]: value
-            }
-            newAvName[i] = newAv;
-            console.log("NEW AV", newAv)
-        }
+        const id = this.getGameIdUrl();
+        const gameObj = this.state.gameObj
+        //const forRealUpdateAvatar = new GameObj(gameObj.name, gameObj.traits, newAvName, gameObj.questions)
+        update(gameObj, id)
     }
+
+
 
     // helper method so we can grab the value of the trait that's being edited on each Avatar.
     // Grab the game ID again so we know which game we're working on. Create a new duplicate array,
@@ -73,7 +76,7 @@ class ContentEdit extends Component {
     // cur to represent the current avatar. Spread all the traits in the object, but update the trait
     // that's been edited by the user. Do this for each avatar trait that's been edited.
     updateAvatarTrait(avatar, trait, value) {
-        console.log("UPDATE AVATAR TRAIT", avatar, trait, value)
+        console.log("UPDATE AVATAR TRAIT:", "AVATAR:", avatar, "TRAIT:", trait, "VALUE:", value)
         const id = this.getGameIdUrl();
         let allNewAvTraits = [...this.state.gameObj.avatars]
         for (let i = 0; i < this.state.gameObj.avatars.length; i++) {
@@ -137,7 +140,9 @@ class ContentEdit extends Component {
                     handleChange={this.handleChange}
                     passedState={this.state}
                 />
-                
+                <button className="btn btn-danger" text="Next" buttonType="green" to="/create/avatars" onClick={this.updateAvatarName} />
+
+
             </Container>
         )
     }
