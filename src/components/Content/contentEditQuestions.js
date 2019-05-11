@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import { Container, Row, Col } from '../Grid'
 import Label from '../Label'
 import Dropdown, { QuestionDropdown } from '../Dropdown'
@@ -254,10 +255,6 @@ class ContentEditQuestions extends Component {
                         </Row>
 
                         <Row>
-                            {/* <Col size="sm-2">
-                                Affects:
-                            </Col> */}
-
                             <Col size="sm-5">
                                 <PointToggler text="Affects Trait" options={Object.values(this.state.gameObj.traits)} value={response.outcomes[0].amount} trait={response.outcomes[0].trait} onChange={
                                     (value) => this.handleOutcomeTrait(i, 0, value)} plus={partial(this.handleTraitAmount, i, 0, response.outcomes[0].amount + 1)} minus={partial(this.handleTraitAmount, i, 0, response.outcomes[0].amount - 1)} />

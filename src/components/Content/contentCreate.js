@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import * as constructor from "../../constructors"
+import * as api from "../../utils/lifeAPIController"
+
 import { Container, Row, Col } from '../Grid'
 import { ContentHeader } from '../Header'
 import Label from '../Label'
 import '../style.css';
 import AdminButton from '../Button';
-import * as constructor from "../../constructors"
-import * as api from "../../utils/lifeAPIController"
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Since all of our traits are always in this order, creating an array for easy mapping down in render.
@@ -24,7 +24,6 @@ class ContentCreate extends Component {
 
         this.state = {
         }
-
     }
 
     // Take in the changed value and set state to be that
@@ -35,7 +34,6 @@ class ContentCreate extends Component {
         this.setState({
             [name]: value
         })
-
     }
 
     // This method builds our new object using our imported constructors and sends it to the database.
@@ -47,10 +45,10 @@ class ContentCreate extends Component {
             .then(results => console.log(results))
     }
 
-
     render() {
         return (
             <Container>
+
                 <Row>
                     <Col size="sm-12">
                         <ContentHeader text="Instructions" />
@@ -63,7 +61,6 @@ class ContentCreate extends Component {
                     </Col>
                 </Row>
 
-
                 <Row>
                     <Col size="sm-6">
                         {texts.map((text, i) => (
@@ -74,6 +71,7 @@ class ContentCreate extends Component {
                 </Row>
 
                 <button text="Next" buttonType="green" to="/create/avatars" onClick={this.buildTraits} />
+
             </Container>
         )
     }

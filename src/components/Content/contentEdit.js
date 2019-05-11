@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Container } from '../Grid'
-import '../style.css';
-import Avatars from '../Avatars';
 import { GameObj } from "../../constructors"
 import axios from 'axios';
 import { update, findbyId } from '../../utils/lifeAPIController';
+
+import { Container } from '../Grid'
+import '../style.css';
+import Avatars from '../Avatars';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -20,10 +21,10 @@ class ContentEdit extends Component {
             gameObj: {}
         }
     }
+
     // Run get game once the component loads
     componentDidMount() {
         this.getGame()
-
     }
 
     //Check the URL to grab the ID, then pass that id up to the findbyId to get it from the database.
@@ -35,7 +36,6 @@ class ContentEdit extends Component {
                     gameObj: results.data
                 })
             })
-
     }
 
     // This is so we can grab that value of an updated filed in real time. 
@@ -57,7 +57,6 @@ class ContentEdit extends Component {
         this.setState({
             gameObj: newGameObj
         })
-
     }
 
     updateAvatarName() {
@@ -87,7 +86,6 @@ class ContentEdit extends Component {
                 let newAv = {
                     ...cur,
                     [trait]: value
-
                 };
                 // Now that we have both the current avatar and the traits that have been changed,
                 //set our duplicate array at each trait index to be the newly created trait.
@@ -135,6 +133,7 @@ class ContentEdit extends Component {
         }
         return (
             <Container>
+
                 <Avatars avatars={gameObj.avatars ? gameObj.avatars : []}
                     traitName={gameObj.traits ? gameObj.traits : []}
                     updater={(avatar, trait, value) => { this.updateAvatarTrait(avatar, trait, value) }}

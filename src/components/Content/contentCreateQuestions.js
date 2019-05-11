@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
+
 import { Container, Row, Col } from '../Grid'
 import Label from '../Label'
 import Dropdown from '../Dropdown'
 import { PointToggler } from "../PointToggler"
 import '../style.css';
-
-// import Dropdown from '../Dropdown'
-// import { ContentHeader } from '../Header'
-// import { Link } from 'react-router-dom';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -29,6 +26,7 @@ class ContentCreateQuestions extends Component {
     render() {
         return (
             <Container>
+
                 <Row>
                     <Col size="sm-12">
                         <Label className="questionInput" text="Type question here" />
@@ -71,23 +69,3 @@ class ContentCreateQuestions extends Component {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 export default ContentCreateQuestions;
-
-
-
-{/* <Row>
-    <Col size="sm-4">
-        <Label text="Response 1" />
-    </Col>
-
-    <Col size="sm-1">
-        Affects:
-    </Col>
-
-    <Col size="sm-3">
-        <PointToggler text="Trait" trait1Val={this.state.trait1Val} onClick={this.onClick} />
-    </Col>
-
-    <Col size="sm-3">
-        <PointToggler text="Trait" trait2Val={this.state.trait2Val} onClick={this.onClick} />
-    </Col>
-</Row> */}

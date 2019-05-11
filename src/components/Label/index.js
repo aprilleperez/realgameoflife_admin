@@ -13,7 +13,8 @@ function Label(props) {
                 <Form.Group controlId="formBasicEmail" className="thisForm">
 
                     <Form.Control className={props.className}
-                        type="text" name={props.traitNumber} placeholder={props.text} value={props.text} onChange={props.onChange} />
+                    // changed value from props.text to props.traitName @12:40 5/11/19
+                        type="text" name={props.traitNumber} placeholder={props.text} value={props.traitName} onChange={props.onChange} />
                 </Form.Group>
 
             </Form>

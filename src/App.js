@@ -15,7 +15,6 @@ class App extends Component {
     gameNameGameId: [],
     currentGameId: undefined,
     allGames: []
-    // TODO: figure out user state here
   }
 
   componentDidMount() {
@@ -23,7 +22,6 @@ class App extends Component {
   }
 
   getAllGames() {
-
     axios.get("https://real-life-api.herokuapp.com/api/games")
       .then((results) => {
         console.log("RESULTS.DATA", results.data)
@@ -48,6 +46,7 @@ class App extends Component {
         })
       })
   }
+
   render() {
     return (
       <Router basename = {process.env.PUBLIC_URL}>
@@ -68,5 +67,3 @@ class App extends Component {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 export default App;
-
-// basename="/realgameoflife_admin/"
