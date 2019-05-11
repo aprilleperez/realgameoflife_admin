@@ -11,6 +11,8 @@ import { findbyId } from '../../utils/lifeAPIController';
 import { Response } from '../../constructors';
 import update from "immutability-helper"
 import { partial } from "../../utils/partials"
+import { update as dbUpdate } from "../../utils/lifeAPIController"
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -25,6 +27,7 @@ class ContentEditQuestions extends Component {
         this.handleQuestionText = this.handleQuestionText.bind(this);
         this.handleQuestionTraits = this.handleQuestionTraits.bind(this);
         this.handleQuestionDropdown = this.handleQuestionDropdown.bind(this);
+        this.updateQuestionDb = this.updateQuestionDb.bind(this);
 
         this.state = {
             gameObj: null,
@@ -198,8 +201,21 @@ class ContentEditQuestions extends Component {
         })
     }
 
+    getGameIdUrl() {
+        const url = window.location.pathname
+        const questionIndex = url.indexOf("questions")
+        const fromQuestions = url.substring(questionIndex)
+        const id = fromQuestions.substring(fromQuestions.indexOf("/") + 1)
 
+        return id
+    }
 
+    updateQuestionDb() {
+        const id = this.getGameIdUrl()
+        console.log("HELLO FROM UPDATE QUESTION DB", id)
+        const gameObj = this.state.gameObj
+        dbUpdate(gameObj, id)
+    }
 
     //     let question = this.state.gameObj.questions[this.state.questionIndex]
     //     let response = question.responses[rIndex]
@@ -271,7 +287,8 @@ class ContentEditQuestions extends Component {
 
                     </Container>
                 ))}
-                <AdminButton text="Done" buttonType="green" click={() => { }} to="/" />
+                {/* <AdminButton text="Done" buttonType="green" click={() => { }} to="/" /> */}
+                <button className="btn btn-danger" text="Next" buttonType="green" to="/create/avatars" onClick={this.updateQuestionDb} />
             </Container>
         )
     }
