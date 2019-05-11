@@ -25,6 +25,7 @@ export function Dropdown(props) {
 }
 
 export function QuestionDropdown(props) {
+  const { qProps, t1Props, t2Props } = props;
   return (
     <Container fluid>
       <Row>
@@ -33,22 +34,7 @@ export function QuestionDropdown(props) {
       </Col>
 
         <Col size="sm-3">
-          <Form>
-            <Form.Group controlId="exampleForm.ControlSelect2" className="thisForm">
-              <Form.Control as="select">
-                <option>{props.qtext} 1</option>
-                <option>{props.qtext} 2</option>
-                <option>{props.qtext} 3</option>
-                <option>{props.qtext} 4</option>
-                <option>{props.qtext} 5</option>
-                <option>{props.qtext} 6</option>
-                <option>{props.qtext} 7</option>
-                <option>{props.qtext} 8</option>
-                <option>{props.qtext} 9</option>
-                <option>{props.qtext} 10</option>
-              </Form.Control>
-            </Form.Group>
-          </Form>
+          <Dropdown {...qProps} />
         </Col>
 
         <Col size="sm-2">
@@ -56,31 +42,11 @@ export function QuestionDropdown(props) {
       </Col>
 
         <Col size="sm-2">
-          <Form>
-            <Form.Group controlId="exampleForm.ControlSelect2" className="thisForm">
-              <Form.Control as="select">
-                <option>{props.text} 1</option>
-                <option>{props.text} 2</option>
-                <option>{props.text} 3</option>
-                <option>{props.text} 4</option>
-                <option>{props.text} 5</option>
-              </Form.Control>
-            </Form.Group>
-          </Form>
+          <Dropdown {...t1Props} />
         </Col>
 
         <Col size="sm-2">
-          <Form>
-            <Form.Group controlId="exampleForm.ControlSelect2" className="thisForm">
-              <Form.Control as="select">
-                <option>{props.text} 1</option>
-                <option>{props.text} 2</option>
-                <option>{props.text} 3</option>
-                <option>{props.text} 4</option>
-                <option>{props.text} 5</option>
-              </Form.Control>
-            </Form.Group>
-          </Form>
+          <Dropdown {...t2Props} />
         </Col>
       </Row>
     </Container>
