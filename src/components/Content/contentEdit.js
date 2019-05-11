@@ -126,7 +126,7 @@ class ContentEdit extends Component {
 
     // If gameObj isn't empty (which it will be on first render, in which case just return an empty div),
     // render the Avatars component, passing it the gameObj that exists in state (unless it's empty, in which case)
-    // just pass an empty array). Also passing 
+    // just pass an empty array). 
 
     render() {
         const gameObj = this.state.gameObj

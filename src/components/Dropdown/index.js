@@ -10,15 +10,16 @@ import { Container, Row, Col } from '../Grid'
 export function Dropdown(props) {
   return (
     <Form>
+
       <Form.Group controlId="exampleForm.ControlSelect1" className="thisForm">
-        <Form.Control as="select">
-          <option>{props.text} 1</option>
-          <option>{props.text} 2</option>
-          <option>{props.text} 3</option>
-          <option>{props.text} 4</option>
-          <option>{props.text} 5</option>
+        <Form.Control as="select" value={props.value} onChange={props.onChange}>
+          {props.options.map(option => (
+            <option>{option} </option>
+          ))}
         </Form.Control>
+
       </Form.Group>
+
     </Form>
   )
 }
