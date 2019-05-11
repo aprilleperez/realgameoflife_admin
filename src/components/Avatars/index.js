@@ -4,14 +4,15 @@ import { Header, SubHeader } from '../Header';
 import Card from "../Card"
 import Label from "../Label"
 import { PointToggler2 } from "../PointToggler";
+import { partial } from "../../utils/partials"
 
 let keys = ["trait1", "trait2", "trait3", "trait4", "trait5"];
 
-function makeMePartial(avatar, traitName, val, fnOfAllThree) {
-    return () => {
-        fnOfAllThree(avatar, traitName, val);
-    }
-}
+// function makeMePartial(avatar, traitName, val, fnOfAllThree) {
+//     return () => {
+//         fnOfAllThree(avatar, traitName, val);
+//     }
+// }
 
 
 
@@ -36,8 +37,8 @@ function Avatars(props) {
 
                         <Col size="md-4">
                             {keys.map(key => {
-                                const increment = makeMePartial(avatar, key, avatar[key] + 1, props.updater)
-                                const decrement = makeMePartial(avatar, key, avatar[key] - 1, props.updater)
+                                const increment = partial(props.updater, avatar, key, avatar[key] + 1)
+                                const decrement = partial(props.updater, avatar, key, avatar[key] - 1)
                                 return (<PointToggler2 traits={avatar[key]} plus={increment} minus={decrement} />)
                             })}
 
