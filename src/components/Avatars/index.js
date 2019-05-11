@@ -30,7 +30,8 @@ function Avatars(props) {
                         </Col>
                         <Col size="md-4">
                             {keys.map(key =>
-                                (<Label traitName={props.traitName[key]} />)
+                            // had to change traitName to text for it to show up in the placeholder
+                                (<Label text={props.traitName[key]} />)
                             )}
                         </Col>
 
