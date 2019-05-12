@@ -9,8 +9,10 @@ function AdminButton(props) {
 
     return (
         <div className="appAdminButton">
-            <Link to={props.to}><button className="appButton">{props.text}</button></Link>
+            {/* <Link to={props.to}><button className="appButton">{props.text}</button></Link> */}
             {/* className={className} */}
+
+            <button className="appButton" buttonType={props.buttonType} onClick={props.onClick}>{props.text}</button>
         </div>
 
     )

@@ -6,6 +6,7 @@ import { update, findbyId } from '../../utils/lifeAPIController';
 import { Container } from '../Grid'
 import '../style.css';
 import Avatars from '../Avatars';
+import AdminButton from '../Button';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -64,7 +65,10 @@ class ContentEdit extends Component {
         const id = this.getGameIdUrl();
         const gameObj = this.state.gameObj
         //const forRealUpdateAvatar = new GameObj(gameObj.name, gameObj.traits, newAvName, gameObj.questions)
-        update(gameObj, id)
+        update(gameObj, id).then(() => {
+            this.props.history.push(`/create/questions/${id}`)
+        })
+
     }
 
 
@@ -140,7 +144,7 @@ class ContentEdit extends Component {
                     handleChange={this.handleChange}
                     passedState={this.state}
                 />
-                <button className="btn btn-danger" text="Next" buttonType="green" onClick={this.updateAvatarName} />
+                <AdminButton className="btn btn-danger" text="Next" buttonType="green" onClick={this.updateAvatarName} />
 
 
             </Container>
