@@ -18,7 +18,7 @@ class ContentCreateAvatars extends Component {
 
         return (
             <Container>
-                <ContentEdit></ContentEdit>
+                <ContentEdit history={this.props.history} />
             </Container>
         )
     }

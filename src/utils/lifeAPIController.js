@@ -7,8 +7,7 @@ export function create(gameObj) {
 
 export function update(gameObj, id) {
 
-    axios
-        .put(`https://real-life-api.herokuapp.com/api/games/${id}`, gameObj)
+    return axios.put(`https://real-life-api.herokuapp.com/api/games/${id}`, gameObj)
 }
 
 export function remove(id) {

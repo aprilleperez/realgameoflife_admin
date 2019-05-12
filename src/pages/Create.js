@@ -26,7 +26,7 @@ class Create extends Component {
                     <Container fluid>
                         <Header text="Create Avatars" />
                         <AvatarHeader />
-                        <Content />
+                        <Content history={this.props.history} />
                         <AdminButton text="Next" buttonType="green" to={`/create/questions`} />
                     </Container>
                 ) : null}
@@ -34,7 +34,7 @@ class Create extends Component {
                     <Container fluid>
                         <Header text="Create Questions" />
                         <QuestionDropdown qtext="Question" text="Trait" />
-                        <Content />
+                        <Content history={this.props.history} />
                         <AdminButton text="Done" buttonType="green" to="/" />
                     </Container>
                 ) : null}
