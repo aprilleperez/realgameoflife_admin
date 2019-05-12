@@ -38,10 +38,10 @@ class ContentCreate extends Component {
 
     // This method builds our new object using our imported constructors and sends it to the database.
     buildTraits() {
-        let traits = Object.keys(this.state).map(key => this.state[key])
-        let templateObj = new constructor.GameObj("TO DO - Make Name For Game", traits, [], [])
+        let traits = Object.keys(this.state).filter(key => !key.startsWith("GameName")).map(key => this.state[key])
+        let templateObj = constructor.templateConstructor(traits, this.state.GameName)
         console.log("TEMPLATE OBJECT", templateObj)
-        api.create(constructor.testDataObject)
+        api.create(templateObj)
             .then(results => console.log(results))
     }
 
@@ -63,7 +63,7 @@ class ContentCreate extends Component {
 
                 <Row>
                     <Col size="sm-6">
-                        <Label onChange={this.handleChange} className="thisCreateTraits" text="Game Name" />
+                        <Label onChange={this.handleChange} traitNumber="GameName" className="thisCreateTraits" text="Game Name" />
                         <hr></hr>
                     </Col>
 
