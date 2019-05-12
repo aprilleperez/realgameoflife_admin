@@ -1,22 +1,47 @@
+/* PALETTE */
+/* 
+BLUE: #AFD9EA;
+PINK: #F0A6BA;
+PEACH: #F1C5B0;
+YELLOW: #F6E1A1; 
+*/
+
 /* ------------------------------GLOBAL------------------------------ */
 body {
-  background-color: #AFD9EA;
+  /* background-color: #AFD9EA; */
+  /* background: rgb(240,166,186);
+  background: linear-gradient(328deg, rgba(240,166,186,1) 0%, rgba(241,197,176,1) 100%); */
+  background: rgb(246,225,161);
+  background: linear-gradient(350deg, rgba(246,225,161,1) 0%, rgba(175,217,234,1) 75%);
   font-family: 'Muli', sans-serif;
 }
 
 /* ------------------------------Nav Component------------------------------ */
 .appNav {
   background-color: rgba(255, 255, 255, 0.75);
+  /* background-color: rgba(246, 225, 161, 0.75); */
 }
 
 
 /* ------------------------------Header Component------------------------------ */
+.appHero {
+    /* border-radius: 10px;
+    border-color: #F1C5B0;
+    border-style: solid; */
+    /* background-color: #AFD9EA; */
+    padding: 16px;
+}
+
 .appHeader {
     margin-top: 24px;
+    color: #F0A6BA;
+    font-weight: 700;
 }
 
 .appSubHeader {
     margin-top: 24px;
+    color: #F0A6BA;
+    font-weight: 700;
     /* color: #F6E1A1;
     font-weight: 700; */
 }
@@ -41,18 +66,39 @@ body {
 }
 
 .appControls {
-  color: #F0A6BA;
+  color: #444444;
   cursor: pointer;
 }
 
 .appControls:hover {
-  color: #F1C5B0;
+  color: #F0A6BA;
 }
 
 .controlsText {
-  font-weight: 700;
+  /* font-weight: 700; */
+  
 }
 
+/* ------------------------------Avatar Card Component------------------------------ */
+.card {
+  background-color: #F0A6BA;
+  object-fit: cover;
+}
+
+.imgContainer {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  object-fit: cover;
+  /* FIGURE OUT WHY IMAGE DOESNT RESPONSIVELY SCALE */
+}
+
+.avatarImg {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
 
 
 /* .thisCreateTraits {
@@ -98,7 +144,7 @@ body {
   height: 75px;
   margin: 32px;
   padding: 8px 16px;
-  background-color: #F6E1A1;
+  background-color: #F1C5B0;
   border: none;
   color:white;
   text-align: center;
@@ -108,35 +154,10 @@ body {
 }
 
 .appButton:hover {
-  opacity: .8;
+  opacity: .7;
 }
+  
 
-.green {
-    background-color: #4CAF50;
-  
-    /* padding: 15px 25px; */
-
-  
-    display: inline-block
-  }
-  
-  .green:hover {
-    opacity: .6;
-  }
-  
-  .blue {
-    background-color: rgb(30, 43, 233);
-    border: none;
-    color: white;
-    /* padding: 15px 25px; */
-    text-align: center;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .blue:hover {
-    opacity: .6;
-  }
   
   .navlink {
     background-color: rgb(57, 0, 189);
@@ -159,8 +180,17 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
   /* ------------------------------Dropdown Hover------------------------------ */
-  .dropbtn {
+  /* .dropbtn {
     background-color: #4CAF50;
     color: white;
     padding: 16px;
@@ -193,4 +223,4 @@ body {
   
   .dropdown:hover .dropdown-content {display: block;}
   
-  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+  .dropdown:hover .dropbtn {background-color: #3e8e41;} */
