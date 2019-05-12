@@ -7,8 +7,7 @@ export function create(gameObj) {
 
 export function update(gameObj, id) {
 
-    axios
-        .put(`https://real-life-api.herokuapp.com/api/games/${id}`, gameObj)
+    return axios.put(`https://real-life-api.herokuapp.com/api/games/${id}`, gameObj)
 }
 
 export function remove(id) {
@@ -25,6 +24,12 @@ export function findbyId(id) {
     return axios.get(`https://real-life-api.herokuapp.com/api/games/${id}`)
 
 }
+
+// export function findOne() {
+//     return axios.get
+// }
+
+
 
 
 
