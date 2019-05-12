@@ -53,33 +53,48 @@ export class GameObj {
     }
 }
 
-let testTraits = new Traits("Red", "White", "Blue", "Firmness", "Bubble-ness")
-let testAvatars = [new Avatar("Steve Rogers", 20, 20, 20, 20, 20), new Avatar("Tony Stark", 10, 10, 10, 10, 10), new Avatar("Hulk", 18, 17, 16, 15, 14)]
+
+let templateAvatars = [new Avatar("Steve Rogers", 20, 20, 20, 20, 20), new Avatar("Tony Stark", 10, 10, 10, 10, 10), new Avatar("Hulk", 18, 17, 16, 15, 14)]
+
+export function templateConstructor(traits, gameName) {
+    const questions = [1, 2, 3, 4, 5].map(i => {
+        return templateQuestion(traits)
+    })
+    const keys = ["trait1", "trait2", "trait3", "trait4", "trait5"]
+    let traitsObj = traits.reduce((obj, thing, i) => {
+        return {
+            ...obj,
+            // whatever we want to add as a key:value
+            [keys[i]]: thing
+        }
+    }, {})
+    let templateObj = new GameObj(gameName, traitsObj, templateAvatars, questions)
+
+    return templateObj
+}
 
 
-let testResponses = [
-    new Response("Definitely no favors done", [new Outcome("Firmness", 3, "down"), new Outcome("Red", 4, "up")]),
-    new Response("It was fine", [new Outcome("Bubble-ness", 4, "Up"), new Outcome("White", 3, "Down")]),
-    new Response("Typing all this blows", [new Outcome("Firmness", 5, "Down"), new Outcome("Firmness", 5, "down")])]
+function templateResponse(traits) {
+    let defaultResponse = new Response("Please enter a response here", [new Outcome("Enter an outcome here", traits[0], 0, "up"), new Outcome("Enter an outcome here", traits[0], 0, "up")])
+
+    return defaultResponse
+}
 
 
+function templateQuestion(traits) {
+    const responses = [1, 2, 3, 4, 5].map(i => {
+        // do junk here
+        return templateResponse(traits)
+    })
 
-let testQuestions = [new Question("Did Captain America's first suit really do him no favors?", testResponses, "Firmness", "Bubble-ness")]
+    let templateQuestion = new Question("Type your question here", responses, traits[0], traits[1])
 
-export const testGameObj = new GameObj("Testing with America's Ass", testTraits, testAvatars, testQuestions);
-
-let updateResponses = [
-    new Response("Because Tony is an appreciator of fine things", [new Outcome("Firmness", 3, "down"), new Outcome("Red", 4, "up")]),
-    new Response("He did it for his father", [new Outcome("Bubble-ness", 4, "Up"), new Outcome("White", 3, "Down")]),
-    new Response("Callipygian", [new Outcome("Firmness", 5, "Down"), new Outcome("Firmness", 5, "down")])]
-
-let updateQuestion = new Question("Why did Tony make Captain America's second suit so it did America's Ass Justice?", updateResponses, "Red", "Blue")
-
-export const updateGameObj = new GameObj(testGameObj.name, testGameObj.traits, testGameObj.avatars, [testQuestions[0], updateQuestion])
+    return templateQuestion
+}
 
 export const testDataObject = {
 
-    "name": "OBJECT FOR JAMES",
+    "name": "Test Data Object",
     "traits": {
         "trait1": "Wealth",
         "trait2": "Education",
