@@ -6,6 +6,7 @@ import { update, findbyId } from '../../utils/lifeAPIController';
 import { Container } from '../Grid'
 import '../style.css';
 import Avatars from '../Avatars';
+import AdminButton from '../Button';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -143,7 +144,7 @@ class ContentEdit extends Component {
                     handleChange={this.handleChange}
                     passedState={this.state}
                 />
-                <button className="btn btn-danger" text="Next" buttonType="green" onClick={this.updateAvatarName} />
+                <AdminButton className="btn btn-danger" text="Next" buttonType="green" onClick={this.updateAvatarName} />
 
 
             </Container>

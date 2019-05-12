@@ -28,7 +28,7 @@ class Content extends Component {
                     <ContentCreateAvatars history={this.props.history} />
                 ) : null}
                 {window.location.pathname.startsWith(`${process.env.PUBLIC_URL}/create/questions`) ? (
-                    <ContentCreateQuestions />
+                    <ContentCreateQuestions history={this.props.history} />
                 ) : null}
                 {window.location.pathname.startsWith(`${process.env.PUBLIC_URL}/edit/avatars/`) ? (
                     <ContentEdit globalState={this.props.globalState} history={this.props.history} />

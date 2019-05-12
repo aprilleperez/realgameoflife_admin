@@ -83,7 +83,7 @@ class ContentCreate extends Component {
 
                 </Row>
 
-                <button text="Next" buttonType="green" onClick={this.buildTraits} />
+                <AdminButton text="Next" buttonType="green" onClick={this.buildTraits} />
 
             </Container>
         )

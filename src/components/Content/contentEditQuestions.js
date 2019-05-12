@@ -214,7 +214,9 @@ class ContentEditQuestions extends Component {
         const id = this.getGameIdUrl()
         console.log("HELLO FROM UPDATE QUESTION DB", id)
         const gameObj = this.state.gameObj
-        dbUpdate(gameObj, id)
+        dbUpdate(gameObj, id).then(() => {
+            this.props.history.push(`/`)
+        })
     }
 
     //     let question = this.state.gameObj.questions[this.state.questionIndex]
@@ -287,7 +289,7 @@ class ContentEditQuestions extends Component {
                     </Container>
                 ))}
                 {/* <AdminButton text="Done" buttonType="green" click={() => { }} to="/" /> */}
-                <button className="btn btn-danger" text="Next" buttonType="green" to="/create/avatars" onClick={this.updateQuestionDb} />
+                <AdminButton className="btn btn-danger" text="Save Changes" buttonType="green" onClick={this.updateQuestionDb} />
             </Container>
         )
     }
