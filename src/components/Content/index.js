@@ -22,12 +22,12 @@ class Content extends Component {
                     <ContentAdmin games={this.props.gameNameGameId} />
                 ) : null}
                 {window.location.pathname === `${process.env.PUBLIC_URL}/create` ? (
-                    <ContentCreate />
+                    <ContentCreate history={this.props.history} />
                 ) : null}
-                {window.location.pathname === `${process.env.PUBLIC_URL}/create/avatars` ? (
+                {window.location.pathname.startsWith(`${process.env.PUBLIC_URL}/create/avatars`) ? (
                     <ContentCreateAvatars />
                 ) : null}
-                {window.location.pathname === `${process.env.PUBLIC_URL}/create/questions` ? (
+                {window.location.pathname.startsWith(`${process.env.PUBLIC_URL}/create/questions`) ? (
                     <ContentCreateQuestions />
                 ) : null}
                 {window.location.pathname.startsWith(`${process.env.PUBLIC_URL}/edit/avatars/`) ? (

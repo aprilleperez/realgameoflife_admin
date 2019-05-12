@@ -26,6 +26,12 @@ export function findbyId(id) {
 
 }
 
+// export function findOne() {
+//     return axios.get
+// }
+
+
+
 
 
 
