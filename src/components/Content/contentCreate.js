@@ -42,7 +42,12 @@ class ContentCreate extends Component {
         let templateObj = constructor.templateConstructor(traits, this.state.GameName)
         console.log("TEMPLATE OBJECT", templateObj)
         api.create(templateObj)
-            .then(results => console.log(results))
+            .then((results) => {
+                let id = results.data._id
+                this.props.history.push(`/create/avatars/${id}`)
+            }
+            );
+
     }
 
     render() {
@@ -78,7 +83,7 @@ class ContentCreate extends Component {
 
                 </Row>
 
-                <button text="Next" buttonType="green" to="/create/avatars" onClick={this.buildTraits} />
+                <button text="Next" buttonType="green" onClick={this.buildTraits} />
 
             </Container>
         )
