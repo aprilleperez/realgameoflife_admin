@@ -8,7 +8,7 @@ function Card(props) {
     return (
         <div className="card mt-10">
             <div className="imgContainer">
-                <img className="avatarImg" src="/images/avatar.PNG"></img>
+                <img className="avatarImg" src={props.image}></img>
             </div>
 
             <div className="card-body">

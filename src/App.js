@@ -34,7 +34,7 @@ class App extends Component {
             gameId: results.data[i]._id,
             gameName: results.data[i].name
           }
-          nonprofitName = "We Need To Get the Name Somehow"
+          nonprofitName = "Superhero Academy"
           gameNameGameId.push(gameObj)
 
         }
@@ -50,12 +50,12 @@ class App extends Component {
 
   render() {
     return (
-      <Router basename = {process.env.PUBLIC_URL}>
+      <Router basename={process.env.PUBLIC_URL}>
         <div>
           <Nav />
           <Switch>
-            <Route exact path= {`/`} render={(props) => <Admin {...props} globalState={this.state} />} />
-            <Route prefix path={`/create`}render={(props) => <Create {...props} globalState={this.state} />} />
+            <Route exact path={`/`} render={(props) => <Admin {...props} globalState={this.state} />} />
+            <Route prefix path={`/create`} render={(props) => <Create {...props} globalState={this.state} />} />
             <Route prefix path={`/edit`} render={(props) => <Edit {...props} globalState={this.state} />} />
             {/* <Route component={NoMatch} /> */}
           </Switch>
