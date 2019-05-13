@@ -64,11 +64,3 @@ export function PointToggler2(props) {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // export default PointToggler;
-
-
-
-{/* <Col size="sm-4">
-<TogglerButton className="fas fa-plus" />
-<div className="thisForm">hi</div>
-<TogglerButton className="fas fa-minus" />
-</Col> */}
