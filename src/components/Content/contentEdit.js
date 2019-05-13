@@ -138,14 +138,19 @@ class ContentEdit extends Component {
         return (
             <Container>
 
-                <Avatars className="avatarRow" avatars={gameObj.avatars ? gameObj.avatars : []}
+                <Avatars avatars={gameObj.avatars ? gameObj.avatars : []}
                     traitName={gameObj.traits ? gameObj.traits : []}
                     updater={(avatar, trait, value) => { this.updateAvatarTrait(avatar, trait, value) }}
                     handleChange={this.handleChange}
                     passedState={this.state}
                 />
-                <AdminButton className="btn btn-danger" text="Save Avatars" buttonType="green" onClick={this.updateAvatarName} />
-
+                <br></br>
+                <br></br>
+                <br></br>
+                <AdminButton className="btn btn-danger" text="Save Avatars" onClick={this.updateAvatarName} />
+                <br></br>
+                <br></br>
+                <br></br>
 
             </Container>
         )

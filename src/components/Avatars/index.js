@@ -32,7 +32,7 @@ function Avatars(props) {
                     image = temporaryImagesEdit[i]
                 }
                 return (
-                    <Row className="avatarRow">
+                    <Row>
                         <Col size="md-4">
                             <Card avatar={avatar} avatarIndex={i} handleChange={props.handleChange} image={image} />
                         </Col>
@@ -53,7 +53,6 @@ function Avatars(props) {
                         </Col>
 
                     </Row>
-
                 )
             })}
         </Container>

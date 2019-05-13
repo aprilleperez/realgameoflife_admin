@@ -21,6 +21,9 @@ class Admin extends Component {
                 </div>
                 <Content gameNameGameId={this.props.globalState.gameNameGameId} everyGame={this.props.globalState.allGames} />
                 <AdminButton text="Create Game" onClick={() => this.props.history.push(`/create`)} />
+                <br></br>
+                <br></br>
+                <br></br>
             </Container >
         )
     }
