@@ -25,7 +25,7 @@ class Create extends Component {
                 {window.location.pathname.startsWith(`${process.env.PUBLIC_URL}/create/avatars`) ? (
                     <Container fluid>
                         <Header text="Create Avatars" />
-                        <AvatarHeader />
+                        {/* <AvatarHeader /> */}
                         <Content history={this.props.history} />
 
                     </Container>
