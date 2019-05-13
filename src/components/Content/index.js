@@ -34,7 +34,7 @@ class Content extends Component {
                     <ContentEdit globalState={this.props.globalState} history={this.props.history} />
                 ) : null}
                 {window.location.pathname.startsWith(`${process.env.PUBLIC_URL}/edit/questions/`) ? (
-                    <ContentEditQuestions />
+                    <ContentEditQuestions history={this.props.history} />
                 ) : null}
             </div>
         )
