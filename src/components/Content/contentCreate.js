@@ -62,7 +62,10 @@ class ContentCreate extends Component {
 
                 <Row>
                     <Col size="sm-12">
-                        <p>INSTRUCTIONS GO HERE: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste rerum consequuntur maiores eaque iusto ea accusantium, est quisquam earum ut possimus quos iure eveniet fugiat dolores delectus ipsam aliquid libero! Lorem ipsum dolor sit amet consectetur adipisicing elit. Est similique at consequatur soluta omnis aperiam voluptate quasi eveniet vero earum deserunt ad consectetur hic fugiat ullam nesciunt, nobis possimus eaque.</p>
+                        <p>First start by naming your unique game. This game is based off of traits, or stats, that weigh the responses and outcomes you will be able to view. The traits below will not be weighed in a particular order when you declare them, however once you hit next, the traits will be locked in. 
+                            <br></br>
+                            On the following screens you will be able to edit: the avatars (5 total) and the starting points of their stats based off the traits (min 1, max 20), and the questions (5 total) each being weighed by the current points of the avatar's traits. Each question will have 5 response which will increase or decrease the avatar's stats, as well as have a certain outcome.
+                        </p>
                     </Col>
                 </Row>
 
