@@ -32,14 +32,14 @@ class Edit extends Component {
                     <Container fluid>
                         <Header text="Edit Avatars" />
                         {/* <AvatarHeader text="Update Avatar Selections" /> */}
-                        <Content globalState={this.props.globalState} />
-                        <AdminButton text="Done" buttonType="green" to="/" />
+                        <Content globalState={this.props.globalState} history={this.props.history} />
+
                     </Container>
                 ) : null}
                 {window.location.pathname.startsWith(`${process.env.PUBLIC_URL}/edit/questions/`) ? (
                     <Container fluid>
                         <Header text="Edit Questions" />
-                        <Content />
+                        <Content history={this.props.history} />
 
                     </Container>
                 ) : null}
