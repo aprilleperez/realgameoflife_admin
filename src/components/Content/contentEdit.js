@@ -144,7 +144,7 @@ class ContentEdit extends Component {
                     handleChange={this.handleChange}
                     passedState={this.state}
                 />
-                <AdminButton className="btn btn-danger" text="Next" buttonType="green" onClick={this.updateAvatarName} />
+                <AdminButton className="btn btn-danger" text="Save Avatars" buttonType="green" onClick={this.updateAvatarName} />
 
 
             </Container>
