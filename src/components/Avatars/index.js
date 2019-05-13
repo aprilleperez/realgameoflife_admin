@@ -5,6 +5,7 @@ import Card from "../Card"
 import Label from "../Label"
 import { PointToggler2 } from "../PointToggler";
 import { partial } from "../../utils/partials"
+import "../style.css"
 
 let keys = ["trait1", "trait2", "trait3", "trait4", "trait5"];
 const temporaryImagesEdit = ["https://res.cloudinary.com/instapotty/image/upload/v1557721995/Life%20Game/Steve.jpg", "https://res.cloudinary.com/instapotty/image/upload/v1557721996/Life%20Game/Tony.jpg", "https://res.cloudinary.com/instapotty/image/upload/v1557721982/Life%20Game/Bruce.png", "https://res.cloudinary.com/instapotty/image/upload/v1557721993/Life%20Game/Natasha.jpg", "https://res.cloudinary.com/instapotty/image/upload/v1557721986/Life%20Game/Freya.jpg"]
@@ -31,7 +32,7 @@ function Avatars(props) {
                     image = temporaryImagesEdit[i]
                 }
                 return (
-                    <Row>
+                    <Row className="avatarRow">
                         <Col size="md-4">
                             <Card avatar={avatar} avatarIndex={i} handleChange={props.handleChange} image={image} />
                         </Col>
@@ -52,6 +53,7 @@ function Avatars(props) {
                         </Col>
 
                     </Row>
+
                 )
             })}
         </Container>

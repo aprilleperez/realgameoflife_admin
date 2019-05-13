@@ -4,6 +4,8 @@ BLUE: #AFD9EA;
 PINK: #F0A6BA;
 PEACH: #F1C5B0;
 YELLOW: #F6E1A1; 
+
+ORANGE: #fca25d;
 */
 
 /* ------------------------------GLOBAL------------------------------ */
@@ -11,15 +13,25 @@ body {
   /* background-color: #AFD9EA; */
   /* background: rgb(240,166,186);
   background: linear-gradient(328deg, rgba(240,166,186,1) 0%, rgba(241,197,176,1) 100%); */
-  background: rgb(246,225,161);
-  background: linear-gradient(350deg, rgba(246,225,161,1) 0%, rgba(175,217,234,1) 75%);
+  /* background: rgb(246,225,161);
+  background: linear-gradient(350deg, rgba(246,225,161,1) 0%, rgba(175,217,234,1) 75%); */
   font-family: 'Muli', sans-serif;
+  color: #707070;
+}
+
+hr {
+  border-color: #fca25d;
+  margin-bottom: 32px; 
 }
 
 /* ------------------------------Nav Component------------------------------ */
 .appNav {
-  background-color: rgba(255, 255, 255, 0.75);
+  /* background-color: rgba(255, 255, 255, 0.75); */
   /* background-color: rgba(246, 225, 161, 0.75); */
+  /* background: rgb(246,225,161);
+  background: linear-gradient(350deg, rgba(246,225,161,1) 0%, rgba(175,217,234,1) 75%); */
+  background: rgba(175, 217, 234, 0.75);
+  color: #707070;
 }
 
 
@@ -34,13 +46,14 @@ body {
 
 .appHeader {
     margin-top: 24px;
-    color: #F0A6BA;
+    /* color: #F0A6BA; */
+    color: #fca25d;
     font-weight: 700;
 }
 
 .appSubHeader {
     margin-top: 24px;
-    color: #F0A6BA;
+    color: #fca25d;
     font-weight: 700;
     /* color: #F6E1A1;
     font-weight: 700; */
@@ -66,37 +79,42 @@ body {
 }
 
 .appControls {
-  color: #444444;
+  color: #707070;
   cursor: pointer;
 }
 
 .appControls:hover {
-  color: #F0A6BA;
+  color: #fca25d;
 }
 
-.controlsText {
-  /* font-weight: 700; */
-  
-}
 
 /* ------------------------------Avatar Card Component------------------------------ */
+.avatarRow {
+  margin-bottom: 64px;
+}
+
 .card {
-  background-color: #F0A6BA;
+  border-style: solid;
+  border-color: #fca25d;
+  border-width: 1px;
+  box-shadow: unset;
+  padding-top: 16px;
   object-fit: cover;
+
 }
 
 .imgContainer {
-  max-width: 100%;
+  margin: auto;
+  max-width: 75%;
   height: auto;
   display: flex;
   justify-content: center;
   object-fit: cover;
-  /* FIGURE OUT WHY IMAGE DOESNT RESPONSIVELY SCALE */
 }
 
 .avatarImg {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -123,8 +141,8 @@ body {
 .thisForm {
   padding: 5px;
   border-style: solid;
-  border-color: gray;
-  border-width: .5px;
+  border-color: #AFD9EA;
+  border-width: 1px;
   background-color: white;
 }
 
@@ -143,7 +161,7 @@ body {
   width: 392px;
   margin: 16px 32px;
   padding: 16px 16px;
-  background-color: #F1C5B0;
+  background-color: #fca25d;
   border: none;
   color:white;
   text-align: center;
@@ -162,7 +180,6 @@ body {
     background-color: rgb(57, 0, 189);
     border: none;
     color: white;
-    /* padding: 15px 25px; */
     text-align: center;
     font-size: 16px;
     cursor: pointer;
@@ -175,6 +192,7 @@ body {
 
   .togglerButton {
     padding: 2px 6px;
+    background-color: #AFD9EA;
   }
 
 

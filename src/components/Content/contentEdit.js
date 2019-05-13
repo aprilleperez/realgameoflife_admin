@@ -138,7 +138,7 @@ class ContentEdit extends Component {
         return (
             <Container>
 
-                <Avatars avatars={gameObj.avatars ? gameObj.avatars : []}
+                <Avatars className="avatarRow" avatars={gameObj.avatars ? gameObj.avatars : []}
                     traitName={gameObj.traits ? gameObj.traits : []}
                     updater={(avatar, trait, value) => { this.updateAvatarTrait(avatar, trait, value) }}
                     handleChange={this.handleChange}
