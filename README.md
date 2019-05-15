@@ -1,4 +1,4 @@
-# realgameoflife_admin
+# Real Game of Life: Admin
 
 The Real Game of Life was made as a training tool for nonprofits to lead discussions on how different kinds of privilege can affect their communities and the clients they serve.
 
