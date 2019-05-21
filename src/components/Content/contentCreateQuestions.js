@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
 import { Container, Row, Col } from '../Grid'
-import Label from '../Label'
-import Dropdown from '../Dropdown'
-import { PointToggler } from "../PointToggler"
 import '../style.css';
 import ContentEditQuestions from './contentEditQuestions';
 ///////////////////////////////////////////////////////////////////////////////////////////////////

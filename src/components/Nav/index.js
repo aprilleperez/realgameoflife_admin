@@ -79,7 +79,7 @@ class Nav extends Component {
               <Link
                 onClick={this.toggleNav}
                 className="nav-link"
-                to="/edit" // TODO: figure out where logout will link to
+                to="/" // TODO: figure out where logout will link to
               >
                 Logout
               </Link>

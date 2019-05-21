@@ -54,7 +54,7 @@ export class GameObj {
 }
 
 
-let templateAvatars = [new Avatar("Steve Rogers", 20, 20, 20, 20, 20), new Avatar("Tony Stark", 10, 10, 10, 10, 10), new Avatar("Hulk", 18, 17, 16, 15, 14)]
+let templateAvatars = [new Avatar("Name this Avatar", 0, 0, 0, 0, 0), new Avatar("Name this Avatar", 0, 0, 0, 0, 0), new Avatar("Name this Avatar", 0, 0, 0, 0, 0), new Avatar("Name this Avatar", 0, 0, 0, 0, 0), new Avatar("Name this Avatar", 0, 0, 0, 0, 0)]
 
 export function templateConstructor(traits, gameName) {
     const questions = [1, 2, 3, 4, 5].map(i => {

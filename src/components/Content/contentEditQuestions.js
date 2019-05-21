@@ -6,7 +6,6 @@ import Dropdown, { QuestionDropdown } from '../Dropdown'
 import { PointToggler } from "../PointToggler"
 import '../style.css';
 import AdminButton from "../Button"
-import { Header } from '../Header';
 import { findbyId } from '../../utils/lifeAPIController';
 import { Response } from '../../constructors';
 import update from "immutability-helper"
@@ -249,48 +248,62 @@ class ContentEditQuestions extends Component {
         const allProps = { qProps: q, t1Props: t1, t2Props: t2 }
         return (
             <Container>
-                <QuestionDropdown {...allProps} />
-                <Row>
-                    <Col size="sm-12">
-                        <Label className="questionInput" text={this.state.gameObj.questions[this.state.questionIndex].Q} onChange={this.handleQuestionText} />
-                        <hr></hr>
-                    </Col>
-                </Row>
+                <div className="questionRow">
+                    <QuestionDropdown {...allProps} />
+                    <Row>
+                        <Col size="sm-12">
+                            <label for="questionInput" className="qIns qLabel"><strong>Question: </strong></label>
+                            <Label className="questionInput" text={this.state.gameObj.questions[this.state.questionIndex].Q} onChange={this.handleQuestionText} />
+                            <br></br>
+                            {/* <hr></hr> */}
+                        </Col>
+                    </Row>
+                </div>
 
                 <br></br>
 
-                {this.state.gameObj.questions[this.state.questionIndex].responses.map((response, i) => (
-                    <Container fluid>
-                        <Row>
-                            <Col size="sm-6">
-                                <Label text={response.response} onChange={partial(this.handleResponseText, i)} />
-                            </Col>
+                {
+                    this.state.gameObj.questions[this.state.questionIndex].responses.map((response, i) => (
+                        <Container fluid>
+                            <Row>
+                                <Col size="sm-6">
+                                <p className="qIns"><strong>Response {i +1}</strong></p>
+                                    <Label text={response.response} onChange={partial(this.handleResponseText, i)} />
+                                </Col>
 
-                            <Col size="sm-6">
-                                <Label text={response.outcomes[0].text} onChange={partial(this.handleOutcomeText, i, 0)} />
-                            </Col>
-                        </Row>
+                                <Col size="sm-6">
+                                <p className="qIns"><strong>Outcome {i +1}</strong></p>
+                                    <Label text={response.outcomes[0].text} onChange={partial(this.handleOutcomeText, i, 0)} />
+                                </Col>
+                            </Row>
 
-                        <Row>
-                            <Col size="sm-5">
-                                <PointToggler text="Affects Trait" options={Object.values(this.state.gameObj.traits)} value={response.outcomes[0].amount} trait={response.outcomes[0].trait} onChange={
-                                    (value) => this.handleOutcomeTrait(i, 0, value)} plus={partial(this.handleTraitAmount, i, 0, response.outcomes[0].amount + 1)} minus={partial(this.handleTraitAmount, i, 0, response.outcomes[0].amount - 1)} />
-                            </Col>
+                            <Row>
+                                <Col size="sm-5">
+                                    <PointToggler text="Affects Trait" options={Object.values(this.state.gameObj.traits)} value={response.outcomes[0].amount} trait={response.outcomes[0].trait} onChange={
+                                        (value) => this.handleOutcomeTrait(i, 0, value)} plus={partial(this.handleTraitAmount, i, 0, response.outcomes[0].amount + 1)} minus={partial(this.handleTraitAmount, i, 0, response.outcomes[0].amount - 1)} />
+                                </Col>
 
-                            <Col size="sm-5">
-                                <PointToggler text="Affects Trait" options={Object.values(this.state.gameObj.traits)} value={response.outcomes[1].amount}
-                                    trait={response.outcomes[1].trait} onChange={
-                                        (value) => this.handleOutcomeTrait(i, 1, value)} plus={partial(this.handleTraitAmount, i, 1, response.outcomes[1].amount + 1)} minus={partial(this.handleTraitAmount, i, 1, response.outcomes[1].amount - 1)} />
-                            </Col>
-                        </Row>
+                                <Col size="sm-5">
+                                    <PointToggler text="Affects Trait" options={Object.values(this.state.gameObj.traits)} value={response.outcomes[1].amount}
+                                        trait={response.outcomes[1].trait} onChange={
+                                            (value) => this.handleOutcomeTrait(i, 1, value)} plus={partial(this.handleTraitAmount, i, 1, response.outcomes[1].amount + 1)} minus={partial(this.handleTraitAmount, i, 1, response.outcomes[1].amount - 1)} />
+                                </Col>
+                            </Row>
 
-                        <hr></hr>
+                            <hr></hr>
 
-                    </Container>
-                ))}
+                        </Container>
+                    ))
+                }
                 {/* <AdminButton text="Done" buttonType="green" click={() => { }} to="/" /> */}
-                <AdminButton className="btn btn-danger" text="Save Changes" buttonType="green" onClick={this.updateQuestionDb} />
-            </Container>
+                <br></br>
+                <br></br>
+                <br></br>
+                <AdminButton className="btn btn-danger" text="Save Questions" onClick={this.updateQuestionDb} />
+                <br></br>
+                <br></br>
+                <br></br>
+            </Container >
         )
     }
 }
