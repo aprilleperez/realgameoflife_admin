@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import * as constructors from "../constructors"
-
 import { Container } from '../components/Grid';
-import { Header, SubHeader, AvatarHeader } from '../components/Header'
-import { QuestionDropdown } from '../components/Dropdown'
+import { Header, SubHeader } from '../components/Header'
 import Content from '../components/Content'
-import AdminButton from '../components/Button'
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 

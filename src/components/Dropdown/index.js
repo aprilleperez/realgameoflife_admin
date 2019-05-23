@@ -1,7 +1,6 @@
 import React from "react";
 import '../style.css';
 import Form from 'react-bootstrap/Form';
-
 import { Container, Row, Col } from '../Grid'
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -31,7 +30,7 @@ export function QuestionDropdown(props) {
       <Row>
         <Col size="sm-1">
           <p className="qIns"><strong>Edit Question:</strong></p>
-      </Col>
+        </Col>
 
         <Col size="sm-3">
           <Dropdown {...qProps} />
@@ -39,7 +38,7 @@ export function QuestionDropdown(props) {
 
         <Col size="sm-2">
           <p className="qIns"><strong>Weighted By Avatar's:</strong></p>
-      </Col>
+        </Col>
 
         <Col size="sm-2">
           <Dropdown {...t1Props} />

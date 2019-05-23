@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import * as constructor from "../../constructors"
 import * as api from "../../utils/lifeAPIController"
-
 import { Container, Row, Col } from '../Grid'
 import { ContentHeader } from '../Header'
 import Label from '../Label'
@@ -62,7 +61,7 @@ class ContentCreate extends Component {
 
                 <Row>
                     <Col size="sm-12">
-                        <p>First start by naming your unique game. This game is based off of traits, or stats, that weigh the responses and outcomes you will be able to view. The traits below will not be weighed in a particular order when you declare them, however once you hit next, the traits will be locked in. 
+                        <p>First start by naming your unique game. This game is based off of traits, or stats, that weigh the responses and outcomes you will be able to view. The traits below will not be weighed in a particular order when you declare them, however once you hit next, the traits will be locked in.
                             <br></br>
                             On the following screens you will be able to edit: the avatars (5 total) and the starting points of their stats based off the traits (min 1, max 20), and the questions (5 total) each being weighed by the current points of the avatar's traits. Each question will have 5 response which will increase or decrease the avatar's stats, as well as have a certain outcome.
                         </p>
