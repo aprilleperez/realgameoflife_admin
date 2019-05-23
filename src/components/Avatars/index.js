@@ -10,14 +10,6 @@ import "../style.css"
 let keys = ["trait1", "trait2", "trait3", "trait4", "trait5"];
 const temporaryImagesCreate = "https://res.cloudinary.com/instapotty/image/upload/v1557722385/Life%20Game/Flam.png"
 
-// function makeMePartial(avatar, traitName, val, fnOfAllThree) {
-//     return () => {
-//         fnOfAllThree(avatar, traitName, val);
-//     }
-// }
-
-
-
 function Avatars(props) {
     return (
         <Container fluid>
