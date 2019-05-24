@@ -8,16 +8,7 @@ import { partial } from "../../utils/partials"
 import "../style.css"
 
 let keys = ["trait1", "trait2", "trait3", "trait4", "trait5"];
-const temporaryImagesEdit = ["https://res.cloudinary.com/instapotty/image/upload/v1557721995/Life%20Game/Steve.jpg", "https://res.cloudinary.com/instapotty/image/upload/v1557721996/Life%20Game/Tony.jpg", "https://res.cloudinary.com/instapotty/image/upload/v1557721982/Life%20Game/Bruce.png", "https://res.cloudinary.com/instapotty/image/upload/v1557721993/Life%20Game/Natasha.jpg", "https://res.cloudinary.com/instapotty/image/upload/v1557765739/Life%20Game/manatee.jpg"]
 const temporaryImagesCreate = "https://res.cloudinary.com/instapotty/image/upload/v1557722385/Life%20Game/Flam.png"
-
-// function makeMePartial(avatar, traitName, val, fnOfAllThree) {
-//     return () => {
-//         fnOfAllThree(avatar, traitName, val);
-//     }
-// }
-
-
 
 function Avatars(props) {
     return (
@@ -26,15 +17,15 @@ function Avatars(props) {
             <SubHeader />
             {/* Map over the avatars object */}
             {props.avatars.map((avatar, i) => {
-                let url = window.location.href
                 let image = temporaryImagesCreate
-                if (url.includes("edit")) {
-                    image = temporaryImagesEdit[i]
+                if (avatar.picture) {
+                    image = avatar.picture
                 }
+
                 return (
                     <Row>
                         <Col size="md-4">
-                            <Card avatar={avatar} avatarIndex={i} handleChange={props.handleChange} image={image} />
+                            <Card avatar={avatar} avatarIndex={i} handleChange={props.handleChange} image={image} onClick={() => props.showWidget(partial(props.pictureUpdater, avatar))} />
                         </Col>
                         <Col size="md-4">
                             {keys.map(key =>

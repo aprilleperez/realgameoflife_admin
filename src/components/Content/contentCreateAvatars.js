@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
 import { Container } from '../Grid'
 import '../style.css';
 import ContentEdit from "../Content/contentEdit"

@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-
 import { Container, Row, Col } from '../Grid'
 import Label from '../Label'
-import Dropdown, { QuestionDropdown } from '../Dropdown'
+import { QuestionDropdown } from '../Dropdown'
 import { PointToggler } from "../PointToggler"
 import '../style.css';
 import AdminButton from "../Button"
 import { findbyId } from '../../utils/lifeAPIController';
-import { Response } from '../../constructors';
 import update from "immutability-helper"
 import { partial } from "../../utils/partials"
 import { update as dbUpdate } from "../../utils/lifeAPIController"
@@ -195,19 +193,14 @@ class ContentEditQuestions extends Component {
 
     handleQuestionDropdown(event) {
         const { value } = event.target
+        // convert value="Question:<space>number"==> number-1
+        const index = this.state.gameObj.questions.map((_q, i) => `Question: ${i + 1}`).indexOf(value)
+        console.log("VALUE:", value, "INDEX:", index)
         this.setState({
-            questionIndex: value
+            questionIndex: index
         })
     }
 
-    getGameIdUrl() {
-        const url = window.location.pathname
-        const questionIndex = url.indexOf("questions")
-        const fromQuestions = url.substring(questionIndex)
-        const id = fromQuestions.substring(fromQuestions.indexOf("/") + 1)
-
-        return id
-    }
 
     updateQuestionDb() {
         const id = this.getGameIdUrl()
@@ -242,7 +235,7 @@ class ContentEditQuestions extends Component {
         if (!gameObj) {
             return (<div></div>)
         }
-        const q = { value: this.state.questionIndex, onChange: this.handleQuestionDropdown, options: Object.keys(this.state.gameObj.questions) }
+        const q = { value: `Question: ${this.state.questionIndex + 1}`, onChange: this.handleQuestionDropdown, options: this.state.gameObj.questions.map((_question, i) => `Question: ${i + 1}`) }
         const t1 = { value: this.state.gameObj.questions[this.state.questionIndex].trait1, onChange: partial(this.handleQuestionTraits, "trait1"), options: Object.values(this.state.gameObj.traits) }
         const t2 = { value: this.state.gameObj.questions[this.state.questionIndex].trait2, onChange: partial(this.handleQuestionTraits, "trait2"), options: Object.values(this.state.gameObj.traits) }
         const allProps = { qProps: q, t1Props: t1, t2Props: t2 }
@@ -267,12 +260,12 @@ class ContentEditQuestions extends Component {
                         <Container fluid>
                             <Row>
                                 <Col size="sm-6">
-                                <p className="qIns"><strong>Response {i +1}</strong></p>
+                                    <p className="qIns"><strong>Response {i + 1}</strong></p>
                                     <Label text={response.response} onChange={partial(this.handleResponseText, i)} />
                                 </Col>
 
                                 <Col size="sm-6">
-                                <p className="qIns"><strong>Outcome {i +1}</strong></p>
+                                    <p className="qIns"><strong>Outcome {i + 1}</strong></p>
                                     <Label text={response.outcomes[0].text} onChange={partial(this.handleOutcomeText, i, 0)} />
                                 </Col>
                             </Row>
