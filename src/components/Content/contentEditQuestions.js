@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-
 import { Container, Row, Col } from '../Grid'
 import Label from '../Label'
-import Dropdown, { QuestionDropdown } from '../Dropdown'
+import { QuestionDropdown } from '../Dropdown'
 import { PointToggler } from "../PointToggler"
 import '../style.css';
 import AdminButton from "../Button"
 import { findbyId } from '../../utils/lifeAPIController';
-import { Response } from '../../constructors';
 import update from "immutability-helper"
 import { partial } from "../../utils/partials"
 import { update as dbUpdate } from "../../utils/lifeAPIController"
@@ -200,14 +198,6 @@ class ContentEditQuestions extends Component {
         })
     }
 
-    getGameIdUrl() {
-        const url = window.location.pathname
-        const questionIndex = url.indexOf("questions")
-        const fromQuestions = url.substring(questionIndex)
-        const id = fromQuestions.substring(fromQuestions.indexOf("/") + 1)
-
-        return id
-    }
 
     updateQuestionDb() {
         const id = this.getGameIdUrl()
@@ -267,12 +257,12 @@ class ContentEditQuestions extends Component {
                         <Container fluid>
                             <Row>
                                 <Col size="sm-6">
-                                <p className="qIns"><strong>Response {i +1}</strong></p>
+                                    <p className="qIns"><strong>Response {i + 1}</strong></p>
                                     <Label text={response.response} onChange={partial(this.handleResponseText, i)} />
                                 </Col>
 
                                 <Col size="sm-6">
-                                <p className="qIns"><strong>Outcome {i +1}</strong></p>
+                                    <p className="qIns"><strong>Outcome {i + 1}</strong></p>
                                     <Label text={response.outcomes[0].text} onChange={partial(this.handleOutcomeText, i, 0)} />
                                 </Col>
                             </Row>

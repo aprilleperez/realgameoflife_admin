@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-
-import { Container, Row, Col } from '../Grid'
+import { Container } from '../Grid'
 import '../style.css';
 import ContentEditQuestions from './contentEditQuestions';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
