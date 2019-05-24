@@ -193,8 +193,11 @@ class ContentEditQuestions extends Component {
 
     handleQuestionDropdown(event) {
         const { value } = event.target
+        // convert value="Question:<space>number"==> number-1
+        const index = this.state.gameObj.questions.map((_q, i) => `Question: ${i + 1}`).indexOf(value)
+        console.log("VALUE:", value, "INDEX:", index)
         this.setState({
-            questionIndex: value
+            questionIndex: index
         })
     }
 
@@ -232,7 +235,7 @@ class ContentEditQuestions extends Component {
         if (!gameObj) {
             return (<div></div>)
         }
-        const q = { value: this.state.questionIndex, onChange: this.handleQuestionDropdown, options: Object.keys(this.state.gameObj.questions) }
+        const q = { value: `Question: ${this.state.questionIndex + 1}`, onChange: this.handleQuestionDropdown, options: this.state.gameObj.questions.map((_question, i) => `Question: ${i + 1}`) }
         const t1 = { value: this.state.gameObj.questions[this.state.questionIndex].trait1, onChange: partial(this.handleQuestionTraits, "trait1"), options: Object.values(this.state.gameObj.traits) }
         const t2 = { value: this.state.gameObj.questions[this.state.questionIndex].trait2, onChange: partial(this.handleQuestionTraits, "trait2"), options: Object.values(this.state.gameObj.traits) }
         const allProps = { qProps: q, t1Props: t1, t2Props: t2 }
