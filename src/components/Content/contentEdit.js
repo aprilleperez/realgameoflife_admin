@@ -16,6 +16,7 @@ class ContentEdit extends Component {
         this.updateAvatarName = this.updateAvatarName.bind(this);
         this.showWidget = this.showWidget.bind(this);
         this.updatePicture = this.updatePicture.bind(this);
+        this.removeAvatar = this.removeAvatar.bind(this);
 
 
         this.state = {
@@ -133,6 +134,25 @@ class ContentEdit extends Component {
 
     }
 
+    removeAvatar(avatar) {
+        const id = this.getGameIdUrl();
+        let allNewAvs = [...this.state.gameObj.avatars]
+        console.log("HELLO FROM REMOVE AVATAR", avatar)
+        for (let i = 0; i < this.state.gameObj.avatars.length; i++) {
+            if (avatar === this.state.gameObj.avatars[i]) {
+
+                allNewAvs.splice(i, 1);
+                const gameObj = this.state.gameObj
+                const newAvs = new GameObj(gameObj.name, gameObj.traits, allNewAvs, gameObj.questions)
+                update(newAvs, id)
+                console.log("UPDATE HAPPENED")
+                this.setState({
+                    gameObj: newAvs
+                })
+            }
+        }
+    }
+
 
 
     //this parses the url and grabs the id from it. It grabs the index of the avatars string
@@ -201,6 +221,7 @@ class ContentEdit extends Component {
                     handleChange={this.handleChange}
                     passedState={this.state}
                     showWidget={this.showWidget}
+                    remover={(avatar) => { this.removeAvatar(avatar) }}
                 />
 
                 <br></br>
