@@ -15,6 +15,7 @@ function Card(props) {
                 <button id="upload_widget" onClick={props.onClick} className="cloudinary-button">Upload files</button>
 
                 <Label onChange={props.handleChange} className="thisCreateTraits" text={props.avatar.name} traitNumber={props.avatarIndex} />
+                <button onClick={props.remover}>Remove this avatar</button>
             </div>
         </div>
     )
