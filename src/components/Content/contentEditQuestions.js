@@ -9,7 +9,8 @@ import { findbyId } from '../../utils/lifeAPIController';
 import update from "immutability-helper"
 import { partial } from "../../utils/partials"
 import { update as dbUpdate } from "../../utils/lifeAPIController"
-import { GameObj } from '../../constructors';
+import { GameObj, Response, Outcome, Question, Traits, templateQuestion } from '../../constructors';
+import { all } from 'q';
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -27,6 +28,7 @@ class ContentEditQuestions extends Component {
         this.handleQuestionDropdown = this.handleQuestionDropdown.bind(this);
         this.updateQuestionDb = this.updateQuestionDb.bind(this);
         this.removeQuestion = this.removeQuestion.bind(this);
+        this.addQuestion = this.addQuestion.bind(this);
 
         this.state = {
             gameObj: null,
@@ -228,7 +230,26 @@ class ContentEditQuestions extends Component {
         })
     }
 
-
+    addQuestion() {
+        const id = this.getGameIdUrl()
+        let allNewQs = [...this.state.gameObj.questions]
+        console.log("ALL NEW QS", allNewQs)
+        let traits = Object.values(this.state.gameObj.traits)
+        console.log("THESE ARE THE TRAITS", traits)
+        let newQ = templateQuestion(traits)
+        console.log("NEW Q", newQ)
+        allNewQs.push(newQ)
+        console.log("ALL NEW QS", allNewQs)
+        const gameObj = this.state.gameObj
+        const newQuestions = new GameObj(gameObj.name, gameObj.traits, gameObj.avatars, allNewQs)
+        console.log("NEW QUESTIONS TO GO IN DB", newQuestions)
+        dbUpdate(newQuestions, id)
+        console.log("ADD QUESTION HAPPEND")
+        this.setState({
+            gameObj: newQuestions,
+            questionIndex: newQuestions.questions.length - 1
+        })
+    }
 
     render() {
         const gameObj = this.state.gameObj
@@ -288,11 +309,14 @@ class ContentEditQuestions extends Component {
                                 </Col>
                             </Row>
 
+
                             <hr></hr>
 
                         </Container>
+
                     ))
                 }
+                <button onClick={this.addQuestion}>Add another question</button>
                 {/* <AdminButton text="Done" buttonType="green" click={() => { }} to="/" /> */}
                 <br></br>
                 <br></br>
