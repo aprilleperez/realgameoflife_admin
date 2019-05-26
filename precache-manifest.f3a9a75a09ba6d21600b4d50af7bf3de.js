@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "86ee8d57462a3ed9498b2357840d6277",
+    "revision": "8837222891911e2a55ea4c80fad80a52",
     "url": "/realgameoflife_admin/index.html"
   },
   {
-    "revision": "1538cba8f82810c6f1b4",
+    "revision": "9ddb07c060203a0b0566",
     "url": "/realgameoflife_admin/static/css/main.091bf152.chunk.css"
   },
   {
-    "revision": "5958baf0b31542992ef7",
-    "url": "/realgameoflife_admin/static/js/2.f49ab274.chunk.js"
+    "revision": "6e0e8398ba384dd01b69",
+    "url": "/realgameoflife_admin/static/js/2.38d1a463.chunk.js"
   },
   {
-    "revision": "1538cba8f82810c6f1b4",
-    "url": "/realgameoflife_admin/static/js/main.cb23aee4.chunk.js"
+    "revision": "9ddb07c060203a0b0566",
+    "url": "/realgameoflife_admin/static/js/main.0820c7f5.chunk.js"
   },
   {
     "revision": "ff9e2e72e1b80b41c79f",
