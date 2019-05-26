@@ -25,7 +25,8 @@ function Avatars(props) {
                 return (
                     <Row>
                         <Col size="md-4">
-                            <Card avatar={avatar} avatarIndex={i} handleChange={props.handleChange} image={image} onClick={() => props.showWidget(partial(props.pictureUpdater, avatar))} />
+                            <Card remover={partial(props.remover, avatar)} avatar={avatar} avatarIndex={i} handleChange={props.handleChange} image={image} onClick={() => props.showWidget(partial(props.pictureUpdater, avatar))} />
+
                         </Col>
                         <Col size="md-4">
                             {keys.map(key =>

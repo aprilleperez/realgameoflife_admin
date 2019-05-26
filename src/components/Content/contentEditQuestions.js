@@ -9,10 +9,11 @@ import { findbyId } from '../../utils/lifeAPIController';
 import update from "immutability-helper"
 import { partial } from "../../utils/partials"
 import { update as dbUpdate } from "../../utils/lifeAPIController"
+import { GameObj } from '../../constructors';
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+// Binding all methods to our ContentEditQuestions class object
 class ContentEditQuestions extends Component {
     constructor(props) {
         super(props)
@@ -25,6 +26,7 @@ class ContentEditQuestions extends Component {
         this.handleQuestionTraits = this.handleQuestionTraits.bind(this);
         this.handleQuestionDropdown = this.handleQuestionDropdown.bind(this);
         this.updateQuestionDb = this.updateQuestionDb.bind(this);
+        this.removeQuestion = this.removeQuestion.bind(this);
 
         this.state = {
             gameObj: null,
@@ -193,7 +195,6 @@ class ContentEditQuestions extends Component {
 
     handleQuestionDropdown(event) {
         const { value } = event.target
-        // convert value="Question:<space>number"==> number-1
         const index = this.state.gameObj.questions.map((_q, i) => `Question: ${i + 1}`).indexOf(value)
         console.log("VALUE:", value, "INDEX:", index)
         this.setState({
@@ -211,22 +212,21 @@ class ContentEditQuestions extends Component {
         })
     }
 
-    //     let question = this.state.gameObj.questions[this.state.questionIndex]
-    //     let response = question.responses[rIndex]
-    //     let outcome = response.outcomes[oIndex]
-    //     let newOut = { ...outcome, trait: value };
-    //     let newOuts = [...response.outcomes];
-    //     newOuts[oIndex] = newOut;
-    //     let newResp = new Response(response.response, newOuts);
-    //     let newResps = [...question.responses];
-    //     newResps[rIndex] = newResp;
-    //     let newQ = { ...question, responses: newResps };
-    //     let newQuestions = [...this.state.gameObj.questions];
-    //     newQuestions[this.state.questionIndex] = newQ;
-    //     let newWholeFuckingGame = { ...this.state.gameObj, questions: newQuestions }
-    //     this.setState({
-    //         gameObj: newWholeFuckingGame
-    //     })
+    removeQuestion() {
+        const id = this.getGameIdUrl();
+        let allNewQs = [...this.state.gameObj.questions]
+        console.log("HELLO FROM REMOVE QUESTION", this.state.questionIndex)
+
+        allNewQs.splice(this.state.questionIndex, 1);
+        const gameObj = this.state.gameObj
+        const newQs = new GameObj(gameObj.name, gameObj.traits, gameObj.avatars, allNewQs)
+        dbUpdate(newQs, id)
+        console.log("REMOVED QUESTION HAPPENED")
+        this.setState({
+            gameObj: newQs,
+            questionIndex: 0
+        })
+    }
 
 
 
@@ -239,11 +239,16 @@ class ContentEditQuestions extends Component {
         const t1 = { value: this.state.gameObj.questions[this.state.questionIndex].trait1, onChange: partial(this.handleQuestionTraits, "trait1"), options: Object.values(this.state.gameObj.traits) }
         const t2 = { value: this.state.gameObj.questions[this.state.questionIndex].trait2, onChange: partial(this.handleQuestionTraits, "trait2"), options: Object.values(this.state.gameObj.traits) }
         const allProps = { qProps: q, t1Props: t1, t2Props: t2 }
+
+        const enabled = (this.state.gameObj.questions.length > 1)
+
         return (
             <Container>
                 <div className="questionRow">
+                    <button disabled={!enabled} className="float-right" onClick={this.removeQuestion}>Remove this question</button>
                     <QuestionDropdown {...allProps} />
                     <Row>
+
                         <Col size="sm-12">
                             <label for="questionInput" className="qIns qLabel"><strong>Question: </strong></label>
                             <Label className="questionInput" text={this.state.gameObj.questions[this.state.questionIndex].Q} onChange={this.handleQuestionText} />
