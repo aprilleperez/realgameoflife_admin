@@ -33,6 +33,7 @@ function Avatars(props) {
                                 // had to change traitName to text for it to show up in the placeholder
                                 (<Label traitName={props.traitName[key]} disabled="disabled" />)
                             )}
+
                         </Col>
 
                         <Col size="md-4">
