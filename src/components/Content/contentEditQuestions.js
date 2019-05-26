@@ -9,7 +9,8 @@ import { findbyId } from '../../utils/lifeAPIController';
 import update from "immutability-helper"
 import { partial } from "../../utils/partials"
 import { update as dbUpdate } from "../../utils/lifeAPIController"
-import { GameObj, Response, Outcome } from '../../constructors';
+import { GameObj, Response, Outcome, Question, Traits, templateQuestion } from '../../constructors';
+import { all } from 'q';
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -231,12 +232,23 @@ class ContentEditQuestions extends Component {
 
     addQuestion() {
         const id = this.getGameIdUrl()
-        let allNewQs = [this.state.gameObj.questions]
-        let traits = [this.state.gameObj.traits]
-        console.log("HELLO FROM ADD QUESTION", traits)
-        let templateResponse = new Response("Please enter a response here", [new Outcome("Enter an outcome here", traits[0], 0, "up"), new Outcome("Enter an outcome here", traits[0], 0, "up")])
-        console.log("TEMPLATE RESPONSE", templateResponse)
-
+        let allNewQs = [...this.state.gameObj.questions]
+        console.log("ALL NEW QS", allNewQs)
+        let traits = Object.values(this.state.gameObj.traits)
+        console.log("THESE ARE THE TRAITS", traits)
+        let newQ = templateQuestion(traits)
+        console.log("NEW Q", newQ)
+        allNewQs.push(newQ)
+        console.log("ALL NEW QS", allNewQs)
+        const gameObj = this.state.gameObj
+        const newQuestions = new GameObj(gameObj.name, gameObj.traits, gameObj.avatars, allNewQs)
+        console.log("NEW QUESTIONS TO GO IN DB", newQuestions)
+        dbUpdate(newQuestions, id)
+        console.log("ADD QUESTION HAPPEND")
+        this.setState({
+            gameObj: newQuestions,
+            questionIndex: newQuestions.questions.length - 1
+        })
     }
 
     render() {
