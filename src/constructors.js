@@ -75,16 +75,16 @@ export function templateConstructor(traits, gameName) {
 }
 
 
-function templateResponse(traits) {
+export function templateResponse(traits) {
     let defaultResponse = new Response("Please enter a response here", [new Outcome("Enter an outcome here", traits[0], 0, "up"), new Outcome("Enter an outcome here", traits[0], 0, "up")])
 
     return defaultResponse
 }
 
 
-function templateQuestion(traits) {
+export function templateQuestion(traits) {
     const responses = [1, 2, 3, 4, 5].map(i => {
-        // do junk here
+
         return templateResponse(traits)
     })
 
