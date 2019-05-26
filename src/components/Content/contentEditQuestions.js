@@ -9,7 +9,7 @@ import { findbyId } from '../../utils/lifeAPIController';
 import update from "immutability-helper"
 import { partial } from "../../utils/partials"
 import { update as dbUpdate } from "../../utils/lifeAPIController"
-import { GameObj } from '../../constructors';
+import { GameObj, Response, Outcome } from '../../constructors';
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -27,6 +27,7 @@ class ContentEditQuestions extends Component {
         this.handleQuestionDropdown = this.handleQuestionDropdown.bind(this);
         this.updateQuestionDb = this.updateQuestionDb.bind(this);
         this.removeQuestion = this.removeQuestion.bind(this);
+        this.addQuestion = this.addQuestion.bind(this);
 
         this.state = {
             gameObj: null,
@@ -228,7 +229,15 @@ class ContentEditQuestions extends Component {
         })
     }
 
+    addQuestion() {
+        const id = this.getGameIdUrl()
+        let allNewQs = [this.state.gameObj.questions]
+        let traits = [this.state.gameObj.traits]
+        console.log("HELLO FROM ADD QUESTION", traits)
+        let templateResponse = new Response("Please enter a response here", [new Outcome("Enter an outcome here", traits[0], 0, "up"), new Outcome("Enter an outcome here", traits[0], 0, "up")])
+        console.log("TEMPLATE RESPONSE", templateResponse)
 
+    }
 
     render() {
         const gameObj = this.state.gameObj
@@ -288,11 +297,14 @@ class ContentEditQuestions extends Component {
                                 </Col>
                             </Row>
 
+
                             <hr></hr>
 
                         </Container>
+
                     ))
                 }
+                <button onClick={this.addQuestion}>Add another question</button>
                 {/* <AdminButton text="Done" buttonType="green" click={() => { }} to="/" /> */}
                 <br></br>
                 <br></br>
