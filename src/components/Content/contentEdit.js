@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { GameObj } from "../../constructors"
+import { GameObj, Avatar } from "../../constructors"
 import { update, findbyId } from '../../utils/lifeAPIController';
 import { Container } from '../Grid'
 import '../style.css';
@@ -17,6 +17,7 @@ class ContentEdit extends Component {
         this.showWidget = this.showWidget.bind(this);
         this.updatePicture = this.updatePicture.bind(this);
         this.removeAvatar = this.removeAvatar.bind(this);
+        this.addAvatar = this.addAvatar.bind(this);
 
 
         this.state = {
@@ -153,6 +154,22 @@ class ContentEdit extends Component {
         }
     }
 
+    addAvatar() {
+        const id = this.getGameIdUrl();
+        let allNewAvs = [...this.state.gameObj.avatars]
+        console.log("HELLO FROM ADD AVATAR")
+        let templateAvatar = new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0)
+        allNewAvs.push(templateAvatar)
+        console.log("NEW LIST OF AVATARS", allNewAvs)
+        const gameObj = this.state.gameObj
+        const newAvs = new GameObj(gameObj.name, gameObj.traits, allNewAvs, gameObj.questions)
+        update(newAvs, id)
+        console.log("ADD AVATAR HIT DATABASE")
+        this.setState({
+            gameObj: newAvs
+        })
+    }
+
 
 
     //this parses the url and grabs the id from it. It grabs the index of the avatars string
@@ -173,8 +190,6 @@ class ContentEdit extends Component {
     ///////////////////////////////////////////////
 
     showWidget(updatePicture) {
-        let id = this.state.gameObj._id
-        let gameObj = this.state.gameObj
         window.cloudinary.openUploadWidget(
             {
                 cloud_name: "instapotty",
@@ -222,7 +237,9 @@ class ContentEdit extends Component {
                     passedState={this.state}
                     showWidget={this.showWidget}
                     remover={(avatar) => { this.removeAvatar(avatar) }}
+
                 />
+                <button onClick={this.addAvatar}>Add another avatar</button>
 
                 <br></br>
                 <br></br>
