@@ -40,7 +40,7 @@ class Nav extends Component {
     return (
       <nav className="appNav navbar sticky-top navbar-expand-lg navbar-light mb-2">
         <Link className="navbar-brand" to="/">
-          Real Game of Life
+          In Their Shoes
         </Link>
         <button
           // this is for onClick of hamburger

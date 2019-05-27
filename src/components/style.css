@@ -105,6 +105,35 @@ hr {
   object-fit: cover;
 }
 
+.card-body {
+  margin: auto;
+  padding: auto;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.cloudinary-button {
+  background-color: #fca25d;
+  color: white;
+  margin: auto;
+  padding: auto;
+  /* display: inline-block; */
+  /* position: relative; */
+  /* bottom: 8px;
+  right: 8px; */
+}
+
+.removeAvatar {
+  background-color: transparent;
+  border-color: #fca25d;
+  border-style: solid;
+  border-width: 1px;
+  color: #707070;
+  cursor: pointer;
+  margin: auto;
+  padding: auto;
+} 
+
 
 /* .thisCreateTraits {
   margin: 5px;
