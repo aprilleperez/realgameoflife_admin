@@ -3,6 +3,7 @@ import { GameObj, Avatar } from "../../constructors"
 import { update, findbyId } from '../../utils/lifeAPIController';
 import { Container } from '../Grid'
 import '../style.css';
+import { Tabs } from "../Header"
 import Avatars from '../Avatars';
 import AdminButton from '../Button';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -228,6 +229,14 @@ class ContentEdit extends Component {
         }
         return (
             <Container>
+                <Tabs>
+                    <div label="Avatar 1">
+                        Testing
+                    </div>
+                    <div label="Avatar 2">
+                        More testing
+                    </div>
+                </Tabs>
 
                 <Avatars avatars={gameObj.avatars ? gameObj.avatars : []}
                     traitName={gameObj.traits ? gameObj.traits : []}
