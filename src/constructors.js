@@ -9,7 +9,7 @@ export class Traits {
 }
 
 export class Avatar {
-    constructor(name, picture, t1, t2, t3, t4, t5) {
+    constructor(name, picture, t1, t2, t3, t4, t5, tracking) {
         this.name = name
         this.picture = picture
         this.trait1 = t1
@@ -17,6 +17,7 @@ export class Avatar {
         this.trait3 = t3
         this.trait4 = t4
         this.trait5 = t5
+        this.tracking = tracking
     }
 }
 
@@ -55,7 +56,7 @@ export class GameObj {
 }
 
 
-let templateAvatars = [new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0), new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0), new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0), new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0), new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0)]
+let templateAvatars = [new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0, []), new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0, []), new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0, []), new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0, []), new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0, [])]
 
 export function templateConstructor(traits, gameName) {
     const questions = [1, 2, 3, 4, 5].map(i => {
