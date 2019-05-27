@@ -158,7 +158,7 @@ class ContentEdit extends Component {
         const id = this.getGameIdUrl();
         let allNewAvs = [...this.state.gameObj.avatars]
         console.log("HELLO FROM ADD AVATAR")
-        let templateAvatar = new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0)
+        let templateAvatar = new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0, [])
         allNewAvs.push(templateAvatar)
         console.log("NEW LIST OF AVATARS", allNewAvs)
         const gameObj = this.state.gameObj
