@@ -230,8 +230,14 @@ class ContentEdit extends Component {
         return (
             <Container>
                 <Tabs>
-                    <div label="Avatar 1">
-                        Testing
+                    {/* {avatars.map(() => {
+                        return (
+                            <div label={"Avatar" {}}>
+                            </div>
+                        )
+                    })} */}
+                    <div label="Avatar 1"> 
+                        Testing this is where avatars need to come in
                     </div>
                     <div label="Avatar 2">
                         More testing
