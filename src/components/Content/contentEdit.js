@@ -227,24 +227,34 @@ class ContentEdit extends Component {
         if (!gameObj) {
             return (<div></div>)
         }
+
+        const domAvatars = this.state.gameObj.avatars
+        console.log("DOM Avatars: ", domAvatars)
+
         return (
             <Container>
-                <Tabs>
-                    {/* {avatars.map(() => {
+                {/* <div>
+                    {domAvatars.map((domAvatar, i) => {
                         return (
-                            <div label={"Avatar" {}}>
-                            </div>
+                            <Tabs>
+                                <div label={i + 1}>
+                                    {domAvatar}
+                                </div>
+                            </Tabs>
                         )
-                    })} */}
+                    })}
+                </div> */}
+
+                {/* <Tabs>
                     <div label="Avatar 1"> 
                         Testing this is where avatars need to come in
                     </div>
                     <div label="Avatar 2">
                         More testing
                     </div>
-                </Tabs>
+                </Tabs> */}
 
-                <Avatars avatars={gameObj.avatars ? gameObj.avatars : []}
+                {/* <Avatars avatars={gameObj.avatars ? gameObj.avatars : []}
                     traitName={gameObj.traits ? gameObj.traits : []}
                     updater={(avatar, trait, value) => { this.updateAvatarTrait(avatar, trait, value) }}
                     pictureUpdater={(avatar, url) => { this.updatePicture(avatar, url) }}
@@ -252,8 +262,8 @@ class ContentEdit extends Component {
                     passedState={this.state}
                     showWidget={this.showWidget}
                     remover={(avatar) => { this.removeAvatar(avatar) }}
+                /> */}
 
-                />
                 <button onClick={this.addAvatar}>Add another avatar</button>
 
                 <br></br>
