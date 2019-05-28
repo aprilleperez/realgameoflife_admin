@@ -6,6 +6,9 @@ import { ContentHeader } from '../Header'
 import Label from '../Label'
 import '../style.css';
 import AdminButton from '../Button';
+import { Button, ButtonToolbar } from "react-bootstrap"
+import { MyVerticallyCenteredModal } from "../Modal"
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Since all of our traits are always in this order, creating an array for easy mapping down in render.
@@ -21,9 +24,14 @@ class ContentCreate extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.buildTraits = this.buildTraits.bind(this);
 
+
         this.state = {
+            modalShow: false
         }
     }
+
+
+
 
     // Take in the changed value and set state to be that
     handleChange(event) {
@@ -50,12 +58,28 @@ class ContentCreate extends Component {
     }
 
     render() {
+        let modalClose = () => this.setState({ modalShow: false })
         return (
+
             <Container>
+                <ButtonToolbar>
+                    <Button
+                        variant="primary"
+                        onClick={() => this.setState({ modalShow: true })}
+                    >
+                        Launch Modal
+        </Button>
+
+                    <MyVerticallyCenteredModal
+                        show={this.state.modalShow}
+                        onHide={modalClose}
+                    />
+                </ButtonToolbar>
 
                 <Row>
                     <Col size="sm-12">
                         <ContentHeader text="Instructions" />
+
                     </Col>
                 </Row>
 
