@@ -32,17 +32,25 @@ export function ContentHeader(props) {
 
 export class Tabs extends Component {
     // sets the prop to have required Array type (in parent element, it must be passing more than 1 avatar)
-    static propTypes = {
-        children: PropTypes.instanceOf(Array).isRequired,
-    }
+    // static propTypes = {
+    //     children: PropTypes.instanceOf(Array).isRequired,
+    // }
 
     // inherits props from parent element
     constructor(props) {
         super(props);
 
+        // this.props.children[0].props.label = this.props.children[0].props.label.bind(this)
+
         this.state = {
-            activeTab: this.props.children[0].props.label,
+            activeTab: [],
+            // activeTab: this.props.label,
         };
+    }
+
+    componentDidMount() {
+        this.setState({
+            activeTab: this.props.children[0].props.label})
     }
 
     // on click, sets state to active tab of clicked tab
@@ -61,7 +69,11 @@ export class Tabs extends Component {
             }
         } = this;
 
+        console.log("Children: ",  children)
+        console.log("STATE", this.state)
+
         return (
+            
             <div className="tabs">
                 <ol className="tab-list">
                     {children.map((child) => {

@@ -228,33 +228,56 @@ class ContentEdit extends Component {
             return (<div></div>)
         }
 
-        const domAvatars = this.state.gameObj.avatars
+        const domAvatars = this.state.gameObj.avatars || [];
         console.log("DOM Avatars: ", domAvatars)
 
+        let r = [];
+
+        domAvatars.forEach((domAvatar, i) => {
+            r.push(
+
+                <div label={"Avatar" + { i }}>
+                    hi
+                    {/* {domAvatar} */}
+                </div>
+            )
+        })
+
         return (
+
+            // domAvatars.forEach((domAvatar, i) => {
+            //     r.push (
+
+            //         <div label="Avatar">
+            //             {domAvatar.name}
+            //         </div>
+            //     )
+            // })
+
             <Container>
-                {/* <div>
-                    {domAvatars.map((domAvatar, i) => {
-                        return (
-                            <Tabs>
-                                <div label={i + 1}>
-                                    {domAvatar}
-                                </div>
-                            </Tabs>
-                        )
-                    })}
-                </div> */}
+                {/* {r ?
+                    <Tabs>
+                        {r}
+                    </Tabs>
+                    : null} */}
 
                 {/* <Tabs>
                     <div label="Avatar 1"> 
-                        Testing this is where avatars need to come in
+                        testing blah blah 
                     </div>
                     <div label="Avatar 2">
                         More testing
                     </div>
+                    <div label="Avatar 3">
+                        Hi Carrie
+                    </div>
                 </Tabs> */}
 
-                {/* <Avatars avatars={gameObj.avatars ? gameObj.avatars : []}
+                {/* <Tabs avatars={gameObj.avatars ? gameObj.avatars : []}>
+                   
+                </Tabs> */}
+
+                <Avatars avatars={gameObj.avatars ? gameObj.avatars : []}
                     traitName={gameObj.traits ? gameObj.traits : []}
                     updater={(avatar, trait, value) => { this.updateAvatarTrait(avatar, trait, value) }}
                     pictureUpdater={(avatar, url) => { this.updatePicture(avatar, url) }}
@@ -262,7 +285,7 @@ class ContentEdit extends Component {
                     passedState={this.state}
                     showWidget={this.showWidget}
                     remover={(avatar) => { this.removeAvatar(avatar) }}
-                /> */}
+                />
 
                 <button onClick={this.addAvatar}>Add another avatar</button>
 
