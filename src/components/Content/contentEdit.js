@@ -228,54 +228,8 @@ class ContentEdit extends Component {
             return (<div></div>)
         }
 
-        const domAvatars = this.state.gameObj.avatars || [];
-        console.log("DOM Avatars: ", domAvatars)
-
-        let r = [];
-
-        domAvatars.forEach((domAvatar, i) => {
-            r.push(
-
-                <div label={"Avatar" + { i }}>
-                    hi
-                    {/* {domAvatar} */}
-                </div>
-            )
-        })
-
         return (
-
-            // domAvatars.forEach((domAvatar, i) => {
-            //     r.push (
-
-            //         <div label="Avatar">
-            //             {domAvatar.name}
-            //         </div>
-            //     )
-            // })
-
             <Container>
-                {/* {r ?
-                    <Tabs>
-                        {r}
-                    </Tabs>
-                    : null} */}
-
-                {/* <Tabs>
-                    <div label="Avatar 1"> 
-                        testing blah blah 
-                    </div>
-                    <div label="Avatar 2">
-                        More testing
-                    </div>
-                    <div label="Avatar 3">
-                        Hi Carrie
-                    </div>
-                </Tabs> */}
-
-                {/* <Tabs avatars={gameObj.avatars ? gameObj.avatars : []}>
-                   
-                </Tabs> */}
 
                 <Avatars avatars={gameObj.avatars ? gameObj.avatars : []}
                     traitName={gameObj.traits ? gameObj.traits : []}
@@ -305,3 +259,65 @@ class ContentEdit extends Component {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 export default ContentEdit;
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////
+// TABS STUFF
+
+// UNDER RENDER
+// const domAvatars = this.state.gameObj.avatars || [];
+// console.log("DOM Avatars: ", domAvatars)
+
+// let r = [];
+
+// domAvatars.forEach((domAvatar, i) => {
+//     r.push(
+//         <div label={"Avatar" + { i }}>
+//             hi
+//             {/* {domAvatar} */}
+//         </div>
+//     )
+// })
+
+// UNDER RETURN
+// domAvatars.forEach((domAvatar, i) => {
+            //     r.push (
+
+            //         <div label="Avatar">
+            //             {domAvatar.name}
+            //         </div>
+            //     )
+            // })
+
+    {/* {r ?
+                    <Tabs>
+                        {r}
+                    </Tabs>
+                    : null} */}
+
+                {/* <Tabs>
+                    <div label="Avatar 1"> 
+                        testing blah blah 
+                    </div>
+                    <div label="Avatar 2">
+                        More testing
+                    </div>
+                    <div label="Avatar 3">
+                        Hi Carrie
+                    </div>
+                </Tabs> */}
+
+                {/* <Tabs avatars={gameObj.avatars ? gameObj.avatars : []}>
+                   
+                </Tabs> */}
