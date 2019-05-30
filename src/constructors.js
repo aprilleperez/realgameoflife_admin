@@ -59,7 +59,7 @@ export class GameObj {
 let templateAvatars = [new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0, []), new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0, []), new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0, []), new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0, []), new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0, [])]
 
 export function templateConstructor(traits, gameName) {
-    const questions = [1, 2, 3, 4, 5].map(i => {
+    const questions = [1].map(i => {
         return templateQuestion(traits)
     })
     const keys = ["trait1", "trait2", "trait3", "trait4", "trait5"]
