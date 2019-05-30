@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { GameObj } from "../../constructors"
-import axios from 'axios';
+import { GameObj, Avatar } from "../../constructors"
 import { update, findbyId } from '../../utils/lifeAPIController';
-
 import { Container } from '../Grid'
 import '../style.css';
+import { Tabs } from "../Header"
 import Avatars from '../Avatars';
 import AdminButton from '../Button';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -16,6 +15,10 @@ class ContentEdit extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.updateAvatarName = this.updateAvatarName.bind(this);
+        this.showWidget = this.showWidget.bind(this);
+        this.updatePicture = this.updatePicture.bind(this);
+        this.removeAvatar = this.removeAvatar.bind(this);
+        this.addAvatar = this.addAvatar.bind(this);
 
 
         this.state = {
@@ -72,7 +75,6 @@ class ContentEdit extends Component {
     }
 
 
-
     // helper method so we can grab the value of the trait that's being edited on each Avatar.
     // Grab the game ID again so we know which game we're working on. Create a new duplicate array,
     //called allNewAvTraits. Loop over the original gameObj and compare the current state of Avatr
@@ -110,7 +112,64 @@ class ContentEdit extends Component {
         }
     }
 
+    updatePicture(avatar, url) {
+        console.log("THIS AVATAR:", avatar, "URL:", url)
+        const id = this.getGameIdUrl();
+        let allNewAvs = [...this.state.gameObj.avatars]
+        for (let i = 0; i < this.state.gameObj.avatars.length; i++) {
+            if (avatar === this.state.gameObj.avatars[i]) {
+                let cur = this.state.gameObj.avatars[i]
+                let newAv = {
+                    ...cur,
+                    picture: url
+                }
+                allNewAvs[i] = newAv
+                const gameObj = this.state.gameObj
+                const newAvatarWithPicture = new GameObj(gameObj.name, gameObj.traits, allNewAvs, gameObj.questions)
+                console.log("NEW AVATAR WITH PICTURE:", newAvatarWithPicture)
+                update(newAvatarWithPicture, id)
+                this.setState({
+                    gameObj: newAvatarWithPicture
+                })
+            }
+        }
 
+    }
+
+    removeAvatar(avatar) {
+        const id = this.getGameIdUrl();
+        let allNewAvs = [...this.state.gameObj.avatars]
+        console.log("HELLO FROM REMOVE AVATAR", avatar)
+        for (let i = 0; i < this.state.gameObj.avatars.length; i++) {
+            if (avatar === this.state.gameObj.avatars[i]) {
+
+                allNewAvs.splice(i, 1);
+                const gameObj = this.state.gameObj
+                const newAvs = new GameObj(gameObj.name, gameObj.traits, allNewAvs, gameObj.questions)
+                update(newAvs, id)
+                console.log("UPDATE HAPPENED")
+                this.setState({
+                    gameObj: newAvs
+                })
+            }
+        }
+    }
+
+    addAvatar() {
+        const id = this.getGameIdUrl();
+        let allNewAvs = [...this.state.gameObj.avatars]
+        console.log("HELLO FROM ADD AVATAR")
+        let templateAvatar = new Avatar("Name this Avatar", null, 0, 0, 0, 0, 0, [])
+        allNewAvs.push(templateAvatar)
+        console.log("NEW LIST OF AVATARS", allNewAvs)
+        const gameObj = this.state.gameObj
+        const newAvs = new GameObj(gameObj.name, gameObj.traits, allNewAvs, gameObj.questions)
+        update(newAvs, id)
+        console.log("ADD AVATAR HIT DATABASE")
+        this.setState({
+            gameObj: newAvs
+        })
+    }
 
 
 
@@ -126,24 +185,64 @@ class ContentEdit extends Component {
         return id
     }
 
+    ///////////////////////////////////////////////
+    //                                           //
+    //    CLOUDINARY                             // 
+    ///////////////////////////////////////////////
+
+    showWidget(updatePicture) {
+        window.cloudinary.openUploadWidget(
+            {
+                cloud_name: "instapotty",
+                upload_preset: "wveqgdsr",
+                thumbnailTransformation: { width: 200, height: 200, crop: 'fit' },
+                multiple: false,
+                clientAllowedFormats: ["png", "gif", "jpeg"],
+                maxFileSize: 1500000,
+                maxImageWidth: 5000,
+                maxImageHeight: 5000,
+                minImageWidth: 200,
+                minImageHeight: 200
+            },
+            function (error, result) {
+                console.log(result)
+                if (result.event === "success") {
+                    let newUrl = result.info.thumbnail_url
+                    console.log("NEW PICTURE URL:", newUrl)
+                    updatePicture(newUrl)
+
+                }
+            }
+        )
+
+    }
+
     // If gameObj isn't empty (which it will be on first render, in which case just return an empty div),
     // render the Avatars component, passing it the gameObj that exists in state (unless it's empty, in which case)
     // just pass an empty array). 
 
     render() {
+
         const gameObj = this.state.gameObj
         if (!gameObj) {
             return (<div></div>)
         }
+
         return (
             <Container>
 
                 <Avatars avatars={gameObj.avatars ? gameObj.avatars : []}
                     traitName={gameObj.traits ? gameObj.traits : []}
                     updater={(avatar, trait, value) => { this.updateAvatarTrait(avatar, trait, value) }}
+                    pictureUpdater={(avatar, url) => { this.updatePicture(avatar, url) }}
                     handleChange={this.handleChange}
                     passedState={this.state}
+                    showWidget={this.showWidget}
+                    remover={(avatar) => { this.removeAvatar(avatar) }}
                 />
+
+                <button onClick={this.addAvatar}>Add another avatar</button>
+
                 <br></br>
                 <br></br>
                 <br></br>
@@ -160,3 +259,65 @@ class ContentEdit extends Component {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 export default ContentEdit;
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////
+// TABS STUFF
+
+// UNDER RENDER
+// const domAvatars = this.state.gameObj.avatars || [];
+// console.log("DOM Avatars: ", domAvatars)
+
+// let r = [];
+
+// domAvatars.forEach((domAvatar, i) => {
+//     r.push(
+//         <div label={"Avatar" + { i }}>
+//             hi
+//             {/* {domAvatar} */}
+//         </div>
+//     )
+// })
+
+// UNDER RETURN
+// domAvatars.forEach((domAvatar, i) => {
+            //     r.push (
+
+            //         <div label="Avatar">
+            //             {domAvatar.name}
+            //         </div>
+            //     )
+            // })
+
+    {/* {r ?
+                    <Tabs>
+                        {r}
+                    </Tabs>
+                    : null} */}
+
+                {/* <Tabs>
+                    <div label="Avatar 1"> 
+                        testing blah blah 
+                    </div>
+                    <div label="Avatar 2">
+                        More testing
+                    </div>
+                    <div label="Avatar 3">
+                        Hi Carrie
+                    </div>
+                </Tabs> */}
+
+                {/* <Tabs avatars={gameObj.avatars ? gameObj.avatars : []}>
+                   
+                </Tabs> */}

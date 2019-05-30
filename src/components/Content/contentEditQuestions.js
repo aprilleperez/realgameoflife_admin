@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-
 import { Container, Row, Col } from '../Grid'
 import Label from '../Label'
-import Dropdown, { QuestionDropdown } from '../Dropdown'
+import { QuestionDropdown } from '../Dropdown'
 import { PointToggler } from "../PointToggler"
 import '../style.css';
 import AdminButton from "../Button"
 import { findbyId } from '../../utils/lifeAPIController';
-import { Response } from '../../constructors';
 import update from "immutability-helper"
 import { partial } from "../../utils/partials"
 import { update as dbUpdate } from "../../utils/lifeAPIController"
+import { GameObj, Response, Outcome, Question, Traits, templateQuestion } from '../../constructors';
+import { all } from 'q';
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+// Binding all methods to our ContentEditQuestions class object
 class ContentEditQuestions extends Component {
     constructor(props) {
         super(props)
@@ -27,6 +27,8 @@ class ContentEditQuestions extends Component {
         this.handleQuestionTraits = this.handleQuestionTraits.bind(this);
         this.handleQuestionDropdown = this.handleQuestionDropdown.bind(this);
         this.updateQuestionDb = this.updateQuestionDb.bind(this);
+        this.removeQuestion = this.removeQuestion.bind(this);
+        this.addQuestion = this.addQuestion.bind(this);
 
         this.state = {
             gameObj: null,
@@ -195,19 +197,13 @@ class ContentEditQuestions extends Component {
 
     handleQuestionDropdown(event) {
         const { value } = event.target
+        const index = this.state.gameObj.questions.map((_q, i) => `Question: ${i + 1}`).indexOf(value)
+        console.log("VALUE:", value, "INDEX:", index)
         this.setState({
-            questionIndex: value
+            questionIndex: index
         })
     }
 
-    getGameIdUrl() {
-        const url = window.location.pathname
-        const questionIndex = url.indexOf("questions")
-        const fromQuestions = url.substring(questionIndex)
-        const id = fromQuestions.substring(fromQuestions.indexOf("/") + 1)
-
-        return id
-    }
 
     updateQuestionDb() {
         const id = this.getGameIdUrl()
@@ -218,44 +214,73 @@ class ContentEditQuestions extends Component {
         })
     }
 
-    //     let question = this.state.gameObj.questions[this.state.questionIndex]
-    //     let response = question.responses[rIndex]
-    //     let outcome = response.outcomes[oIndex]
-    //     let newOut = { ...outcome, trait: value };
-    //     let newOuts = [...response.outcomes];
-    //     newOuts[oIndex] = newOut;
-    //     let newResp = new Response(response.response, newOuts);
-    //     let newResps = [...question.responses];
-    //     newResps[rIndex] = newResp;
-    //     let newQ = { ...question, responses: newResps };
-    //     let newQuestions = [...this.state.gameObj.questions];
-    //     newQuestions[this.state.questionIndex] = newQ;
-    //     let newWholeFuckingGame = { ...this.state.gameObj, questions: newQuestions }
-    //     this.setState({
-    //         gameObj: newWholeFuckingGame
-    //     })
+    removeQuestion() {
+        const id = this.getGameIdUrl();
+        let allNewQs = [...this.state.gameObj.questions]
+        console.log("HELLO FROM REMOVE QUESTION", this.state.questionIndex)
 
+        allNewQs.splice(this.state.questionIndex, 1);
+        const gameObj = this.state.gameObj
+        const newQs = new GameObj(gameObj.name, gameObj.traits, gameObj.avatars, allNewQs)
+        dbUpdate(newQs, id)
+        console.log("REMOVED QUESTION HAPPENED")
+        this.setState({
+            gameObj: newQs,
+            questionIndex: 0
+        })
+    }
 
+    addQuestion() {
+        const id = this.getGameIdUrl()
+        let allNewQs = [...this.state.gameObj.questions]
+        console.log("ALL NEW QS", allNewQs)
+        let traits = Object.values(this.state.gameObj.traits)
+        console.log("THESE ARE THE TRAITS", traits)
+        let newQ = templateQuestion(traits)
+        console.log("NEW Q", newQ)
+        allNewQs.push(newQ)
+        console.log("ALL NEW QS", allNewQs)
+        const gameObj = this.state.gameObj
+        const newQuestions = new GameObj(gameObj.name, gameObj.traits, gameObj.avatars, allNewQs)
+        console.log("NEW QUESTIONS TO GO IN DB", newQuestions)
+        dbUpdate(newQuestions, id)
+        console.log("ADD QUESTION HAPPEND")
+        this.setState({
+            gameObj: newQuestions,
+            questionIndex: newQuestions.questions.length - 1
+        })
+    }
 
     render() {
         const gameObj = this.state.gameObj
         if (!gameObj) {
             return (<div></div>)
         }
-        const q = { value: this.state.questionIndex, onChange: this.handleQuestionDropdown, options: Object.keys(this.state.gameObj.questions) }
+        const q = { value: `Question: ${this.state.questionIndex + 1}`, onChange: this.handleQuestionDropdown, options: this.state.gameObj.questions.map((_question, i) => `Question: ${i + 1}`) }
         const t1 = { value: this.state.gameObj.questions[this.state.questionIndex].trait1, onChange: partial(this.handleQuestionTraits, "trait1"), options: Object.values(this.state.gameObj.traits) }
         const t2 = { value: this.state.gameObj.questions[this.state.questionIndex].trait2, onChange: partial(this.handleQuestionTraits, "trait2"), options: Object.values(this.state.gameObj.traits) }
         const allProps = { qProps: q, t1Props: t1, t2Props: t2 }
+
+        const enabled = (this.state.gameObj.questions.length > 1)
+
         return (
             <Container>
                 <div className="questionRow">
                     <QuestionDropdown {...allProps} />
                     <Row>
+
                         <Col size="sm-12">
                             <label for="questionInput" className="qIns qLabel"><strong>Question: </strong></label>
                             <Label className="questionInput" text={this.state.gameObj.questions[this.state.questionIndex].Q} onChange={this.handleQuestionText} />
                             <br></br>
-                            {/* <hr></hr> */}
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col size="sm-3">
+                            <button className="addQButton" onClick={this.addQuestion}><i class="fas fa-plus"></i> Add Another question</button>
+                        </Col>
+                        <Col size="sm-3">
+                            <button disabled={!enabled} className="removeButton" onClick={this.removeQuestion}><i class="fas fa-trash"></i> Drop Question</button>
                         </Col>
                     </Row>
                 </div>
@@ -266,40 +291,44 @@ class ContentEditQuestions extends Component {
                     this.state.gameObj.questions[this.state.questionIndex].responses.map((response, i) => (
                         <Container fluid>
                             <Row>
-                                <Col size="sm-6">
-                                <p className="qIns"><strong>Response {i +1}</strong></p>
+                                <Col size="sm-12">
+                                    <p className="qIns"><strong>Choice {i + 1}</strong></p>
                                     <Label text={response.response} onChange={partial(this.handleResponseText, i)} />
                                 </Col>
+                            </Row>
 
-                                <Col size="sm-6">
-                                <p className="qIns"><strong>Outcome {i +1}</strong></p>
+                            <Row>
+                                <Col size="sm-12">
+                                    <p className="qIns"><strong>Outcome {i + 1}</strong></p>
                                     <Label text={response.outcomes[0].text} onChange={partial(this.handleOutcomeText, i, 0)} />
                                 </Col>
                             </Row>
 
                             <Row>
-                                <Col size="sm-5">
+                                <Col size="sm-6">
                                     <PointToggler text="Affects Trait" options={Object.values(this.state.gameObj.traits)} value={response.outcomes[0].amount} trait={response.outcomes[0].trait} onChange={
                                         (value) => this.handleOutcomeTrait(i, 0, value)} plus={partial(this.handleTraitAmount, i, 0, response.outcomes[0].amount + 1)} minus={partial(this.handleTraitAmount, i, 0, response.outcomes[0].amount - 1)} />
                                 </Col>
 
-                                <Col size="sm-5">
+                                <Col size="sm-6">
                                     <PointToggler text="Affects Trait" options={Object.values(this.state.gameObj.traits)} value={response.outcomes[1].amount}
                                         trait={response.outcomes[1].trait} onChange={
                                             (value) => this.handleOutcomeTrait(i, 1, value)} plus={partial(this.handleTraitAmount, i, 1, response.outcomes[1].amount + 1)} minus={partial(this.handleTraitAmount, i, 1, response.outcomes[1].amount - 1)} />
                                 </Col>
                             </Row>
 
+                            <br></br>
+                            <br></br>
                             <hr></hr>
 
                         </Container>
+
                     ))
                 }
-                {/* <AdminButton text="Done" buttonType="green" click={() => { }} to="/" /> */}
                 <br></br>
                 <br></br>
                 <br></br>
-                <AdminButton className="btn btn-danger" text="Save Questions" onClick={this.updateQuestionDb} />
+                <AdminButton className="btn btn-danger" text="Done" onClick={this.updateQuestionDb} />
                 <br></br>
                 <br></br>
                 <br></br>

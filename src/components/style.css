@@ -19,6 +19,15 @@ hr {
   margin-bottom: 32px; 
 }
 
+.container {
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+}
+
+.form-control {
+  border-bottom-color: none!important;
+}
+
 /* ------------------------------Nav Component------------------------------ */
 .appNav {
   background: rgba(175, 217, 234, 0.75);
@@ -80,6 +89,29 @@ hr {
 
 
 /* ------------------------------Avatar Card Component------------------------------ */
+/* .tab-list {
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+}
+
+.tab-list-item {
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  padding: 0.5rem 0.75rem;
+}
+
+.tab-list-active {
+  background-color: white;
+  border: solid #ccc;
+  border-width: 1px 1px 0 1px;
+} */
+
+.fullAvatar {
+  margin-bottom: 32px;
+  /* background-color: red; */
+}
+
 .card {
   border-style: solid;
   border-color: #fca25d;
@@ -105,6 +137,52 @@ hr {
   object-fit: cover;
 }
 
+.card-body {
+  margin: auto;
+  padding: auto;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.cloudinary-button {
+  background-color: #fca25d;
+  color: white;
+  /* margin: auto; */
+  margin-bottom: 16px;
+  padding: auto;
+  /* display: inline-block; */
+  /* position: relative; */
+  /* bottom: 8px;
+  right: 8px; */
+}
+
+/* .avatarName {
+  margin-top: 16px;
+  margin-bottom: 16px;
+} */
+
+.addQButton {
+  background-color: transparent;
+  border-color: white;
+  border-style: solid;
+  border-width: 1px;
+  color: #707070;
+  cursor: pointer;
+  margin: auto;
+  padding: auto;
+}
+
+.removeButton {
+  background-color: transparent;
+  border-color: white;
+  border-style: solid;
+  border-width: 1px;
+  color: #707070;
+  cursor: pointer;
+  margin: auto;
+  padding: auto;
+} 
+
 
 /* .thisCreateTraits {
   margin: 5px;
@@ -126,11 +204,13 @@ hr {
 
 /* ------------------------------??? Component------------------------------ */
 .thisForm {
+  /* margin: auto; */
   padding: 5px;
   border-style: solid;
   border-color: #AFD9EA;
   border-width: 1px;
   background-color: white;
+  color: #707070!important;
 }
 
 .score {
@@ -185,10 +265,11 @@ hr {
 
 .qIns {
   color: #fca25d;
+  word-wrap: break-word;
 }
 
 .qLabel {
-  padding-left: 15px;
+  /* padding-left: 15px; */
 }
 
 .questionRow {
@@ -196,6 +277,10 @@ hr {
   border-style: solid;
   border-width: 1px;
   border-color: #fca25d;
-  padding-top: 32px;
+  padding: 32px;
   margin-bottom: 32px;
+}
+
+.modalText {
+  font-size: 32px;
 }
