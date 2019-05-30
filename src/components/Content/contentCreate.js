@@ -90,6 +90,8 @@ class ContentCreate extends Component {
                             <br></br>
                             <br></br>
                             On the following screens you will be able to edit: the avatars (5 total) and the starting points of their stats based off the traits (min 1, max 20), and the questions (5 total) each being weighed by the current points of the avatar's traits. Each question will have 5 response which will increase or decrease the avatar's stats, as well as have a certain outcome.
+                            <br></br>
+                            <br></br>
                         </p>
                     </Col>
                 </Row>
@@ -99,7 +101,7 @@ class ContentCreate extends Component {
                     </Col>
 
                     <Col size="sm-6">
-                        <Label onChange={this.handleChange} traitNumber="GameName" className="thisCreateTraits" text="Game Name" />
+                        <Label onChange={this.handleChange} traitNumber="GameName" className="thisCreateTraits" text=" Type Game Name" />
                         <hr></hr>
                     </Col>
 
@@ -114,7 +116,8 @@ class ContentCreate extends Component {
 
                     <Col size="sm-6">
                         {texts.map((text, i) => (
-                            <Label onChange={this.handleChange} className="thisCreateTraits" text={text} traitNumber={i} />
+                            <Label onChange={this.handleChange} className="thisCreateTraits" text={`Type Trait ${i + 1}`} traitNumber={i} />
+                            // text={text}
                         ))}
                     </Col>
 

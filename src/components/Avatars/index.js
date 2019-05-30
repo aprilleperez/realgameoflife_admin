@@ -13,8 +13,8 @@ const temporaryImagesCreate = "https://res.cloudinary.com/instapotty/image/uploa
 function Avatars(props) {
     return (
         <Container fluid>
-            <Header />
-            <SubHeader />
+            {/* <Header />
+            <SubHeader /> */}
             {/* Map over the avatars object */}
             {props.avatars.map((avatar, i) => {
                 let image = temporaryImagesCreate

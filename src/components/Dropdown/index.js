@@ -26,9 +26,9 @@ export function Dropdown(props) {
 export function QuestionDropdown(props) {
   const { qProps, t1Props, t2Props } = props;
   return (
-    <Container fluid>
+    <Container>
       <Row>
-        <Col size="sm-1">
+        <Col size="sm-2">
           <p className="qIns"><strong>Edit Question:</strong></p>
         </Col>
 
