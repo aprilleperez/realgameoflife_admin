@@ -242,7 +242,6 @@ class ContentEdit extends Component {
                 />
 
                 <div className="addingAvatar"><button className="addAvatarButton" onClick={this.addAvatar}><i class="fas fa-plus"></i> Add another avatar</button></div>
-                {/* <hr></hr> */}
                 <br></br>
                 <AdminButton className="btn btn-danger" text="Save Avatars" onClick={this.updateAvatarName} />
                 <br></br>
