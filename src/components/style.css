@@ -108,7 +108,8 @@ hr {
 } */
 
 .fullAvatar {
-  margin-bottom: 32px;
+  /* margin-top: 32px; */
+  margin-bottom: 48px;
   /* background-color: red; */
 }
 
@@ -156,10 +157,35 @@ hr {
   right: 8px; */
 }
 
+.gray {
+  border-color: #70707075;
+}
+
 /* .avatarName {
   margin-top: 16px;
   margin-bottom: 16px;
 } */
+
+.addingAvatar, .removeAvatar {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.addAvatarButton {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: transparent;
+  border-color: #fca25d;
+  border-style: solid;
+  border-width: 1px;
+  color: #707070;
+}
+
+.addAvatarButton:hover {
+  background-color: #fca25d;
+  color: white;
+}
 
 .addQButton {
   background-color: transparent;
@@ -182,6 +208,10 @@ hr {
   margin: auto;
   padding: auto;
 } 
+
+.removeButton:hover {
+  color: #fca25d;
+}
 
 
 /* .thisCreateTraits {

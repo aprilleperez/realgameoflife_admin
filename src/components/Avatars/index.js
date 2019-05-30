@@ -28,6 +28,17 @@ function Avatars(props) {
                             </Col>
 
                             <Col size="sm-8">
+                                <Row>
+                                    <Col size="sm-8">
+                                        <h4>Traits</h4>
+                                    </Col>
+
+                                    <Col size="sm-4">
+                                    <h4>Stat Points</h4>
+                                    </Col>
+                                </Row>
+                                <br></br>
+
                                 {keys.map(key => {
                                     const increment = partial(props.updater, avatar, key, avatar[key] + 1)
                                     const decrement = partial(props.updater, avatar, key, avatar[key] - 1)
@@ -46,6 +57,8 @@ function Avatars(props) {
                                 })}
                             </Col>
                         </Row>
+                        <br></br>
+                        <hr className="gray"></hr>
                     </div>
                 )
             })}
