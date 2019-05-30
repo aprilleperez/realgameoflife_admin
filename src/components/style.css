@@ -166,13 +166,13 @@ hr {
   margin-bottom: 16px;
 } */
 
-.addingAvatar, .removeAvatar {
+.addingAvatar, .removeAvatar, .addingQuestion {
   display: flex;
   justify-content: center;
   align-content: center;
 }
 
-.addAvatarButton {
+.addAvatarButton, .addQButton {
   margin-top: 16px;
   margin-bottom: 16px;
   background-color: transparent;
@@ -182,12 +182,12 @@ hr {
   color: #707070;
 }
 
-.addAvatarButton:hover {
+.addAvatarButton:hover, .addQButton:hover {
   background-color: #fca25d;
   color: white;
 }
 
-.addQButton {
+/* .addQButton {
   background-color: transparent;
   border-color: white;
   border-style: solid;
@@ -196,7 +196,7 @@ hr {
   cursor: pointer;
   margin: auto;
   padding: auto;
-}
+} */
 
 .removeButton {
   background-color: transparent;
@@ -271,6 +271,23 @@ hr {
   opacity: .7;
 }
   
+.helpButton {
+  background-color: #AFD9EA;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #AFD9EA;
+  color: #707070;
+  padding: 8px 16px!important;
+  margin-bottom: 8px!important;
+}
+
+.helpButton:hover {
+  background-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #AFD9EA;
+  color: #707070;
+}
 
   
   .navlink {

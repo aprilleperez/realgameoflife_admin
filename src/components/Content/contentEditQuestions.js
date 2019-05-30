@@ -272,13 +272,9 @@ class ContentEditQuestions extends Component {
                         <Col size="sm-12">
                             <label for="questionInput" className="qIns qLabel"><strong>Question: </strong></label>
                             <Label className="questionInput" text={this.state.gameObj.questions[this.state.questionIndex].Q} onChange={this.handleQuestionText} />
-                            <br></br>
                         </Col>
                     </Row>
                     <Row>
-                        <Col size="sm-3">
-                            <button className="addQButton" onClick={this.addQuestion}><i class="fas fa-plus"></i> Add Another question</button>
-                        </Col>
                         <Col size="sm-3">
                             <button disabled={!enabled} className="removeButton" onClick={this.removeQuestion}><i class="fas fa-trash"></i> Drop Question</button>
                         </Col>
@@ -292,14 +288,15 @@ class ContentEditQuestions extends Component {
                         <Container fluid>
                             <Row>
                                 <Col size="sm-12">
-                                    <p className="qIns"><strong>Choice {i + 1}</strong></p>
+                                    <h5 className="qIns"><strong>Choice {i + 1}</strong></h5>
                                     <Label text={response.response} onChange={partial(this.handleResponseText, i)} />
                                 </Col>
                             </Row>
 
+                            <br></br>
                             <Row>
                                 <Col size="sm-12">
-                                    <p className="qIns"><strong>Outcome {i + 1}</strong></p>
+                                    <h5 className="qIns"><strong>Outcome {i + 1}</strong></h5>
                                     <Label text={response.outcomes[0].text} onChange={partial(this.handleOutcomeText, i, 0)} />
                                 </Col>
                             </Row>
@@ -319,14 +316,17 @@ class ContentEditQuestions extends Component {
 
                             <br></br>
                             <br></br>
-                            <hr></hr>
+                            <hr className="gray"></hr>
 
                         </Container>
 
                     ))
                 }
+
                 <br></br>
-                <br></br>
+                <div className="addingQuestion">
+                    <button className="addQButton" onClick={this.addQuestion}><i class="fas fa-plus"></i> Add Another question</button>
+                </div>
                 <br></br>
                 <AdminButton className="btn btn-danger" text="Done" onClick={this.updateQuestionDb} />
                 <br></br>

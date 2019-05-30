@@ -71,12 +71,12 @@ export class MyVerticallyCenteredModal extends React.Component {
                 <Modal.Body>
                     <p>{instructions[this.state.instructionsIndex]}</p>
                     {this.state.showNextButton ?
-                        <button onClick={this.nextInstruction}>More instructions</button>
+                        <button className="helpButton" onClick={this.nextInstruction}>More instructions</button>
                         : <div></div>}
                 </Modal.Body>
-                <Modal.Footer>
+                {/* <Modal.Footer>
                     <Button onClick={this.props.onHide}>Close</Button>
-                </Modal.Footer>
+                </Modal.Footer> */}
             </Modal>
         );
     }

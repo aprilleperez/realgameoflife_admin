@@ -62,25 +62,11 @@ class ContentCreate extends Component {
         return (
 
             <Container>
-                <ButtonToolbar className="float-right">
-                    <Button
 
-                        variant="primary"
-                        onClick={() => this.setState({ modalShow: true })}
-                    >
-                        Help!
-        </Button>
-
-                    <MyVerticallyCenteredModal
-                        show={this.state.modalShow}
-                        onHide={modalClose}
-                    />
-                </ButtonToolbar>
 
                 <Row>
                     <Col size="sm-12">
                         <ContentHeader text="Instructions" />
-
                     </Col>
                 </Row>
 
@@ -97,11 +83,31 @@ class ContentCreate extends Component {
                 </Row>
 
                 <Row>
+                    <Col size="sm-12">
+                        <ButtonToolbar>
+                            <Button
+                                className="helpButton"
+                                variant="primary"
+                                onClick={() => this.setState({ modalShow: true })}
+                            >
+                                Help!
+                            </Button>
+
+                            <MyVerticallyCenteredModal
+                                show={this.state.modalShow}
+                                onHide={modalClose}
+                            />
+                        </ButtonToolbar>
+                    </Col>
+                </Row>
+
+                <Row>
                     <Col size="sm-3">
                     </Col>
 
                     <Col size="sm-6">
-                        <Label onChange={this.handleChange} traitNumber="GameName" className="thisCreateTraits"  placeholder="Type Game Name" />
+                        <h5 className="qIns"><strong>Game Name</strong></h5>
+                        <Label onChange={this.handleChange} traitNumber="GameName" className="thisCreateTraits" placeholder="Type Game Name" />
                         <hr></hr>
                     </Col>
 
@@ -115,6 +121,7 @@ class ContentCreate extends Component {
                     </Col>
 
                     <Col size="sm-6">
+                        <h5 className="qIns"><strong>Game Traits</strong></h5>
                         {texts.map((text, i) => (
                             <Label onChange={this.handleChange} className="thisCreateTraits" placeholder={`Type Trait ${i + 1}`} traitNumber={i} />
                             // text={text}
@@ -127,6 +134,9 @@ class ContentCreate extends Component {
                 </Row>
 
                 <AdminButton text="Next" buttonType="green" onClick={this.buildTraits} />
+                <br></br>
+                <br></br>
+                <br></br>
 
             </Container>
         )
