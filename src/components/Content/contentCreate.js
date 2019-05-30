@@ -101,7 +101,7 @@ class ContentCreate extends Component {
                     </Col>
 
                     <Col size="sm-6">
-                        <Label onChange={this.handleChange} traitNumber="GameName" className="thisCreateTraits" text=" Type Game Name" />
+                        <Label onChange={this.handleChange} traitNumber="GameName" className="thisCreateTraits"  placeholder="Type Game Name" />
                         <hr></hr>
                     </Col>
 
@@ -116,7 +116,7 @@ class ContentCreate extends Component {
 
                     <Col size="sm-6">
                         {texts.map((text, i) => (
-                            <Label onChange={this.handleChange} className="thisCreateTraits" text={`Type Trait ${i + 1}`} traitNumber={i} />
+                            <Label onChange={this.handleChange} className="thisCreateTraits" placeholder={`Type Trait ${i + 1}`} traitNumber={i} />
                             // text={text}
                         ))}
                     </Col>

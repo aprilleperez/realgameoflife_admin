@@ -107,6 +107,11 @@ hr {
   border-width: 1px 1px 0 1px;
 } */
 
+.fullAvatar {
+  margin-bottom: 32px;
+  /* background-color: red; */
+}
+
 .card {
   border-style: solid;
   border-color: #fca25d;
