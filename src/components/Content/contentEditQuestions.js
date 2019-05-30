@@ -277,7 +277,7 @@ class ContentEditQuestions extends Component {
                     </Row>
                     <Row>
                         <Col size="sm-3">
-                        <button className="addQButton" onClick={this.addQuestion}><i class="fas fa-plus"></i> Add Another question</button>
+                            <button className="addQButton" onClick={this.addQuestion}><i class="fas fa-plus"></i> Add Another question</button>
                         </Col>
                         <Col size="sm-3">
                             <button disabled={!enabled} className="removeButton" onClick={this.removeQuestion}><i class="fas fa-trash"></i> Drop Question</button>

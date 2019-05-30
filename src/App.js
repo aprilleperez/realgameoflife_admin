@@ -34,7 +34,7 @@ class App extends Component {
             gameId: results.data[i]._id,
             gameName: results.data[i].name
           }
-          nonprofitName = "Seattle Foundation"
+          nonprofitName = "Social Justice Fund NW"
           gameNameGameId.push(gameObj)
 
         }

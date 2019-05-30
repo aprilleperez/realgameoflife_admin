@@ -13,9 +13,6 @@ const temporaryImagesCreate = "https://res.cloudinary.com/instapotty/image/uploa
 function Avatars(props) {
     return (
         <Container fluid>
-            {/* <Header />
-            <SubHeader /> */}
-            {/* Map over the avatars object */}
             {props.avatars.map((avatar, i) => {
                 let image = temporaryImagesCreate
                 if (avatar.picture) {
@@ -23,29 +20,33 @@ function Avatars(props) {
                 }
 
                 return (
+                    <div className="fullAvatar">
                     <Row>
-                        <Col size="md-4">
+                        <Col size="sm-4">
                             <Card remover={partial(props.remover, avatar)} avatar={avatar} avatarIndex={i} handleChange={props.handleChange} image={image} onClick={() => props.showWidget(partial(props.pictureUpdater, avatar))} />
 
                         </Col>
-                        <Col size="md-4">
-                            {keys.map(key =>
-                                // had to change traitName to text for it to show up in the placeholder
-                                (<Label text={props.traitName[key]} disabled="disabled" />)
-                            )}
 
-                        </Col>
-
-                        <Col size="md-4">
+                        <Col size="sm-8">
                             {keys.map(key => {
                                 const increment = partial(props.updater, avatar, key, avatar[key] + 1)
                                 const decrement = partial(props.updater, avatar, key, avatar[key] - 1)
-                                return (<PointToggler2 traits={avatar[key]} plus={increment} minus={decrement} />)
+                                return (
+                                    <Row>
+                                        <Col size="sm-8">
+                                            {/* // had to change traitName to text for it to show up in the placeholder */}
+                                            <Label text={props.traitName[key]} disabled="disabled" />
+                                        </Col>
+
+                                        <Col size="sm-4">
+                                            <PointToggler2 traits={avatar[key]} plus={increment} minus={decrement} />
+                                        </Col>
+                                    </Row>
+                                )
                             })}
-
                         </Col>
-
                     </Row>
+                    </div>
                 )
             })}
         </Container>
@@ -56,6 +57,24 @@ function Avatars(props) {
 
 export default Avatars;
 
+
+
+      {/* <Col size="md-4">
+                            {keys.map(key =>
+                                // had to change traitName to text for it to show up in the placeholder
+                                (<Label text={props.traitName[key]} disabled="disabled" />)
+                            )}
+
+                        </Col> */}
+                        {/* 
+                        <Col size="md-4">
+                            {keys.map(key => {
+                                const increment = partial(props.updater, avatar, key, avatar[key] + 1)
+                                const decrement = partial(props.updater, avatar, key, avatar[key] - 1)
+                                return (<PointToggler2 traits={avatar[key]} plus={increment} minus={decrement} />)
+                            })}
+
+                        </Col> */}
 
 
 
