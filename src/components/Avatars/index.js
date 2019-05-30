@@ -21,31 +21,31 @@ function Avatars(props) {
 
                 return (
                     <div className="fullAvatar">
-                    <Row>
-                        <Col size="sm-4">
-                            <Card remover={partial(props.remover, avatar)} avatar={avatar} avatarIndex={i} handleChange={props.handleChange} image={image} onClick={() => props.showWidget(partial(props.pictureUpdater, avatar))} />
+                        <Row>
+                            <Col size="sm-4">
+                                <Card remover={partial(props.remover, avatar)} avatar={avatar} avatarIndex={i} handleChange={props.handleChange} image={image} onClick={() => props.showWidget(partial(props.pictureUpdater, avatar))} />
 
-                        </Col>
+                            </Col>
 
-                        <Col size="sm-8">
-                            {keys.map(key => {
-                                const increment = partial(props.updater, avatar, key, avatar[key] + 1)
-                                const decrement = partial(props.updater, avatar, key, avatar[key] - 1)
-                                return (
-                                    <Row>
-                                        <Col size="sm-8">
-                                            {/* // had to change traitName to text for it to show up in the placeholder */}
-                                            <Label text={props.traitName[key]} disabled="disabled" />
-                                        </Col>
+                            <Col size="sm-8">
+                                {keys.map(key => {
+                                    const increment = partial(props.updater, avatar, key, avatar[key] + 1)
+                                    const decrement = partial(props.updater, avatar, key, avatar[key] - 1)
+                                    return (
+                                        <Row>
+                                            <Col size="sm-8">
+                                                {/* // had to change traitName to text for it to show up in the placeholder */}
+                                                <Label text={props.traitName[key]} disabled="disabled" />
+                                            </Col>
 
-                                        <Col size="sm-4">
-                                            <PointToggler2 traits={avatar[key]} plus={increment} minus={decrement} />
-                                        </Col>
-                                    </Row>
-                                )
-                            })}
-                        </Col>
-                    </Row>
+                                            <Col size="sm-4">
+                                                <PointToggler2 traits={avatar[key]} plus={increment} minus={decrement} />
+                                            </Col>
+                                        </Row>
+                                    )
+                                })}
+                            </Col>
+                        </Row>
                     </div>
                 )
             })}
@@ -59,14 +59,14 @@ export default Avatars;
 
 
 
-      {/* <Col size="md-4">
+{/* <Col size="md-4">
                             {keys.map(key =>
                                 // had to change traitName to text for it to show up in the placeholder
                                 (<Label text={props.traitName[key]} disabled="disabled" />)
                             )}
 
                         </Col> */}
-                        {/* 
+{/* 
                         <Col size="md-4">
                             {keys.map(key => {
                                 const increment = partial(props.updater, avatar, key, avatar[key] + 1)
