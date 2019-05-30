@@ -273,12 +273,14 @@ class ContentEditQuestions extends Component {
                             <label for="questionInput" className="qIns qLabel"><strong>Question: </strong></label>
                             <Label className="questionInput" text={this.state.gameObj.questions[this.state.questionIndex].Q} onChange={this.handleQuestionText} />
                             <br></br>
-                            {/* <hr></hr> */}
                         </Col>
                     </Row>
                     <Row>
-                        <Col size="sm-12">
-                        <button disabled={!enabled} className="removeButton" onClick={this.removeQuestion}><i class="fas fa-trash"></i> Drop Question</button>
+                        <Col size="sm-3">
+                        <button className="addQButton" onClick={this.addQuestion}><i class="fas fa-plus"></i> Add Another question</button>
+                        </Col>
+                        <Col size="sm-3">
+                            <button disabled={!enabled} className="removeButton" onClick={this.removeQuestion}><i class="fas fa-trash"></i> Drop Question</button>
                         </Col>
                     </Row>
                 </div>
@@ -289,43 +291,44 @@ class ContentEditQuestions extends Component {
                     this.state.gameObj.questions[this.state.questionIndex].responses.map((response, i) => (
                         <Container fluid>
                             <Row>
-                                <Col size="sm-6">
-                                    <p className="qIns"><strong>Response {i + 1}</strong></p>
+                                <Col size="sm-12">
+                                    <p className="qIns"><strong>Choice {i + 1}</strong></p>
                                     <Label text={response.response} onChange={partial(this.handleResponseText, i)} />
                                 </Col>
+                            </Row>
 
-                                <Col size="sm-6">
+                            <Row>
+                                <Col size="sm-12">
                                     <p className="qIns"><strong>Outcome {i + 1}</strong></p>
                                     <Label text={response.outcomes[0].text} onChange={partial(this.handleOutcomeText, i, 0)} />
                                 </Col>
                             </Row>
 
                             <Row>
-                                <Col size="sm-5">
+                                <Col size="sm-6">
                                     <PointToggler text="Affects Trait" options={Object.values(this.state.gameObj.traits)} value={response.outcomes[0].amount} trait={response.outcomes[0].trait} onChange={
                                         (value) => this.handleOutcomeTrait(i, 0, value)} plus={partial(this.handleTraitAmount, i, 0, response.outcomes[0].amount + 1)} minus={partial(this.handleTraitAmount, i, 0, response.outcomes[0].amount - 1)} />
                                 </Col>
 
-                                <Col size="sm-5">
+                                <Col size="sm-6">
                                     <PointToggler text="Affects Trait" options={Object.values(this.state.gameObj.traits)} value={response.outcomes[1].amount}
                                         trait={response.outcomes[1].trait} onChange={
                                             (value) => this.handleOutcomeTrait(i, 1, value)} plus={partial(this.handleTraitAmount, i, 1, response.outcomes[1].amount + 1)} minus={partial(this.handleTraitAmount, i, 1, response.outcomes[1].amount - 1)} />
                                 </Col>
                             </Row>
 
-
+                            <br></br>
+                            <br></br>
                             <hr></hr>
 
                         </Container>
 
                     ))
                 }
-                <button onClick={this.addQuestion}>Add another question</button>
-                {/* <AdminButton text="Done" buttonType="green" click={() => { }} to="/" /> */}
                 <br></br>
                 <br></br>
                 <br></br>
-                <AdminButton className="btn btn-danger" text="Save Questions" onClick={this.updateQuestionDb} />
+                <AdminButton className="btn btn-danger" text="Done" onClick={this.updateQuestionDb} />
                 <br></br>
                 <br></br>
                 <br></br>
