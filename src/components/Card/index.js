@@ -19,7 +19,7 @@ function Card(props) {
                 <br></br>
                 <Label onChange={props.handleChange} className="thisCreateTraits" text={props.avatar.name} traitNumber={props.avatarIndex} />
                 <br></br>
-                <button className="removeAvatar" onClick={props.remover}>Remove this avatar</button>
+                <button className="removeButton" onClick={props.remover}><i class="fas fa-trash"></i> Drop Avatar</button>
             </div>
         </div>
     )

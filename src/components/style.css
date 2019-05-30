@@ -80,7 +80,7 @@ hr {
 
 
 /* ------------------------------Avatar Card Component------------------------------ */
-.tab-list {
+/* .tab-list {
   border-bottom: 1px solid #ccc;
   padding-left: 0;
 }
@@ -96,7 +96,7 @@ hr {
   background-color: white;
   border: solid #ccc;
   border-width: 1px 1px 0 1px;
-}
+} */
 
 .card {
   border-style: solid;
@@ -133,7 +133,8 @@ hr {
 .cloudinary-button {
   background-color: #fca25d;
   color: white;
-  margin: auto;
+  /* margin: auto; */
+  margin-bottom: 16px;
   padding: auto;
   /* display: inline-block; */
   /* position: relative; */
@@ -141,9 +142,15 @@ hr {
   right: 8px; */
 }
 
-.removeAvatar {
+/* .avatarName {
+  margin-top: 16px;
+  margin-bottom: 16px;
+} */
+
+.removeButton {
   background-color: transparent;
-  border-color: #fca25d;
+  /* border-color: #fca25d; */
+  border-color: white;
   border-style: solid;
   border-width: 1px;
   color: #707070;
@@ -173,6 +180,7 @@ hr {
 
 /* ------------------------------??? Component------------------------------ */
 .thisForm {
+  /* margin: auto; */
   padding: 5px;
   border-style: solid;
   border-color: #AFD9EA;
@@ -245,4 +253,8 @@ hr {
   border-color: #fca25d;
   padding-top: 32px;
   margin-bottom: 32px;
+}
+
+.modalText {
+  font-size: 32px;
 }

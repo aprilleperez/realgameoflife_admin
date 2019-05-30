@@ -266,7 +266,6 @@ class ContentEditQuestions extends Component {
         return (
             <Container>
                 <div className="questionRow">
-                    <button disabled={!enabled} className="float-right" onClick={this.removeQuestion}>Remove this question</button>
                     <QuestionDropdown {...allProps} />
                     <Row>
 
@@ -275,6 +274,11 @@ class ContentEditQuestions extends Component {
                             <Label className="questionInput" text={this.state.gameObj.questions[this.state.questionIndex].Q} onChange={this.handleQuestionText} />
                             <br></br>
                             {/* <hr></hr> */}
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col size="sm-12">
+                        <button disabled={!enabled} className="removeButton" onClick={this.removeQuestion}><i class="fas fa-trash"></i> Drop Question</button>
                         </Col>
                     </Row>
                 </div>
