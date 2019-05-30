@@ -12,8 +12,8 @@ export function Dropdown(props) {
 
       <Form.Group controlId="exampleForm.ControlSelect1" className="thisForm">
         <Form.Control as="select" value={props.value} onChange={props.onChange}>
-          {props.options.map(option => (
-            <option>{option} </option>
+          {props.options.map((option, i) => (
+            <option key={`${option}_${i}`}>{option} </option>
           ))}
         </Form.Control>
 

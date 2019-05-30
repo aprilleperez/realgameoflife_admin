@@ -13,8 +13,10 @@ function Label(props) {
                 <Form.Group controlId="formBasicEmail" className="thisForm">
 
                     <Form.Control className={props.className}
-                    // changed value from props.text to props.traitName @12:40 5/11/19
-                        type="text" name={props.traitNumber} placeholder={props.text} value={props.traitName} onChange={props.onChange} disabled={props.disabled} />
+                        // changed value from props.text to props.traitName @12:40 5/11/19
+                        //change value from props.traitName to props.text @ 10:37 5/28/19 or else everything was 
+                        // barf on create questions
+                        type="text" name={props.traitNumber} placeholder={props.text} value={props.text} onChange={props.onChange} disabled={props.disabled} />
                 </Form.Group>
 
             </Form>
