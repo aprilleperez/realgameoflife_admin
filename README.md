@@ -1,8 +1,8 @@
-# realgameoflife_admin
+# [In Their Shoes](https://github.com/aprilleperez/realgameoflife_client)
 
-The Real Game of Life was made as a training tool for nonprofits to lead discussions on how different kinds of privilege can affect their communities and the clients they serve.
+**In Their Shoes** is a Jackbox style game designed as a training tool for nonprofits to lead discussions on privilege and equity. It's a question and answer style game and hosts can either launch the default game or log in and create their own custom game to play.
 
-The game is a multi-player question and answer game. A host launches a game and players can join either on their mobile devices or another laptop or computer. The host device shows the lobby, questions, and end results, and players answer the questions on their devices.
+The game is launched through a *host* device (ideally a device that can be connected to a large monitor or screen) and players join on their mobile devices to play.The *host* device displays the lobby where players wait until everyone has joined, the questions during the game, and the results at the end of the game. Players can choose their avatar, answer the questions, and see their personal results at the end of the game. 
 
 The default game is a basic intro to the idea of privilege and follows five avatars as they encounter typical life events such as graduating high school or starting a new job. Each avatar has stats that affect which responses are available to them. For example, a question might be: 
 
@@ -34,13 +34,13 @@ The game is broken into three sections:
 * Player - The main landing page for the project and where a host can begin either a default game, or log in to create their own game. Once a host has started a game (either default or their own), one device serves as the "host" - where players see the lobby, the questions, and the end results of the game. [You can find the repo here!](https://github.com/aprilleperez/realgameoflife_client)
 
 ## Built with
-- React
-- Bootstrap
+- [React](https://reactjs.org/)
+- [React-Bootstrap](https://react-bootstrap.github.io/)
 
 ## Other Dependencies 
-- Axios
-- Immutability-helper
-- Router-DOM
+- [Axios](https://www.npmjs.com/package/axios)
+- [Immutability-helper](https://www.npmjs.com/package/immutability-helper)
+- [React Router-DOM](https://www.npmjs.com/package/react-router-dom)
 
 ## Platform Breakdown
 Working on getting pictures added!
@@ -57,4 +57,3 @@ We are still working on this project! Next steps for development:
 - Adding random events that bring in a layer of luck to the game. 
 - Having players complete a success roll in order to achieve their desired response. If unsuccessful, they default to the lower response level. 
 - At the end of the game, having "life achievments"
-- Tracking the success of avatars over the course of many games so players can see how well their avatars tend to fair from game to game. 
