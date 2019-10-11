@@ -33,6 +33,38 @@ The game is broken into three sections:
 
 * Player - The main landing page for the project and where a host can begin either a default game, or log in to create their own game. Once a host has started a game (either default or their own), one device serves as the "host" - where players see the lobby, the questions, and the end results of the game. [You can find the repo here!](https://github.com/aprilleperez/realgameoflife_client)
 
+
+## Create or edit a game
+
+Once logged in, you can **create** a new game, or **edit** one of your existing games.
+
+![dashboard](/public/images/dashboard.PNG)
+
+---
+
+Creating a new game will take you through three stages:
+
+Name your game and pick the *traits* your game will be based around. Because *traits* are the foundation of each game they can't be changed once they're set.
+
+![Create a Game](/public/images/traits.PNG)
+
+Name your avatars, upload pictures, and give each avatar a score of their traits.
+
+![Create Avatars](/public/images/createAvatars.PNG)
+
+Write your questions, choose which traits the question will be weighed on, and which traits will change as a result of the question.
+
+![Create Questions](/public/images/createQuestions.PNG)
+
+---
+When you edit an existing game, you're able to edit or delete any of the avatars and change how much of each trait they have.
+
+![Edit Avatars Screen](/public/images/editAvatars.PNG)
+
+You can also edit or delete any of your questions and make changes to the traits the question is weighted on or the traits that change as a result of the question.
+
+![Edit Questions Screen](/public/images/editQuestions.PNG)
+
 ## Built with
 - [React](https://reactjs.org/)
 - [React-Bootstrap](https://react-bootstrap.github.io/)
