@@ -3,6 +3,7 @@ import { GameObj, Avatar } from "../../constructors"
 import { update, findbyId } from '../../utils/lifeAPIController';
 import { Container } from '../Grid'
 import '../style.css';
+import { Tabs } from "../Header"
 import Avatars from '../Avatars';
 import AdminButton from '../Button';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -226,6 +227,7 @@ class ContentEdit extends Component {
         if (!gameObj) {
             return (<div></div>)
         }
+
         return (
             <Container>
 
@@ -237,8 +239,8 @@ class ContentEdit extends Component {
                     passedState={this.state}
                     showWidget={this.showWidget}
                     remover={(avatar) => { this.removeAvatar(avatar) }}
-
                 />
+
                 <button onClick={this.addAvatar}>Add another avatar</button>
 
                 <br></br>
@@ -257,3 +259,65 @@ class ContentEdit extends Component {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 export default ContentEdit;
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////
+// TABS STUFF
+
+// UNDER RENDER
+// const domAvatars = this.state.gameObj.avatars || [];
+// console.log("DOM Avatars: ", domAvatars)
+
+// let r = [];
+
+// domAvatars.forEach((domAvatar, i) => {
+//     r.push(
+//         <div label={"Avatar" + { i }}>
+//             hi
+//             {/* {domAvatar} */}
+//         </div>
+//     )
+// })
+
+// UNDER RETURN
+// domAvatars.forEach((domAvatar, i) => {
+            //     r.push (
+
+            //         <div label="Avatar">
+            //             {domAvatar.name}
+            //         </div>
+            //     )
+            // })
+
+    {/* {r ?
+                    <Tabs>
+                        {r}
+                    </Tabs>
+                    : null} */}
+
+                {/* <Tabs>
+                    <div label="Avatar 1"> 
+                        testing blah blah 
+                    </div>
+                    <div label="Avatar 2">
+                        More testing
+                    </div>
+                    <div label="Avatar 3">
+                        Hi Carrie
+                    </div>
+                </Tabs> */}
+
+                {/* <Tabs avatars={gameObj.avatars ? gameObj.avatars : []}>
+                   
+                </Tabs> */}
