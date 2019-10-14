@@ -39,7 +39,7 @@ The game is broken into three sections:
 
 Once logged in, you can **create** a new game, or **edit** one of your existing games.
 
-![dashboard](/public/images/dashboard.PNG)
+![dashboard](https://res.cloudinary.com/instapotty/image/upload/v1571083766/Life%20Game/dashboard.png)
 
 ---
 
@@ -47,24 +47,24 @@ Creating a new game will take you through three stages:
 
 Name your game and pick the *traits* your game will be based around. Because *traits* are the foundation of each game they can't be changed once they're set.
 
-![Create a Game](/public/images/traits.PNG)
+![Create a Game](https://res.cloudinary.com/instapotty/image/upload/v1571083766/Life%20Game/traits.png)
 
 Name your avatars, upload pictures, and give each avatar a score of their traits.
 
-![Create Avatars](/public/images/createAvatars.PNG)
+![Create Avatars](https://res.cloudinary.com/instapotty/image/upload/v1571083766/Life%20Game/createAvatars.png)
 
 Write your questions, choose which traits the question will be weighed on, and which traits will change as a result of the question.
 
-![Create Questions](/public/images/createQuestions.PNG)
+![Create Questions](https://res.cloudinary.com/instapotty/image/upload/v1571083766/Life%20Game/createQuestions.png)
 
 ---
 When you edit an existing game, you're able to edit or delete any of the avatars and change how much of each trait they have.
 
-![Edit Avatars Screen](/public/images/editAvatars.PNG)
+![Edit Avatars Screen](https://res.cloudinary.com/instapotty/image/upload/v1571083766/Life%20Game/editAvatars.png)
 
 You can also edit or delete any of your questions and make changes to the traits the question is weighted on or the traits that change as a result of the question.
 
-![Edit Questions Screen](/public/images/editQuestions.PNG)
+![Edit Questions Screen](https://res.cloudinary.com/instapotty/image/upload/v1571083766/Life%20Game/editQuestions.png)
 
 ## Built with
 - [React](https://reactjs.org/)
