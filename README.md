@@ -47,7 +47,7 @@ Creating a new game will take you through three stages:
 
 Name your game and pick the *traits* your game will be based around. Because *traits* are the foundation of each game they can't be changed once they're set.
 
-![Create a Game](/public/images/traits.PNG)
+![Create a Game](../public/images/traits.PNG)
 
 Name your avatars, upload pictures, and give each avatar a score of their traits.
 
