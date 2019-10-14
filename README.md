@@ -39,7 +39,7 @@ The game is broken into three sections:
 
 Once logged in, you can **create** a new game, or **edit** one of your existing games.
 
-![dashboard](./public/images/dashboard.PNG)
+![dashboard](/images/dashboard.PNG)
 
 ---
 
